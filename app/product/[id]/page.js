@@ -3,8 +3,11 @@
 import SimilasProducts from "@/app/components/SimilasProducts";
 import MainLayout from "@/app/layouts/MainLayout";
 import Image from "next/image";
+import { toast } from "react-toastify";
+import { useCart } from "@/app/context/cart";
 
-function Product() {
+function Product({ params }) {
+  const cart = useCart();
   const products = {
     id: 1,
     title: "brown leather bag",
@@ -13,6 +16,16 @@ function Product() {
     url: "https://picsum.photos/200",
     price: 2500,
   };
+
+  function addToCartHandler() {
+    if (cart.isItemAdded) {
+      cart.removeFromCart(products);
+      toast.info("Removed from cart", { autoClose: 3000 });
+    } else {
+      cart.addToCart(products);
+      toast.success("Added to cart", { autoClose: 3000 });
+    }
+  }
 
   return (
     <>
@@ -58,8 +71,13 @@ function Product() {
                   </div>
                   <button
                     className={`
-                      text-white py-2 px-20 rounded-full cursor-pointer bg-[#3498C9]`}>
-                    Add to cart
+                      text-white py-2 px-20 rounded-full cursor-pointer bg-[#3498C9]  ${
+                        cart.isItemAdded
+                          ? "bg-[#e9a321] hover:bg-[#bf851a]"
+                          : "bg-[#3498C9] hover:bg-[#0054A0]"
+                      }`}
+                    onClick={addToCartHandler}>
+                    {cart.isItemAdded ? "Remove From Cart" : "Add To Cart"}
                   </button>
                 </div>
                 <div className="border-b py-1" />
