@@ -1,12 +1,30 @@
 "use client";
+import { useCart } from "../context/cart";
+import { toast } from "react-toastify";
+import Image from "next/image";
 
 function CartItem({ product }) {
+  const cart = useCart();
+
+  function removeItemFromCart() {
+    let res = confirm(
+      `Are you sure you want to remove this?"${product.title}"`
+    );
+    if (res) {
+      cart.removeFromCart(product);
+      toast.info("Removido do carrinho", { autoClose: 3000 });
+    }
+  }
+
   return (
     <>
-      <div className="relative flex justify-start my-2 border w-full p-6">
-        <img
-          src={product?.url + "/150"}
-          className="rounded-md w-[150px] h-[150px]"
+      <div className="relative flex justify-start my-2 border w-[65%] p-6">
+        <Image
+          src={product?.url}
+          width={150}
+          height={150}
+          alt="Product Image"
+          className="rounded-md"
         />
 
         <div className="overflow-hidden pl-2 w-full">
@@ -26,7 +44,9 @@ function CartItem({ product }) {
           </div>
 
           <div className="absolute right-0 bottom-0 p-4 text-sm">
-            <button onClick={() => {}} className="underline text-blue-500">
+            <button
+              onClick={() => removeItemFromCart()}
+              className="underline text-blue-500">
               Remove
             </button>
           </div>
