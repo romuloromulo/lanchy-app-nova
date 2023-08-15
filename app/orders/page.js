@@ -4,23 +4,49 @@ import Link from "next/link";
 import { CiDeliveryTruck } from "react-icons/ci";
 import MainLayout from "../layouts/MainLayout";
 import moment from "moment";
-import { DUMMY_DATA } from "@/dummy-data/dummy-data";
+import { useUser } from "../context/user";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import useIsLoading from "../hooks/useIsLoading";
 
 function Orders() {
-  const product = DUMMY_DATA[0];
-  const orders = [
-    {
-      id: 1,
-      stripe_id: "12313",
-      name: "Teste",
-      address: "Teste",
-      zipcode: "Teste",
-      city: "Teste",
-      country: "Teste",
-      total: 1299,
-      orderItem: [product],
-    },
-  ];
+  const { user } = useUser();
+  const [orders, setOrders] = useState([]);
+
+  async function getOrders() {
+    try {
+      if (!user && !user?.id) return;
+
+      const response = await fetch("/api/orders");
+      const result = await response.json();
+
+      setOrders(result);
+      useIsLoading(false);
+    } catch (error) {
+      toast.error("Something went wrong?", { autoClose: 3000 });
+      useIsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    useIsLoading(true);
+    getOrders();
+  }, [user]);
+
+  // const product = DUMMY_DATA[0];
+  // const orders = [
+  //   {
+  //     id: 1,
+  //     stripe_id: "12313",
+  //     name: "Teste",
+  //     address: "Teste",
+  //     zipcode: "Teste",
+  //     city: "Teste",
+  //     country: "Teste",
+  //     total: 1299,
+  //     orderItem: [product],
+  //   },
+  // ];
 
   return (
     <MainLayout>

@@ -5,7 +5,6 @@ import { cookies } from "next/headers";
 
 export async function POST(req) {
   const supabase = createServerComponentClient({ cookies });
-  console.log(supabase, "supabase asdasdsadajsldjasl");
 
   try {
     const {
