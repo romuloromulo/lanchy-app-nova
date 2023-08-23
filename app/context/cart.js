@@ -84,7 +84,7 @@ const Provider = ({ children }) => {
     return total;
   }
 
-  function cleanCart() {
+  function clearCart() {
     localStorage.removeItem("cart");
     router.refresh();
   }
@@ -97,7 +97,7 @@ const Provider = ({ children }) => {
     isItemAddedToCart,
     cartCount,
     cartTotal,
-    cleanCart,
+    clearCart,
   };
 
   return <Context.Provider value={exposed}>{children}</Context.Provider>;

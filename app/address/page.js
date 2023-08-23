@@ -121,7 +121,6 @@ export default function Home() {
     }
   };
 
-  console.log("teste");
   return (
     <>
       <MainLayout>

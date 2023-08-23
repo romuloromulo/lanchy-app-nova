@@ -2,10 +2,9 @@
 import React, { useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
 
-import SimilasProducts from "../components/SimilasProducts";
+import SimilasProducts from "../components/SimilarProducts";
 import CartItem from "../components/CartItem";
 import { productionBrowserSourceMaps } from "@/next.config";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCart } from "../context/cart";
 import useIsLoading from "../hooks/useIsLoading";

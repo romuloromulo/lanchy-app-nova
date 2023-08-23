@@ -14,7 +14,7 @@ export default function Product({ product }) {
             className="rounded cursor-pointer"
             width={150}
             height={150}
-            src={product.url}
+            src={`${product.url}/300`}
           />
         ) : null}
 

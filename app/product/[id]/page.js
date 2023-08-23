@@ -1,6 +1,6 @@
 "use client";
 
-import SimilasProducts from "@/app/components/SimilasProducts";
+import SimilarProducts from "@/app/components/SimilarProducts";
 import MainLayout from "@/app/layouts/MainLayout";
 import Image from "next/image";
 import { toast } from "react-toastify";
@@ -99,7 +99,7 @@ function Product({ params }) {
             </div>
           </div>
         </div>
-        <SimilasProducts />
+        <SimilarProducts />
       </MainLayout>
     </>
   );
