@@ -7,6 +7,7 @@ import { BsChevronDown } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
 import { useCart } from "@/app/context/cart";
+import ClientOnly from "@/app/components/ClientOnly";
 
 function TopMenu() {
   const [isMenu, setIsMenu] = useState(false);
@@ -99,22 +100,25 @@ function TopMenu() {
             />
             Ship to
           </li>
-          <li className="px-3 hover:underline cursor-pointer">
-            <div className="relative">
-              <Link href="/cart">
-                <AiOutlineShoppingCart size={22} />
-                {cart.cartCount() > 0 ? (
-                  <div className="rounded-full absolute text-[10px] -top-[2px] -right-[5px] bg-red-500 w-[14px] h-[14px] text-white">
-                    <div className="flex items-center justify-center -mt-[1px]">
-                      {cart.cartCount()}
+
+          <ClientOnly>
+            <li className="px-3 hover:underline cursor-pointer">
+              <div className="relative">
+                <Link href="/cart">
+                  <AiOutlineShoppingCart size={22} />
+                  {cart.cartCount() > 0 ? (
+                    <div className="rounded-full absolute text-[10px] -top-[2px] -right-[5px] bg-red-500 w-[14px] h-[14px] text-white">
+                      <div className="flex items-center justify-center -mt-[1px]">
+                        {cart.cartCount()}
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <div></div>
-                )}
-              </Link>
-            </div>
-          </li>
+                  ) : (
+                    <div></div>
+                  )}
+                </Link>
+              </div>
+            </li>
+          </ClientOnly>
         </ul>
       </div>
     </div>
