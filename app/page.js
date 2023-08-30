@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import { useCart } from "./context/cart";
 import useIsLoading from "./hooks/useIsLoading";
 import { usePathname } from "next/navigation";
+import Hero from "./layouts/includes/Hero";
+import About from "./layouts/includes/About";
+import Menu from "./layouts/includes/Menu";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -25,14 +28,11 @@ export default function Home() {
 
   return (
     <MainLayout>
-      <CarouselComp />
-      <div className="max-w-[1200px] mx-auto">
-        <div className="text-2xl font-bold mt-4 mb-6 px-4">Products</div>
-        <div className="grid grid-cols-5 gap-x-44">
-          {products.map((product) => {
-            return <Product key={product.id} product={product} />;
-          })}
-        </div>
+      {/* <CarouselComp /> */}
+      <div className="mx-auto">
+        <Hero />
+        <About />
+        <Menu />
       </div>
     </MainLayout>
   );
