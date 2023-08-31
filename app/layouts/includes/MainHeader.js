@@ -60,7 +60,7 @@ export default function MainHeader() {
                     </button>
 
                     <input
-                      className="placeholder-red-200 text-sm    pl-3focus:outline-none w-full h-full bg-inherit"
+                      className="placeholder-red-200 text-sm    pl-3focus:outline-none w-full h-full bg-inherit outline-none"
                       placeholder="Busque Pizza"
                       type="text"
                       onChange={handleSearchName}

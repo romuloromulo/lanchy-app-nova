@@ -1,89 +1,90 @@
 "use client";
-
+import { FaPizzaSlice } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { SiIfood } from "react-icons/si";
+import { BsFacebook } from "react-icons/bs";
+import Link from "next/link";
+import Image from "next/image";
 export default function Footer() {
   return (
     <>
-      <div id="Footer" className="border-t mt-20 px-2">
-        <div className="flex items-baseline justify-between w-full mx-auto max-w-[1200px] py-10">
-          <ul className="text-gray-700">
-            <li className="font-bold text-lg">Buy</li>
-            <li className="mt-2 py-1 text-xs hover:underline cursor-pointer">
-              Registration
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              eBay Money Back Guarantee
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Bidding & buying help
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Stores
-            </li>
-          </ul>
+      <div id="Footer" className="h-[40rem] bg-black px-2 py-20">
+        <div className="max-w-[1500px] flex items-start justify-around">
+          <div className="flex flex-col justify-cente w-1/3">
+            <Link href="/">
+              <div className="text-yellow-50 items-center flex font-extrabold text-2xl mb-3">
+                <FaPizzaSlice
+                  size={22}
+                  className="mr-2 scale-x-[-1] text-amber-400"
+                />{" "}
+                TOTALPIZZA
+              </div>
+            </Link>
 
-          <ul className="text-gray-700">
-            <li className="font-bold text-lg">Sell</li>
-            <li className="mt-2 py-1 text-xs hover:underline cursor-pointer">
-              Start selling
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Learn to sell
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Affiliates
-            </li>
-          </ul>
-
-          <ul className="text-gray-700">
-            <li className="font-bold text-lg">About eBay</li>
-            <li className="mt-2 py-1 text-xs hover:underline cursor-pointer">
-              Company info
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              News
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Investors
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Carears
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Government relations
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Policies
-            </li>
-          </ul>
-
-          <ul className="text-gray-700">
-            <li className="font-bold text-lg">Sell</li>
-            <li className="mt-2 py-1 text-xs hover:underline cursor-pointer">
-              Start selling
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Learn to sell
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Affiliates
-            </li>
-          </ul>
-
-          <ul className="text-gray-700">
-            <li className="font-bold text-lg">Buy</li>
-            <li className="mt-2 py-1 text-xs hover:underline cursor-pointer">
-              Registration
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              eBay Money Back Guarantee
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Bidding & buying help
-            </li>
-            <li className="py-1 text-xs hover:underline cursor-pointer">
-              Stores
-            </li>
-          </ul>
+            <p className="text-white mb-5">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit ugue quam
+              diam vitae velit bibendum elementum.
+            </p>
+            <div className="flex mt-5 gap-3 relative">
+              <a href="https://instagram.com">
+                <div className="rounded-full bg-white p-1 hover:bg-amber-400 hover:translate-y-[-0.5rem] duration-300 ">
+                  <AiFillInstagram size={22} className="" />
+                </div>
+              </a>
+              <a href="https://ifood.com">
+                <div className="rounded-full bg-white p-1 hover:bg-amber-400 hover:translate-y-[-0.5rem] duration-300">
+                  <SiIfood size={22} className="" />
+                </div>
+              </a>
+              <a href="https://facebook.com">
+                <div className="rounded-full bg-white p-1 hover:bg-amber-400 hover:translate-y-[-0.5rem] duration-300">
+                  <BsFacebook size={22} className="" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="text-white text-2xl font-extrabold">
+              Nos siga no instagram!
+            </div>
+            <a href="https://instagram.com" className="grid grid-cols-2 gap-2 ">
+              <div className="w-[160px] h-[160px] overflow-hidden">
+                <Image
+                  src="/images/sobre1.webp"
+                  height={160}
+                  width={160}
+                  className="hover:scale-125 transition duration-500 cursor-pointer"
+                />
+              </div>
+              <div className="w-[160px] h-[160px] overflow-hidden">
+                <Image
+                  src="/images/sobre4.webp"
+                  height={160}
+                  width={160}
+                  className="hover:scale-125 transition duration-500 cursor-pointer"
+                />
+              </div>
+              <div className="w-[160px] h-[160px] overflow-hidden">
+                <Image
+                  src="/images/sobre4.avif"
+                  height={160}
+                  width={160}
+                  className="hover:scale-125 transition duration-500 cursor-pointer"
+                />
+              </div>
+              <di className="w-[160px] h-[160px] overflow-hidden">
+                <Image
+                  src="/images/sobre3.jpeg"
+                  height={160}
+                  width={160}
+                  className="hover:scale-125 transition duration-500 cursor-pointer"
+                />
+              </di>
+            </a>
+          </div>
+        </div>
+        <div className="m-auto border-t border-gray-800 w-[50rem] botton-2 text-center mt-20 text-white text-lg p-3">
+          © Criado por Rômulo Viana.
         </div>
       </div>
     </>
