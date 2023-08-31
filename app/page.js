@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import Hero from "./layouts/includes/Hero";
 import About from "./layouts/includes/About";
 import Menu from "./layouts/includes/Menu";
+import Clientes from "./layouts/includes/Clientes";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -33,6 +34,7 @@ export default function Home() {
         <Hero />
         <About />
         <Menu />
+        <Clientes />
       </div>
     </MainLayout>
   );
