@@ -32,48 +32,50 @@ function Cart() {
   return (
     <>
       <MainLayout>
-        <div className="max-w-[1200px] mx-auto mb-8 min-h-[300px]">
-          <div className="text-2xl font-bold my-4">Shopping cart</div>
-          <div className="relative flex items-baseline justify-between gap-2">
-            <ClientOnly>
-              <div className="w-[65%">
-                {cart.getCart().map((product) => (
-                  <CartItem key={product.id} product={product} />
-                ))}
-              </div>
-            </ClientOnly>
-            <div
-              id="GoToCheckout"
-              className=" md:w-1/3 absolute top-0 right-0 m-2">
+        <div className="w-full py-16  bg-white">
+          <div className="max-w-[1200px] mx-auto mt-10 mb-8 min-h-[300px]">
+            <div className="text-3xl font-extrabold my-4">Carro de Compras</div>
+            <div className="relative flex items-baseline justify-between gap-2">
               <ClientOnly>
-                <div className="bg-white p-4 border">
-                  <button
-                    onClick={() => goToCheckout()}
-                    className="flex items-center justify-center bg-blue-600 w-full text-white font-semibold p-3 rounded-full mt-4 hover:bg-blue-700">
-                    Go to checkout
-                  </button>
-                  <div className="flex items-center justify-between mt-4 text-sm mb-1">
-                    <div>Items ({cart.getCart().length})</div>
-                    <div>R${(cart.cartTotal() / 100).toFixed(2)}</div>
-                  </div>
-                  <div className="flex items-center justify-between mb-4 text-sm">
-                    <div>Shipping:</div>
-                    <div>Free</div>
-                  </div>
-
-                  <div className="border-b border-gray-300" />
-
-                  <div className="flex items-center justify-between mt-4 mb-1 text-lg font-semibold">
-                    <div>Subtotal</div>
-                    <div>R${(cart.cartTotal() / 100).toFixed(2)}</div>
-                  </div>
+                <div className="w-[65%">
+                  {cart.getCart().map((product) => (
+                    <CartItem key={product.id} product={product} />
+                  ))}
                 </div>
               </ClientOnly>
+              <div
+                id="GoToCheckout"
+                className=" md:w-1/3 absolute top-0 right-0 m-2">
+                <ClientOnly>
+                  <div className="bg-red-500 p-4 border-black border-2">
+                    <button
+                      onClick={() => goToCheckout()}
+                      className="flex items-center border-2 border-black justify-center bg-amber-400 w-full text-black font-bold p-3mt-4 py-5 hover:bg-amber-500 duration-300">
+                      CHECKOUT
+                    </button>
+                    <div className="flex items-center justify-between mt-4 text-xl mb-1">
+                      <div>Items ({cart.getCart().length})</div>
+                      <div>R${cart.cartTotal().toFixed(2)}</div>
+                    </div>
+                    <div className="flex items-center justify-between mb-4 text-sm">
+                      <div className="font-bold">Frete:</div>
+                      <div className="font-bold">Grátis</div>
+                    </div>
+
+                    <div className="border-b border-black border-2" />
+
+                    <div className="flex items-center justify-between mt-4 mb-1 text-2xl font-extrabold">
+                      <div>Subtotal</div>
+                      <div>R${cart.cartTotal().toFixed(2)}</div>
+                    </div>
+                  </div>
+                </ClientOnly>
+              </div>
             </div>
           </div>
-        </div>
 
-        <SimilasProducts />
+          <SimilasProducts />
+        </div>
       </MainLayout>
     </>
   );

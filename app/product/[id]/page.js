@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { useCart } from "@/app/context/cart";
 import { useEffect, useState } from "react";
 import useIsLoading from "@/app/hooks/useIsLoading";
+import { LuWheat, LuWheatOff } from "react-icons/lu";
 
 function Product({ params }) {
   const cart = useCart();
@@ -22,6 +23,10 @@ function Product({ params }) {
     useIsLoading(false);
   }
 
+  console.log(product);
+
+  const ingredients = product?.ingredients || [];
+
   useEffect(() => {
     getProduct();
   }, []);
@@ -29,77 +34,95 @@ function Product({ params }) {
   function addToCartHandler() {
     if (cart.isItemAdded) {
       cart.removeFromCart(product);
-      toast.info("Removed from cart", { autoClose: 3000 });
+      // toast.info("Removed from cart", { autoClose: 3000 });
     } else {
       cart.addToCart(product);
-      toast.success("Added to cart", { autoClose: 3000 });
+      // toast.success("Added to cart", { autoClose: 3000 });
     }
   }
 
   return (
     <>
       <MainLayout>
-        <div className="max-w-[1200px] mx-auto">
-          <div className="flex px-4 py-10">
-            {product?.url ? (
-              <Image
-                width={280}
-                height={280}
-                className="w-[40%] rounded-lg"
-                alt="Imagem do Produto"
-                src={product?.url}
-              />
-            ) : (
-              <div className="w-[40%]"></div>
-            )}
-            <div className="px-4 w-full">
-              <div className="font-bold text-xl">{product?.title}</div>
-              <div className="text-sm text-gray-700 pt-2">
-                Brand New - Full Warranty
+        <section id="Produto" className="bg-white text-black">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="flex px-4 py-10">
+              <div className="bg-red-500 p-10 flex items-center justify-around  rounded-lg">
+                {product?.url ? (
+                  <Image
+                    width={780}
+                    height={780}
+                    className=" rounded-lg"
+                    alt="Imagem do Produto"
+                    src={product?.url}
+                  />
+                ) : (
+                  <div className="w-[40%]"></div>
+                )}
               </div>
-
-              <div className="border-b py-1" />
-
-              <div className="pt-3 pb-2">
-                <div className="flex items-center">
-                  Condition:
-                  <span className="font-bold text-[17px] ml-1"> New</span>
+              <div className="px-4 w-full flex flex-col justify-center items-start gap-2 ml-10">
+                <div className="font-extrabold text-6xl">
+                  Pizza de {product?.title}
                 </div>
-              </div>
+                <div>{product.description}</div>
 
-              <div className="border-b py-1" />
-
-              <div className="pt-3">
-                <div className="w-full flex items-center justify-between">
-                  <div className="flex items-center">
-                    Price:
-                    {product?.price ? (
-                      <div className="font-bold text-[20px] ml-2">
-                        R${(product?.price / 100).toFixed(2)}
-                      </div>
-                    ) : null}
-                  </div>
-                  <button
-                    className={`
-                      text-white py-2 px-20 rounded-full cursor-pointer bg-[#3498C9]  ${
-                        cart.isItemAdded
-                          ? "bg-[#e9a321] hover:bg-[#bf851a]"
-                          : "bg-[#3498C9] hover:bg-[#0054A0]"
-                      }`}
-                    onClick={addToCartHandler}>
-                    {cart.isItemAdded ? "Remove From Cart" : "Add To Cart"}
-                  </button>
+                <div className="py-1" />
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-bold flex translate-x-[-1rem]">
+                    <Image
+                      src="/images/ingredients.png"
+                      width={22}
+                      height={22}
+                      className=""
+                    />
+                    Ingredientes:
+                  </span>
+                  <ul className="text-lx text-black gap-2">
+                    {ingredients.map((i) => (
+                      <li className=""> - {i}</li>
+                    ))}
+                  </ul>
                 </div>
+                <div className="font-bold">
+                  {product?.glutenFree === false ? (
+                    <div className="flex">
+                      {" "}
+                      <LuWheat size={22} />
+                      Contém Glúten
+                    </div>
+                  ) : (
+                    <div className="flex">
+                      {" "}
+                      <LuWheatOff size={22} />
+                      Sem glúten
+                    </div>
+                  )}
+                </div>
+                <div className="flex items-center mt-5">
+                  {product?.price ? (
+                    <div className="font-bold text-4xl ml-2">
+                      R${(product?.price).toFixed(2)}
+                    </div>
+                  ) : null}
+                </div>
+
+                <button
+                  className={`
+                      text-black py-5 font-bold text-xl mt-4 px-16 cursor-pointer bg-amber-400 hover:bg-[#bf851a]`}
+                  onClick={addToCartHandler}>
+                  {cart.isItemAdded
+                    ? "Remover do Carrinho"
+                    : "Adicionar no Carrinho"}
+                </button>
+
                 <div className="border-b py-1" />
-                <div className="pt-3">
-                  <div className="font-semibold pb-1">Description:</div>
-                  <div className="text-sm">{product?.description}</div>
-                </div>
               </div>
             </div>
           </div>
-        </div>
-        <SimilarProducts />
+          <div></div>
+
+          <SimilarProducts />
+        </section>
       </MainLayout>
     </>
   );

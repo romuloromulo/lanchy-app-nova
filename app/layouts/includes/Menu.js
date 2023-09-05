@@ -2,20 +2,25 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useCart } from "@/app/context/cart";
 import useIsLoading from "@/app/hooks/useIsLoading";
-import { usePathname } from "next/navigation";
+
 import Image from "next/image";
 import Link from "next/link";
+import { SiTrustedshops } from "react-icons/si";
+import { AiOutlineLoading } from "react-icons/ai";
 
 function Menu() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function getProducts() {
-    useIsLoading(true);
+    setIsLoading(true);
+    // useIsLoading(true);
     setProducts([]);
     const response = await fetch(`/api/products/`);
     const prods = await response.json();
     setProducts(prods);
-    useIsLoading(false);
+    // useIsLoading(false);
+    setIsLoading(false);
   }
   useEffect(() => {
     getProducts();
@@ -23,15 +28,15 @@ function Menu() {
 
   const pizzas = products.map((pizza) => (
     <Link href={`/product/${pizza.id}`}>
-      <div className="flex flex-col justify-center items-center text-xl font-bold text-red-600  hover:text-red-700 mb-5">
-        <div className="relative w-[180px] h-[180px]">
+      <div className="flex flex-col justify-center items-center text-xl font-bold text-red-600  hover:text-red-700 mb-5 group">
+        <div className="relative w-[200px] h-[200px]">
           <div className="flex flex-col justify-center items-center p-3 bg-red-600 w-full h-full overflow-hidden rounded-full rotate-90 absolute">
             <Image
               src={pizza?.url}
-              width={170}
-              height={170}
+              width={200}
+              height={200}
               alt={pizza?.title}
-              className="rounded-full hover:scale-125 hover:rotate-12 transition duration-500 cursor-pointer"
+              className="rounded-full group-hover:scale-125 group-hover:rotate-12 transition duration-500 cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -57,7 +62,18 @@ function Menu() {
           </p>
         </div>
         <div id="Pizzas">
-          <div className="grid gap-2 grid-cols-5 mt-5 ">{pizzas}</div>
+          <div className="grid gap-2 grid-cols-5 mt-5 ">
+            {isLoading ? (
+              <div className="text-xl font-bold flex">
+                Carregando...
+                <span>
+                  <AiOutlineLoading size={33} className="animate-spin" />
+                </span>
+              </div>
+            ) : (
+              pizzas
+            )}
+          </div>
         </div>
         <div className="flex gap-4">
           <div className="w-40 h-16  bg-white flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-black hover:text-white mt-5">

@@ -50,8 +50,8 @@ function Clientes() {
   return (
     <section
       id="Clients"
-      className="p-5 h-screen bg-white overflow-hidden  mx-auto">
-      <div className="max-w-[1500px] h-full flex flex-col items-center justify-center">
+      className="p-5 h-screen bg-white overflow-hidden w-full flex items-center justify-center">
+      <div className="max-w-[1500px] h-full flex flex-col items-center justify-center ">
         <div className=" w-3/5 mt-5 text-center">
           <h1 className="text-5xl font-extrabold text-black">
             Avaliação dos clientes

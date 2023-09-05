@@ -24,12 +24,12 @@ function SimilasProducts() {
   }, []);
   return (
     <>
-      <div>
-        <div className="border-b py-1 max-w-[1200px] mx-auto" />
+      <div className="bg-white py-10">
+        <div className="border-b max-w-[1200px] mx-auto" />
 
         <div className="max-w-[1200px] mx-auto">
-          <div className="font-bold text-2xl py-2 mt-4">
-            Similar sponsored items
+          <div className="font-bold text-2xl py-2 mt-4 text-black">
+            Talve você também goste:
           </div>
 
           {products.length > 0 ? (

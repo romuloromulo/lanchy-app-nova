@@ -8,9 +8,11 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <>
-      <div id="Footer" className="h-[40rem] bg-black px-2 py-20">
-        <div className="max-w-[1500px] flex items-start justify-around">
-          <div className="flex flex-col justify-cente w-1/3">
+      <div
+        id="Footer"
+        className="h-[40rem] bg-black px-2 py-20 w-full flex flex-col justify-center items-center">
+        <div className="max-w-[1500px]  flex justify-around items-center ">
+          <div className="flex flex-col w-1/3 justify-center">
             <Link href="/">
               <div className="text-yellow-50 items-center flex font-extrabold text-2xl mb-3">
                 <FaPizzaSlice

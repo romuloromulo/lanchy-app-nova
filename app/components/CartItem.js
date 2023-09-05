@@ -18,7 +18,7 @@ function CartItem({ product }) {
 
   return (
     <>
-      <div className="relative flex justify-start my-2 border w-[65%] p-6">
+      <div className="relative flex justify-start my-2 overflow-hidden border-2 border-black bg-amber-400 p-6">
         <Image
           src={product?.url}
           width={150}
@@ -33,21 +33,19 @@ function CartItem({ product }) {
               {product?.title}
             </div>
             <div className="font-bold text-lg">
-              R${(product?.price / 100).toFixed(2)}
+              R${(product?.price).toFixed(2)}
             </div>
           </div>
-
-          <div className="font-semibold mt-2">NEW</div>
 
           <div className="text-sm mt-2">
             {product?.description.substring(0, 150)}...
           </div>
 
-          <div className="absolute right-0 bottom-0 p-4 text-sm">
+          <div className="absolute right-0 bottom-0 p-4 text-sm bg-red-500  hover:bg-red-700 duration-300 font-bold">
             <button
               onClick={() => removeItemFromCart()}
-              className="underline text-blue-500">
-              Remove
+              className=" text-white">
+              REMOVER
             </button>
           </div>
         </div>
