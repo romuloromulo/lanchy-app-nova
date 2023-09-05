@@ -111,7 +111,7 @@ export default function MainHeader() {
                 <Link href="/">Início</Link>
               </li>
               <li className="hover:text-gray-800">
-                <Link href="/">Menu</Link>
+                <Link href="/menu">Menu</Link>
               </li>
               <li className="hover:text-gray-800">
                 <Link href="/">Contato</Link>

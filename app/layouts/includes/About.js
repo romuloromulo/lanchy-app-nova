@@ -67,19 +67,19 @@ function About() {
           <div>
             <ul>
               <li className="flex ">
-                <div className="bg-amber-400 p-1 mb-3">
+                <div className="bg-amber-400 p-1 mb-3 mr-3">
                   <MdEmail size={22} className="text-black" />
                 </div>
                 cidade@totalpizza.com
               </li>
               <li className="flex">
-                <div className="bg-amber-400 p-1 mb-3">
+                <div className="bg-amber-400 p-1 mb-3  mr-3">
                   <BsFillTelephoneFill size={22} className="text-black" />
                 </div>{" "}
                 (98)982122264
               </li>
               <li className="flex">
-                <div className="bg-amber-400 p-1">
+                <div className="bg-amber-400 p-1  mr-3">
                   <GiPositionMarker size={22} className="text-black" />
                 </div>{" "}
                 837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles
