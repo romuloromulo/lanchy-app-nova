@@ -52,11 +52,11 @@ function Orders() {
     <MainLayout>
       <div
         id="OrdersPage"
-        className="mt-4 max-w-[1200px] mx-auto px-2 min-h-[50vh]">
-        <div className="bg-white w-full p-6 min-h-[150px]">
+        className="mt-4 max-w-[1200px] mx-auto px-2 min-h-[50vh] mb-4">
+        <div className="bg-amber-400 w-full p-6 min-h-[150px]">
           <div className="flex items-center text-xl">
-            <CiDeliveryTruck className="text-green-500" size={35} />
-            <span className="pl-4">Orders</span>
+            <CiDeliveryTruck className="text-red-500" size={35} />
+            <span className="pl-4">Pedidos</span>
           </div>
           {orders.length < 1 ? (
             <div className="flex items-center justify-center">
@@ -72,36 +72,37 @@ function Orders() {
                 </div>
 
                 <div className="pt-2">
-                  <span className="font-bold mr-2">Delivery Address:</span>
+                  <span className="font-bold mr-2">Endereço de entrega:</span>
                   {order?.name}, {order?.address}, {order?.zipcode},{" "}
                   {order?.city}, {order?.country}
                 </div>
 
                 <div className="pt-2">
-                  <span className="font-bold mr-2">Total:</span>£
-                  {order?.total / 100}
+                  <span className="font-bold mr-2">Total:</span>R$
+                  {order?.total}
                 </div>
 
                 <div className="pt-2">
-                  <span className="font-bold mr-2">Order Created:</span>
+                  <span className="font-bold mr-2">Pedido criado em:</span>
                   {moment(order?.created_at).calendar()}
                 </div>
 
                 <div className="py-2">
-                  <span className="font-bold mr-2">Delivery Time:</span>
-                  {moment(order?.created_at).add(3, "days").calendar()}
+                  <span className="font-bold mr-2">Tempo de entrega:</span>
+                  {moment(order?.created_at).add(30, "minutes").calendar()}
                 </div>
 
                 <div className="flex items-center gap-4">
                   {order?.orderItem.map((item) => (
                     <div key={item.id} className="flex items-center">
                       <Link
-                        className="py-1 hover:underline text-blue-500 font-bold"
+                        className="py-1 hover:underline text-black font-bold"
                         href={`/product/${item.d}`}>
                         <img
                           className="rounded"
-                          width="120"
-                          src={item.url + "/120"}
+                          width="120px"
+                          height="120px"
+                          src={item.url}
                         />
                         {item.title}
                       </Link>

@@ -53,7 +53,7 @@ function Clientes() {
       className="p-5 h-screen bg-white overflow-hidden w-full flex items-center justify-center">
       <div className="max-w-[1500px] h-full flex flex-col items-center justify-center ">
         <div className=" w-3/5 mt-5 text-center">
-          <h1 className="text-5xl font-extrabold text-black">
+          <h1 className="text-5xl font-extrabold text-black mb-6">
             Avaliação dos clientes
           </h1>
           <p>
@@ -64,36 +64,55 @@ function Clientes() {
           </p>
         </div>
 
-        <div className="flex h-2/3 w-full justify-center items-center">
+        <div className="flex lg:h-2/3 p-12 mt-8 w-full justify-center items-center">
           <button
             onClick={handlePrevious}
-            className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg translate-x-6">
+            className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg translate-x-6 hidden lg:block">
             <FaChevronLeft size={22} />
           </button>
-          <div className="w-2/3 shadow-lg h-full border-gray-400 text-black flex items-center justify-center gap-8">
-            <div
-              className={`rounded-lg p-2 bg-amber-400 overflow-hidden w-1/3 h-1/2 flex justify-center items-center`}>
-              <Image
-                className="rounded-full"
-                src={info[counter].foto}
-                width={350}
-                height={350}
-              />
+          <div className="mx-auto w-full h-full  flex flex-col items-center justify-center">
+            <div className="w-full lg:w-/23 py-8 shadow-lg h-full border-gray-400 text-black flex items-center justify-center gap-8 ">
+              <div
+                className={`rounded-lg p-2 bg-amber-400 overflow-hidden w-1/3 h-1/2 flex justify-center items-center`}>
+                <Image
+                  className="rounded-full"
+                  src={info[counter].foto}
+                  width={350}
+                  height={350}
+                />
+              </div>
+
+              <div className="flex flex-col w-1/2">
+                <RatingStars rating={info[counter].rating} />
+                <div className="font-bold text-lg">{info[counter].quote}</div>
+                <div className="text-base mt-2 mb-8">
+                  {info[counter].avaliaçao}
+                </div>
+                <div className="font-extrabold text-lg mb-1">
+                  {info[counter].nome}
+                </div>
+                <div>{info[counter].cidade}</div>
+              </div>
             </div>
-            <div className="flex flex-col w-1/2">
-              <RatingStars rating={info[counter].rating} />
-              <div className="font-bold text-lg">{info[counter].quote}</div>
-              <div className="text-base mt-2 mb-8">
-                {info[counter].avaliaçao}
+            <div className="flex items-center justify-around mt-5 gap-8">
+              <div>
+                <button
+                  onClick={handlePrevious}
+                  className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg lg:hidden ">
+                  <FaChevronLeft size={22} />
+                </button>
               </div>
-              <div className="font-extrabold text-lg mb-1">
-                {info[counter].nome}
+              <div>
+                <button
+                  className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg lg:hidden "
+                  onClick={handleNext}>
+                  <FaChevronRight size={22} />
+                </button>
               </div>
-              <div>{info[counter].cidade}</div>
             </div>
           </div>
           <button
-            className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg -translate-x-6"
+            className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg -translate-x-6 hidden lg:block"
             onClick={handleNext}>
             <FaChevronRight size={22} />
           </button>

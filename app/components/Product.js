@@ -8,7 +8,7 @@ export default function Product({ product }) {
     <>
       <Link
         href={`/product/${product?.id}`}
-        className="max-w-[200px] text-white h-64 w-40 p-2 mt-2 bg-red-500 rounded mx-auto">
+        className="max-w-[200px] text-white h-64 w-40 p-2 mt-2 border-2 border-black bg-red-500 rounded mx-auto">
         {product?.url ? (
           <Image
             className="rounded cursor-pointer"

@@ -39,14 +39,14 @@ export default function MainHeader() {
   return (
     <>
       <div id="MainHeader">
-        <nav className="flex items-center justify-between w-full mx-auto max-w-[80rem] marker:$px-5 px-24 py-5 mb-5 mt-4">
+        <nav className="flex items-center justify-between w-full mx-auto max-w-[80rem] marker:$px-5 md:px-8 lg:px-24 py-5 mb-5 mt-4">
           <div id="MenuLeft" className="flex items-center">
-            <div className="flex lg:justify-start justify-between gap-10 max-w-[1150px] w-full mx-auto">
+            <div className="lg:flex lg:flex-row flex flex-col items-start justify-start lg:gap-10 max-w-[1150px] w-full mx-auto">
               <Link href="/">
-                <div className="text-yellow-50 tems-center justify-center flex font-extrabold text-2xl">
+                <div className="text-yellow-50 lg:items-center items-start justify-start lg:justify-center flex font-extrabold text-2xl">
                   <FaPizzaSlice
                     size={22}
-                    className="mr-2 scale-x-[-1] text-amber-400"
+                    className="mr-2 lg:scale-x-[-1] text-amber-400"
                   />{" "}
                   TOTALPIZZA
                 </div>
@@ -71,8 +71,9 @@ export default function MainHeader() {
                         size={22}
                       />
                     ) : null}
+
                     {items.length > 0 ? (
-                      <div className="absolute bg-white max-w-[910px] h-auto w-full z-20 left-0 top-12 border p-1">
+                      <div className="absolute bg-amber-400  h-auto w-full z-20 left-0 top-12 border-2 border-black p-1">
                         {items.map((item) => (
                           <div className="p-1" key={item.id}>
                             <Link
@@ -81,8 +82,9 @@ export default function MainHeader() {
                               <div className="flex items-center">
                                 <img
                                   className="rounded-md"
-                                  width="40"
-                                  src={item?.url + "/40"}
+                                  width="40px"
+                                  height="40px"
+                                  src={item?.url}
                                 />
                                 <div className="truncate ml-2">
                                   {item?.title}
@@ -90,7 +92,7 @@ export default function MainHeader() {
                               </div>
 
                               <div className="truncate">
-                                R${(item?.price / 100).toFixed(2)}
+                                R${(item?.price).toFixed(2)}
                               </div>
                             </Link>
                           </div>
@@ -114,7 +116,7 @@ export default function MainHeader() {
                 <Link href="/menu">Menu</Link>
               </li>
               <li className="hover:text-gray-800">
-                <Link href="/">Contato</Link>
+                <Link href="/contato">Contato</Link>
               </li>
 
               <ClientOnly>
