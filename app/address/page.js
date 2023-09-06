@@ -124,17 +124,19 @@ export default function Home() {
   return (
     <>
       <MainLayout>
-        <div id="AddressPage" className="mt-4 max-w-[600px] mx-auto px-2">
-          <div className="mx-auto bg-white rounded-lg p-3">
-            <div className="text-xl text-bold mb-2">Address Details</div>
+        <div
+          id="AddressPage"
+          className="mt-4 max-w-[600px] mx-auto px-2 py-10 h-screen">
+          <div className="mx-auto bg-amber-400 border-2 border-black p-3">
+            <div className="text-xl text-bold mb-2">Endereço completo</div>
 
             <form onSubmit={submit}>
               <div className="mb-4">
                 <ClientOnly>
                   <TextInput
-                    className="w-full"
+                    className="w-full border-2 border-black"
                     string={name}
-                    placeholder="Name"
+                    placeholder="Nome"
                     onUpdate={setName}
                     error={showError("name")}
                   />
@@ -144,9 +146,9 @@ export default function Home() {
               <div className="mb-4">
                 <ClientOnly>
                   <TextInput
-                    className="w-full"
+                    className="w-full border-2 border-black mt-2"
                     string={address}
-                    placeholder="Address"
+                    placeholder="Endereço"
                     onUpdate={setAddress}
                     error={showError("address")}
                   />
@@ -156,9 +158,9 @@ export default function Home() {
               <div className="mb-4">
                 <ClientOnly>
                   <TextInput
-                    className="w-full mt-2"
+                    className="w-full border-2 border-black mt-2"
                     string={zipcode}
-                    placeholder="Zip Code"
+                    placeholder="CEP"
                     onUpdate={setZipcode}
                     error={showError("zipcode")}
                   />
@@ -168,9 +170,9 @@ export default function Home() {
               <div className="mb-4">
                 <ClientOnly>
                   <TextInput
-                    className="w-full mt-2"
+                    className="w-full border-2 border-black mt-2"
                     string={city}
-                    placeholder="City"
+                    placeholder="Cidade"
                     onUpdate={setCity}
                     error={showError("city")}
                   />
@@ -180,9 +182,9 @@ export default function Home() {
               <div>
                 <ClientOnly>
                   <TextInput
-                    className="w-full mt-2"
+                    className="w-full border-2 border-black mt-2"
                     string={country}
-                    placeholder="Country"
+                    placeholder="País"
                     onUpdate={setCountry}
                     error={showError("country")}
                   />
@@ -195,23 +197,25 @@ export default function Home() {
                 className={`
                                 mt-6
                                 w-full 
-                                text-white 
+                                text-black
                                 text-lg 
                                 font-semibold 
                                 p-3 
-                                rounded
+                            border-2 border-black
+                            hover:bg-red-600
+                            duration-300
                                 ${
                                   isUpdatingAddress
-                                    ? "bg-blue-800"
-                                    : "bg-blue-600"
+                                    ? "bg-red-500"
+                                    : "bg-red-400"
                                 }
                             `}>
                 {!isUpdatingAddress ? (
-                  <div>Update Address</div>
+                  <div>Atualizaçar endereço.</div>
                 ) : (
                   <div className="flex items-center justify-center gap-2">
                     <AiOutlineLoading3Quarters className="animate-spin" />
-                    Please wait...
+                    Espere...
                   </div>
                 )}
               </button>

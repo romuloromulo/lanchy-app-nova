@@ -71,16 +71,16 @@ function TopMenu() {
 
               <div className="border-b border-black" />
               <ul className="bg-amber-400">
-                <li className="text-xs py-2 px-4 w-full hover:underline text-gray-800 hover:text-blue-700 cursor-pointer">
-                  <Link href="/orders">My orders</Link>
+                <li className="text-xs py-2 px-4 w-full hover:underline text-gray-800 hover:text-amber-500 cursor-pointer">
+                  <Link href="/orders">Pedidos</Link>
                 </li>
                 <li
-                  className="text-xs py-2 px-4 w-full hover:underline text-gray-800 hover:text-blue-700 cursor-pointer"
+                  className="text-xs py-2 px-4 w-full hover:underline text-gray-800 hover:text-amber-500cursor-pointer"
                   onClick={() => {
                     user.signOut();
                     setIsMenu(false);
                   }}>
-                  Sign out
+                  Sair da conta
                 </li>
               </ul>
             </div>

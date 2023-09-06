@@ -8,17 +8,18 @@ function About() {
   return (
     <section
       id="About"
-      className="h-screen flex items-center justify-center  bg-white overflow-hidden">
-      <div className="h-full max-w-[1500px] flex justify-center items-center">
-        <div className="relative max-h-[45rem] flex w-[60%] h-full">
+      className="h-screen min-h-screen flex lg:flex-row items-center justify-center  bg-white overflow-hidden px-8">
+      <div className="h-full max-w-[1500px] flex lg:flex-row flex-col justify-center items-center">
+        <div className="relative max-h-[45rem] flex lg:w-[60%] w-full h-full">
           <div
             id="ImagePizza1"
-            className="rounded-full ml-5 absolute p-4 right-20 bottom-4 bg-amber-400">
+            className="rounded-full ml-5 absolute p-4 right-20 bottom-4 bg-amber-400 h-[200px] w-[200px] lg:h-[250px] lg:w-[250px]">
             <Image
               src="/images/sobre1.webp"
               width={250}
               height={250}
-              className="rounded-full"
+              layout="responsive"
+              className="rounded-full lg:h-full lg:w-full h-[150px] w-[150px] "
             />
           </div>
           <div
@@ -38,7 +39,7 @@ function About() {
               src="/images/sobre3.jpeg"
               width={280}
               height={280}
-              className="rounded-full"
+              className="rounded-full lg:w-full lg:h-full"
             />
           </div>
           <div
@@ -52,13 +53,13 @@ function About() {
             />
           </div>
         </div>
-        <div className="w-[45%] flex flex-col justify-center  h-full">
+        <div className="lg:w-[45%] w-full lg:text-start flex flex-col justify-center  h-full z-10">
           <div>
-            <h1 className="text-6xl font-extrabold text-black mb-3">
+            <h1 className="text-6xl lg:text-start text-center font-extrabold text-black mb-4 ">
               Sobre
               <br /> TOTALPIZZA
             </h1>
-            <p className="w-4/5 text-lg">
+            <p className="w-4/5 text-lg mb-6">
               Lorem ipsum dolor sit amet consectetur adipiscing elit enim
               bibendum sed et aliquet aliquet risus tempor semper odio egestas
               id pulvinar consectetur elit tortor.
@@ -82,7 +83,7 @@ function About() {
                 <div className="bg-amber-400 p-1  mr-3">
                   <GiPositionMarker size={22} className="text-black" />
                 </div>{" "}
-                837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles
+                Av. Holandeses, N. 28
               </li>
             </ul>
             <div className="w-40 h-16 bg-amber-400 flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-amber-500 mt-8">

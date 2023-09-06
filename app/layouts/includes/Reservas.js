@@ -12,7 +12,6 @@ const Reservas = () => {
     "bg-black text-white  hover:bg-white hover:border hover:text-black z-10 "
   );
   const form = useRef();
-  const teste = "teste";
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -60,7 +59,7 @@ const Reservas = () => {
     <>
       <section
         id="Reservas"
-        className="h-screen bg-black flex  w-full  justify-center items-center py-9 p-12 overflow-hidden">
+        className=" bg-black relative flex  w-full  justify-center items-center py-24 px-12 overflow-hidden">
         {/* <div className="w-[30rem] h-[60rem] bg-white"> */}
         <div className="flex gap-5 max-w-[1500px] h-full justify-center items-center">
           <div className="w-[45%] flex flex-col justify-center  h-full">
@@ -101,7 +100,7 @@ const Reservas = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="max-w-xl bg-white h-2/3 sm:p-5 bg-secondary-light dark:bg-secondary-dark shadow-xl text-left">
+            className="max-w-xl bg-white h-4/5 sm:p-5 bg-secondary-light dark:bg-secondary-dark shadow-xl text-left">
             <div className="grid grid-cols-2 gap-4">
               <FormInput
                 inputLabel="Nome completo"
