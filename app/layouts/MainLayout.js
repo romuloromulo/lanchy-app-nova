@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function MainLayout({ children }) {
   const [isLoading, setIsLoading] = useState(false);
-  git;
+
   useEffect(() => {
     window.addEventListener("storage", function () {
       let res = localStorage.getItem("isLoading");
