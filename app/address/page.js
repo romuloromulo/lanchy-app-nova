@@ -111,7 +111,7 @@ export default function Home() {
       setTheCurrentAddres(response);
       setIsUpdatingAddress(false);
 
-      toast.success("Address updated!", { autoClose: 3000 });
+      toast.success("Endereço pronto!", { autoClose: 3000 });
 
       router.push("/checkout");
     } catch (error) {

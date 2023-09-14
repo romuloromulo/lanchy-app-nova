@@ -120,12 +120,8 @@ function Checkout() {
           }),
         });
 
-        console.log(
-          response,
-          "-------RESPONSE--------RESPONSE--------RESPOSNE"
-        );
         if (response.status == 200) {
-          toast.success("Order Complete!", { autoClose: 3000 });
+          toast.success("Pedido feito!", { autoClose: 3000 });
           cart.clearCart();
           return router.push("/success");
         }

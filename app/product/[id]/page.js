@@ -32,10 +32,10 @@ function Product({ params }) {
   function addToCartHandler() {
     if (cart.isItemAdded) {
       cart.removeFromCart(product);
-      toast.info("Removed from cart", { autoClose: 3000 });
+      toast.info("Removido do carrinho.", { autoClose: 3000 });
     } else {
       cart.addToCart(product);
-      toast.success("Added to cart", { autoClose: 3000 });
+      toast.success("Adicionado ao carrinho.", { autoClose: 3000 });
     }
   }
 
