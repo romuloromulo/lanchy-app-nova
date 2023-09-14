@@ -12,9 +12,9 @@ export default function Footer() {
         id="Footer"
         className="md:h-[40rem] bg-black px-2 py-20 w-full flex flex-col justify-center items-center">
         <div className="max-w-[1500px]  flex sm:flex-row flex-col justify-start sm:justify-center md:justify-around items-center text-center md:items-start md:text-start ">
-          <div className="flex flex-col items-center w-4/5 sm:w-1/3 justify-center">
+          <div className="flex flex-col items-center md:items-start w-4/5 sm:w-1/3 justify-center">
             <Link href="/">
-              <div className="text-yellow-50 items-center flex font-extrabold text-2xl mb-3">
+              <div className="text-yellow-50 items-center md:items-start flex font-extrabold text-2xl mb-3">
                 <FaPizzaSlice
                   size={22}
                   className="mr-2 scale-x-[-1] text-amber-400"
@@ -60,7 +60,7 @@ export default function Footer() {
                   className="hover:scale-125 transition duration-500 cursor-pointer"
                 />
               </div>
-              <div className="w-[130px] h-[130px]  sm:w-[160px] sm:h-[160px]] overflow-hidden">
+              <div className="w-[130px] h-[130px] sm:w-[160px] sm:h-[160px] overflow-hidden">
                 <Image
                   src="/images/sobre4.webp"
                   height={160}
@@ -68,7 +68,7 @@ export default function Footer() {
                   className="hover:scale-125 transition duration-500 cursor-pointer"
                 />
               </div>
-              <div className="w-[130px] h-[130px]   sm:w-[160px] sm:h-[160px]overflow-hidden">
+              <div className="w-[130px] h-[130px] sm:w-[160px] sm:h-[160px] overflow-hidden">
                 <Image
                   src="/images/sobre4.avif"
                   height={160}
@@ -76,14 +76,14 @@ export default function Footer() {
                   className="hover:scale-125 transition duration-500 cursor-pointer"
                 />
               </div>
-              <di className=" sm:w-[160px] sm:h-[160px] w-[130px] h-[130px] overflow-hidden">
+              <div className="w-[130px] h-[130px] sm:w-[160px] sm:h-[160px] overflow-hidden">
                 <Image
                   src="/images/sobre3.jpeg"
                   height={160}
                   width={160}
                   className="hover:scale-125 transition duration-500 cursor-pointer"
                 />
-              </di>
+              </div>
             </a>
           </div>
         </div>

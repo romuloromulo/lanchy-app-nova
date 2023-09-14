@@ -23,8 +23,6 @@ function Product({ params }) {
     useIsLoading(false);
   }
 
-  console.log(product);
-
   const ingredients = product?.ingredients || [];
 
   useEffect(() => {
@@ -34,10 +32,10 @@ function Product({ params }) {
   function addToCartHandler() {
     if (cart.isItemAdded) {
       cart.removeFromCart(product);
-      // toast.info("Removed from cart", { autoClose: 3000 });
+      toast.info("Removed from cart", { autoClose: 3000 });
     } else {
       cart.addToCart(product);
-      // toast.success("Added to cart", { autoClose: 3000 });
+      toast.success("Added to cart", { autoClose: 3000 });
     }
   }
 
@@ -119,7 +117,6 @@ function Product({ params }) {
               </div>
             </div>
           </div>
-          <div></div>
 
           <SimilarProducts />
         </section>

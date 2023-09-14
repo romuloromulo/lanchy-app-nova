@@ -144,59 +144,77 @@ export default function NavBar() {
               </ClientOnly>
             </ul>
           </div>
-          <div
-            id="MenuMobile"
-            onClick={handleNav}
-            className="sm:hidden cursor-pointer md:pl-24">
-            <AiOutlineMenu size={25} />
-          </div>
-          <div
-            className={
-              openNav
-                ? "fixed left-0 top-0 w-screen sm:hidden h-2/3 bg-amber-400 border-2 border-black p-10 ease-in duration-500 z-20"
-                : "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-20"
-            }>
-            <div className="w-full flex items-center justify-between">
-              <div>
-                <ClientOnly>
-                  <div className="relative">
-                    <Link href="/cart">
-                      <AiOutlineShoppingCart size={30} />
-                      {cart.cartCount() > 0 ? (
-                        <div className="rounded-full absolute text-[10px] -top-[5px] pt-[2px]  -right-[5px] bg-red-500 w-[20px] h-[18px] text-gray-800 font-bold">
-                          <div className="flex items-center justify-center">
-                            {cart.cartCount()}
-                          </div>
-                        </div>
-                      ) : (
-                        <div></div>
-                      )}
-                    </Link>
-                  </div>
-                </ClientOnly>
+          <div className="sm:hidden  flex items-center gap-8">
+            <ClientOnly>
+              <div className="relative cursor-pointer">
+                <Link href="/cart">
+                  <AiOutlineShoppingCart size={30} />
+                  {cart.cartCount() > 0 ? (
+                    <div className="rounded-full absolute text-[10px] -top-[5px] pt-[2px]  bg-amber-500 w-[20px] h-[18px] text-gray-800 font-bold mr-8 ">
+                      <div className="flex items-center justify-center">
+                        {cart.cartCount()}
+                      </div>
+                    </div>
+                  ) : (
+                    <div></div>
+                  )}
+                </Link>
               </div>
-              <div onClick={handleNav} className="cursor-pointer">
-                <AiOutlineClose size={25} className="top-1 left-1" />
-              </div>
+            </ClientOnly>
+            <div
+              id="MenuMobile"
+              onClick={handleNav}
+              className="sm:hidden cursor-pointer md:pl-24">
+              <AiOutlineMenu size={25} />
             </div>
-            <div className=" ml-4 w-full mt-5 flex justify-center items-center">
-              <ul className="flex gap-8 flex-col font-extrabold text-2xl text-black z-10">
-                <li
-                  onClick={handleNav}
-                  className=" hover:underline hover:text-white ease-in duration-300  ">
-                  <Link href="/">Início</Link>
-                </li>
-                <li
-                  onClick={handleNav}
-                  className=" hover:underline hover:text-white ease-in duration-300 ">
-                  <Link href="/menu">Menu</Link>
-                </li>
-                <li
-                  onClick={handleNav}
-                  className=" hover:underline hover:text-white ease-in duration-300 ">
-                  <Link href="/contato">Contato</Link>
-                </li>
-              </ul>
+            <div
+              className={
+                openNav
+                  ? "fixed left-0 top-0 w-screen sm:hidden h-2/3 bg-amber-400 border-2 border-black p-10 ease-in duration-500 z-20"
+                  : "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-20"
+              }>
+              <div className="w-full flex items-center justify-between">
+                <div>
+                  <ClientOnly>
+                    <div className="relative">
+                      <Link href="/cart">
+                        <AiOutlineShoppingCart size={30} />
+                        {cart.cartCount() > 0 ? (
+                          <div className="rounded-full absolute text-[10px] -top-[5px] pt-[2px]  -right-[5px] bg-red-500 w-[20px] h-[18px] text-gray-800 font-bold">
+                            <div className="flex items-center justify-center">
+                              {cart.cartCount()}
+                            </div>
+                          </div>
+                        ) : (
+                          <div></div>
+                        )}
+                      </Link>
+                    </div>
+                  </ClientOnly>
+                </div>
+                <div onClick={handleNav} className="cursor-pointer">
+                  <AiOutlineClose size={25} className="top-1 left-1" />
+                </div>
+              </div>
+              <div className=" ml-4 w-full mt-5 flex justify-center items-center">
+                <ul className="flex gap-8 flex-col font-extrabold text-2xl text-black z-10">
+                  <li
+                    onClick={handleNav}
+                    className=" hover:underline hover:text-white ease-in duration-300  ">
+                    <Link href="/">Início</Link>
+                  </li>
+                  <li
+                    onClick={handleNav}
+                    className=" hover:underline hover:text-white ease-in duration-300 ">
+                    <Link href="/menu">Menu</Link>
+                  </li>
+                  <li
+                    onClick={handleNav}
+                    className=" hover:underline hover:text-white ease-in duration-300 ">
+                    <Link href="/contato">Contato</Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>

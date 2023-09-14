@@ -18,7 +18,7 @@ function CartItem({ product }) {
 
   return (
     <>
-      <div className="relative flex justify-start my-2 overflow-hidden border-2 border-black bg-amber-400 w-auto p-4 md:p-6">
+      <div className="relative flex justify-start my-2 overflow-hidden border-2 border-black bg-amber-400 w-[90%]p-4 md:p-6">
         <Image
           src={product?.url}
           width={150}
