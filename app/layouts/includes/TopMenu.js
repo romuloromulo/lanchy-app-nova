@@ -14,7 +14,6 @@ function TopMenu() {
 
   const user = useUser();
   const cart = useCart();
-  console.log(isMenu);
 
   function isLoggedIn() {
     if (user && user?.id) {

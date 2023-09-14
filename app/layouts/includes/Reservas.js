@@ -61,10 +61,10 @@ const Reservas = () => {
         id="Reservas"
         className=" bg-black relative flex  w-full  py-24 px-4 sm:px-12 overflow-hidden">
         {/* <div className="w-[30rem] h-[60rem] bg-white"> */}
-        <div className="flex  md:flex-row flex-col gap-5 max-w-[1500px] h-full justify-center items-start">
-          <div className="md:w-[45%]  sm:p-5 flex flex-col justify-center h-full">
+        <div className="flex   md:flex-row flex-col gap-5 max-w-[1500px] h-full justify-center md:items-start ">
+          <div className="md:w-[45%]  sm:p-2 flex flex-col justify-center h-full">
             <div>
-              <h1 className="text-4xl sm:text-5l md:text-6xl font-extrabold text-white mb-3">
+              <h1 className="text-4xl sm:text-5l md:text-5xl font-extrabold text-white mb-3">
                 Reserve uma mesa agora!
               </h1>
               <p className="w-4/5 text-base md:text-lg text-white mb-3">
@@ -100,8 +100,8 @@ const Reservas = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className=" bg-white mt-4 h-4/5 sm:p-5 bg-secondary-light dark:bg-secondary-dark shadow-xl text-left">
-            <div className="grid grid-cols-1 p-4 sm:p-8 md:p-12 mt-2 sm:grid-cols-2 gap-2 md:gap-x-48">
+            className=" bg-white mt-4 h-4/5  bg-secondary-light dark:bg-secondary-dark shadow-xl w-full md:w-auto  text-left">
+            <div className="grid grid-cols-1 p-4 mt-2 sm:grid-cols-2 gap-2">
               <FormInput
                 inputLabel="Nome completo"
                 labelFor="name"
@@ -158,27 +158,27 @@ const Reservas = () => {
                 placeholderText="Ex. 14:00"
                 ariaLabelName="Horário"
               />
-              <div className="mt-2">
-                <label
-                  className="block text-lg text-dim-gray dark:text-primary-light mb-2"
-                  htmlFor="message">
-                  Mensagem
-                </label>
-                <textarea
-                  className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
-                  id="message"
-                  name="message"
-                  cols="14"
-                  rows="6"
-                  aria-label="Observação"
-                  placeholder="Alguma observação?"></textarea>
-              </div>
+            </div>
+            <div className="mt-2 p-3">
+              <label
+                className="block text-lg text-dim-gray k dark:text-primary-light mb-2"
+                htmlFor="message">
+                Mensagem
+              </label>
+              <textarea
+                className="w-full px-5 py-2  border-black border-2 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md "
+                id="message"
+                name="message"
+                cols="14"
+                rows="6"
+                aria-label="Observação"
+                placeholder="Alguma observação?"></textarea>
             </div>
 
-            <div className="w-full flex items-center justify-center mb-4">
+            <div className="w-full flex items-center justify-center mb-4 p-3">
               <button
                 type="submit"
-                className={`${styleButton} font-general-medium w-40 h-16 px-4 py-2.5 text-center font-medium tracking-wider focus:ring-1 mt-6 duration-500`}>
+                className={`${styleButton} font-general-medium w-full md:w-40 h-16 px-4 py-2.5 text-center font-medium tracking-wider focus:ring-1 mt-6 duration-500`}>
                 {enviar}
               </button>
             </div>

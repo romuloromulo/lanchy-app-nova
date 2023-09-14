@@ -151,11 +151,13 @@ function Checkout() {
     <React.Fragment>
       <MainLayout>
         <div className="bg-white w-full py-12">
-          <div id="CheckoutPage" className="mt-4 max-w-[1100px] mx-auto">
-            <div className="text-2xl font-bold mt-4 mb-4">Checkout</div>
+          <div id="CheckoutPage" className="mt-4 max-w-[1200px] mx-auto">
+            <div className="text-3xl text-center md:text-start font-bold mt-4 mb-4">
+              Checkout
+            </div>
 
-            <div className="relative flex items-baseline gap-4 justify-between mx-auto w-full">
-              <div className="w-[65%]">
+            <div className="relative flex md:flex-row flex-col md:items-baseline items-center gap-4 justify-between mx-auto w-full">
+              <div className="md:w-[65%] w-[90%]">
                 <div className="bg-red-500 p-4 border-2 border-black">
                   <div className="text-xl font-bold mb-2">
                     Endereço de entrega
@@ -202,7 +204,7 @@ function Checkout() {
 
               <div
                 id="PlaceOrder"
-                className="relative -top-[6px] w-[35%] border-2 border-black ">
+                className="relative -top-[6px] md:w-[35%] w-[90%] border-2 border-black ">
                 <ClientOnly>
                   <div className="p-4">
                     <div className="flex items-baseline justify-between text-sm mb-1">
@@ -238,7 +240,7 @@ function Checkout() {
                       <button
                         type="submit"
                         className="mt-4 bg-amber-400 text-lg font-bold w-full text-black p-3 border-2 hover:bg-amber-500 duration-300 border-black">
-                        <div>Confirmar e pagar.</div>
+                        <div>Confirmar e pagar</div>
                       </button>
                     </form>
                   </div>

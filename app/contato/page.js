@@ -58,7 +58,7 @@ function page() {
       <section
         id="Menu"
         className="max-w-[1500px] flex pt-20 flex-col justify-center bg-white ">
-        <div className=" text-center mx-auto w-2/3 mb-12">
+        <div className=" text-center mx-auto w-2/3 mb-5">
           <h1 className="text-5xl sm:text-6xl md:text-7xl text-black font-extrabold mb-2">
             NOS CONTATE
           </h1>
@@ -67,7 +67,7 @@ function page() {
             aliquet risus tempor semper odio egestas id pulvinar consectetu.
           </p>
         </div>
-        <div className="lg:flex-row flex flex-col items-center justify-center gap-12 md:px-10 px-4 mt-10 mb-10 w-full">
+        <div className="lg:flex-row flex flex-col items-center justify-center gap-12 md:px-10 px-4 mb-10 w-full">
           <form
             ref={form}
             onSubmit={() => {}}

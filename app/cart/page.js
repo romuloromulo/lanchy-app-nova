@@ -37,7 +37,7 @@ function Cart() {
             <div className="text-3xl font-extrabold my-4 text-center">
               Carro de Compras
             </div>
-            <div className="lg:flex-row flex flex-col items-center  p-4 justify-center lg:items-baseline lg:justify-between gap-2">
+            <div className="lg:flex-row flex flex-col items-center justify-start md:items-start p-4  lg:justify-between gap-2">
               <div className="flex flex-col justify-center items-center md:w-full h-auto w-auto">
                 <ClientOnly>
                   {cart.getCart().map((product) => (
@@ -45,12 +45,12 @@ function Cart() {
                   ))}
                 </ClientOnly>
               </div>
-              <div id="GoToCheckout" className=" lg:w-1/3 w-4/5 m-2 ">
+              <div id="GoToCheckout" className="lg:w-1/3 w-[90%]">
                 <ClientOnly>
                   <div className="bg-red-500 p-4 border-black border-2">
                     <button
                       onClick={() => goToCheckout()}
-                      className="flex items-center border-2 border-black justify-center bg-amber-400 w-full text-black font-bold p-3mt-4 py-5 hover:bg-amber-500 duration-300">
+                      className="flex items-center border-2 border-black justify-center bg-amber-400 w-full text-black font-bold p-3 mt-4 py-5 hover:bg-amber-500 duration-300">
                       CHECKOUT
                     </button>
                     <div className="flex items-center justify-between mt-4 text-xl mb-1">

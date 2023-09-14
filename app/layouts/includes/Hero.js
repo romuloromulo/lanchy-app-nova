@@ -7,11 +7,11 @@ function Hero() {
   return (
     <section
       id="Hero"
-      className="max-w-[1200px] min-h-screen lg:mt-0 mt-16 mx-auto md:px-8 block overflow-hidden lg:overflow-visible">
-      <div className="lg:flex lg:flex-row flex-col flex justify-between items-center max-h-screen h-auto lg:min-h-screen">
+      className="max-w-[1200px] min-h-screen lg:mt-0 mt-16 mx-auto md:px-8 block overflow-hidden lg:overflow-visible pb-8">
+      <div className="lg:flex lg:flex-row flex-col flex justify-between items-center  lg:min-h-screen">
         <div
           id="Description"
-          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-3/5 ">
+          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5 ">
           <div className="text-red-50 tracking-wider text-4xl lg:text-7xl font-extrabold justify-center items-center z-10">
             O MELHOR LUGAR PARA COMER PIZZA.
           </div>
@@ -20,31 +20,30 @@ function Hero() {
             diam vitae velit bibendum elementum eget non vivamus volutpat odio
             cras vestibulum purus aliquam
           </p>
-          <div className="flex items-center justify-center lg:items-start lg:justify-start gap-2  sm:gap-4">
+          <div className="flex items-center justify-center lg:items-start lg:justify-start gap-5 sm:gap-4">
             <Link href="/menu">
-              <div className="sm:w-44 sm:h-20 w-22 h-14 bg-amber-400 flex justify-center items-center p-2 text-black font-bold lg:text-lg text-base  cursor-pointer hover:bg-amber-500 mt-5">
+              <div className="sm:w-44 sm:h-20 w-32 h-14 bg-amber-400 flex justify-center items-center p-2 text-black font-bold lg:text-lg text-base  cursor-pointer hover:bg-amber-500 mt-5 hover:translate-y-[-0.5rem] duration-300 ">
                 PEDIR ONLINE
               </div>
             </Link>
-            <Link href="#Reservas " scroll={false}>
-              <div
-                onClick={() => scrollSmoothTo("Reservas")}
-                className="sm:w-44  sm:h-20 w-22 h-14 bg-black flex justify-center items-center p-2 text-amber-400  font-bold lg:text-lg text-base cursor-pointer hover:bg-gray-800 mt-5">
-                RESERVAS
-              </div>
-            </Link>
+
+            <div
+              onClick={() => scrollSmoothTo("Reservas")}
+              className="sm:w-44  sm:h-20 w-32 h-14 bg-black flex justify-center items-center p-2 text-amber-400  font-bold lg:text-lg text-base cursor-pointer hover:bg-transparent hover:border-2  hover:text-black hover:border-black mt-5 hover:translate-y-[-0.5rem] duration-300">
+              RESERVAS
+            </div>
           </div>
         </div>
         <div
           id="Images"
-          className="relative  h-auto flex items-center justify-center w-[30rem] lg:w-full mt-5">
+          className="relative h-auto flex items-center justify-center w-[30rem] lg:w-full mt-5">
           <Image
             src="/images/PizzaGrande.png"
-            width={900}
-            height={900}
+            width={1000}
+            height={1000}
             alt="Pizza"
-            layout="responsive"
-            className="lg:translate-x-[190px] lg:scale-x-[-1] lg:w-[900px] lg:h-[900px] md:w-[%50] md:h-[%50]"
+            // layout="responsive"
+            className="lg:translate-x-[190px] lg:scale-x-[-1] translate-x-6  md:w-[%50] md:h-[%50] "
           />
           <Image
             src="/images/peperonislice.png"

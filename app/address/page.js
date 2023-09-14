@@ -206,12 +206,12 @@ export default function Home() {
                             duration-300
                                 ${
                                   isUpdatingAddress
-                                    ? "bg-red-500"
-                                    : "bg-red-400"
+                                    ? "bg-red-400"
+                                    : "bg-red-500"
                                 }
                             `}>
                 {!isUpdatingAddress ? (
-                  <div>Atualizaçar endereço.</div>
+                  <div>Atualizar endereço</div>
                 ) : (
                   <div className="flex items-center justify-center gap-2">
                     <AiOutlineLoading3Quarters className="animate-spin" />

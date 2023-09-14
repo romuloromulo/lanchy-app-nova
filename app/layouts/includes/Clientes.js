@@ -64,14 +64,17 @@ function Clientes() {
           </p>
         </div>
 
-        <div className="flex lg:h-2/3 sm:p-12 p-4 md:mt-8  w-full justify-center items-center">
+        <div className="flex lg:h-2/3 sm:px-12 p-4 w-full justify-center items-center">
           <button
+            id="Flecha-Esquerda"
             onClick={handlePrevious}
-            className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg translate-x-6 hidden lg:block">
+            className="p-4 bg-white  hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg translate-x-[11rem] hidden lg:block">
             <FaChevronLeft size={22} />
           </button>
-          <div className="mx-auto w-full h-full  flex flex-col items-center justify-center">
-            <div className="w-full lg:w-2/3 py-8 shadow-lg h-full border-gray-400 text-black flex md:flex-row flex-col items-center justify-center gap-8 ">
+          <div className="mx-auto w-full h-full flex flex-col items-center justify-center">
+            <div
+              id="Slider"
+              className="w-full lg:w-2/3 py-8 shadow-lg md:h-[25rem] border-gray-400 text-black flex md:flex-row flex-col items-center justify-center gap-8 ">
               <div
                 className={`rounded-lg w-4/5 h-[9rem]  bg-amber-400 overflow-hidden md:w-1/3 md:h-1/2 flex justify-center items-center`}>
                 <Image src={info[counter].foto} width={350} height={350} />
@@ -90,14 +93,14 @@ function Clientes() {
               </div>
             </div>
             <div className="flex items-center justify-around mt-5 gap-8">
-              <div>
+              <div id="Flecha-Esquerda">
                 <button
                   onClick={handlePrevious}
                   className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg lg:hidden ">
                   <FaChevronLeft size={22} />
                 </button>
               </div>
-              <div>
+              <div id="Flecha-Direita">
                 <button
                   className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg lg:hidden "
                   onClick={handleNext}>
@@ -107,7 +110,8 @@ function Clientes() {
             </div>
           </div>
           <button
-            className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg -translate-x-6 hidden lg:block"
+            id="Flecha-Direita"
+            className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg -translate-x-[11rem] hidden lg:block"
             onClick={handleNext}>
             <FaChevronRight size={22} />
           </button>

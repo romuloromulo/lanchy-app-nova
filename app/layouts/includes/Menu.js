@@ -28,14 +28,14 @@ function Menu() {
   const pizzas = products.map((pizza) => (
     <Link href={`/product/${pizza.id}`}>
       <div className="flex flex-col justify-center items-center text-xl font-bold text-red-600  hover:text-red-700 mb-5 group">
-        <div className="relative w-[200px] h-[200px]">
-          <div className="flex flex-col justify-center items-center p-3 bg-red-600 w-full h-full overflow-hidden rounded-full rotate-90 absolute">
+        <div className="relative  w-[200px] h-[200px]">
+          <div className="flex flex-col  justify-center items-center p-3 bg-red-600 w-full h-full overflow-hidden rounded-full rotate-90 absolute">
             <Image
               src={pizza?.url}
               width={200}
               height={200}
               alt={pizza?.title}
-              className="rounded-full group-hover:scale-125 group-hover:rotate-12 transition duration-500 cursor-pointer"
+              className="rounded-full group-hover:scale-125 group-hover:rotate-12  transition duration-500 cursor-pointer"
               loading="lazy"
             />
           </div>
@@ -63,7 +63,7 @@ function Menu() {
           </p>
         </div>
         <div id="Pizzas">
-          <div className="grid gap-2 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 mt-5 ">
+          <div className="grid gap-2 grid-cols-1  md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 mt-5 ">
             {isLoading ? (
               <div className="text-xl font-bold flex">
                 Carregando...
@@ -76,15 +76,15 @@ function Menu() {
             )}
           </div>
         </div>
-        <div className="flex gap-2 sm:gap-4">
+        <div className="flex items-center justify-center lg:items-start lg:justify-start gap-5 sm:gap-4">
           <Link href="/menu">
-            <div className="sm:w-44 sm:h-20 w-22 h-14  bg-white flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-black hover:text-white mt-5">
+            <div className="sm:w-44 sm:h-20 w-22 h-14  bg-white flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-black hover:text-white mt-5 hover:translate-y-[-0.5rem] duration-300">
               PEDIR ONLINE
             </div>
           </Link>
           <div
             onClick={() => scrollSmoothTo("Reservas")}
-            className="sm:w-44 sm:h-20 w-22 h-14 bg-black flex justify-center items-center p-2 text-amber-400  font-bold text-lg cursor-pointer hover:bg-white  mt-5">
+            className="sm:w-44  sm:h-20 w-32 h-14 bg-black flex justify-center items-center p-2 text-amber-400  font-bold lg:text-lg text-base cursor-pointer hover:bg-transparent hover:border-2  hover:text-black hover:border-black mt-5 hover:translate-y-[-0.5rem] duration-300">
             RESERVAS
           </div>
         </div>

@@ -3,14 +3,15 @@ import Image from "next/image";
 import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiPositionMarker } from "react-icons/gi";
+import Link from "next/link";
 
 function About() {
   return (
     <section
       id="About"
-      className=" lg:px-0 min-h-screen flex lg:flex-row items-center justify-center  bg-white overflow-hidden px-8">
-      <div className="h-full max-w-[1200px] flex lg:flex-row flex-col justify-center items-center sm:px-8">
-        <div className="mt-10 lg:mt-0 gap-2 grid grid-cols-2 w-full  h-full bg-amber-400 rounded-lg p-2 md:mr-10">
+      className=" lg:px-0 min-h-screen flex lg:flex-row items-center justify-center  bg-white overflow-hidden py-4 px-8">
+      <div className=" max-w-[1200px] flex lg:flex-row flex-col justify-center items-center sm:px-8">
+        <div className="mt-10 lg:mt-0 gap-2 grid grid-cols-2 bg-amber-400 rounded-lg p-2 md:mr-10">
           <div className="overflow-hidden rounded-tl-lg">
             <Image
               src="/images/sobre1.webp"
@@ -77,9 +78,11 @@ function About() {
                 Av. Holandeses, N. 28
               </li>
             </ul>
-            <div className="w-40 h-16 bg-amber-400 flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-amber-500 mt-8">
-              PEDIR ONLINE
-            </div>
+            <Link href="/menu">
+              <div className="w-40 h-16 bg-amber-400 flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-amber-500 mt-8">
+                PEDIR ONLINE
+              </div>
+            </Link>
           </div>
         </div>
       </div>
