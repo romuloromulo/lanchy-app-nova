@@ -8,7 +8,10 @@ import MainLayout from "../layouts/MainLayout";
 
 export default function AuthPage() {
   const supabase = createClientComponentClient();
-
+  let reference;
+  if (typeof window !== "undefined") {
+    reference = `${window.location.origin}/auth/callback`;
+  }
   return (
     <>
       <MainLayout>
@@ -23,7 +26,7 @@ export default function AuthPage() {
             <div className="max-w-[400px] mx-auto px-2">
               <Auth
                 onlyThirdPartyProviders
-                redirectTo={`${window.location.origin}/auth/callback`}
+                redirectTo={reference}
                 supabaseClient={supabase}
                 providers={["google"]}
                 appearance={{ theme: ThemeSupa }}
