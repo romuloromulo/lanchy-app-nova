@@ -2,14 +2,13 @@
 
 import TopMenu from "./includes/TopMenu";
 import NavBar from "./includes/NavBar";
-
 import Footer from "./includes/Footer";
-import Loading from "../components/Loading";
+import Loading from "../components/loading";
 import { useEffect, useState } from "react";
 
 export default function MainLayout({ children }) {
   const [isLoading, setIsLoading] = useState(false);
-
+  git;
   useEffect(() => {
     window.addEventListener("storage", function () {
       let res = localStorage.getItem("isLoading");
@@ -24,7 +23,6 @@ export default function MainLayout({ children }) {
           {isLoading ? <Loading /> : <div></div>}
           <TopMenu />
           <NavBar />
-          {/* <SubMenu /> */}
         </div>
 
         <div>{children}</div>
