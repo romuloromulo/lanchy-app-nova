@@ -8,58 +8,49 @@ function About() {
   return (
     <section
       id="About"
-      className="h-screen min-h-screen flex lg:flex-row items-center justify-center  bg-white overflow-hidden px-8">
-      <div className="h-full max-w-[1500px] flex lg:flex-row flex-col justify-center items-center">
-        <div className="relative max-h-[45rem] flex lg:w-[60%] w-full h-full">
-          <div
-            id="ImagePizza1"
-            className="rounded-full ml-5 absolute p-4 right-20 bottom-4 bg-amber-400 h-[200px] w-[200px] lg:h-[250px] lg:w-[250px]">
+      className=" lg:px-0 min-h-screen flex lg:flex-row items-center justify-center  bg-white overflow-hidden px-8">
+      <div className="h-full max-w-[1200px] flex lg:flex-row flex-col justify-center items-center sm:px-8">
+        <div className="mt-10 lg:mt-0 gap-2 grid grid-cols-2 w-full  h-full bg-amber-400 rounded-lg p-2 md:mr-10">
+          <div className="overflow-hidden rounded-tl-lg">
             <Image
               src="/images/sobre1.webp"
-              width={250}
-              height={250}
-              layout="responsive"
-              className="rounded-full lg:h-full lg:w-full h-[150px] w-[150px] "
+              width={300}
+              height={300}
+              className="hover:scale-125 duration-300 rounded-tl-lg"
             />
           </div>
-          <div
-            id="ImagePizza2"
-            className=" rounded-full ml-5 p-4 top-[30px] absolute botton-3 left-[100px] bg-amber-400">
+          <div className="overflow-hidden rounded-tr-lg">
             <Image
               src="/images/sobre.webp"
-              width={230}
-              height={230}
-              className="rounded-full"
-            />
+              width={300}
+              height={300}
+              className="hover:scale-125 duration-300 rounded-tr-lg"
+            />{" "}
           </div>
-          <div
-            id="ImagePizza2"
-            className=" rounded-full ml-5 p-4 botton-[50px] absolute top-[340px] bg-amber-400">
+          <div className="overflow-hidden rounded-bl-lg">
             <Image
               src="/images/sobre3.jpeg"
-              width={280}
-              height={280}
-              className="rounded-full lg:w-full lg:h-full"
+              width={300}
+              height={300}
+              className="hover:scale-125 duration-300 rounded-bl-lg"
             />
           </div>
-          <div
-            id="ImagePizza2"
-            className=" rounded-full ml-5  p-4 right-[33px] top-[40px] bg-amber-400 absolute">
+          <div className="overflow-hidden rounded-br-lg">
             <Image
               src="/images/sobre4.webp"
-              width={265}
-              height={265}
-              className="rounded-full overflow-hidden"
+              width={300}
+              height={300}
+              className="hover:scale-125 duration-300 rounded-br-lg"
             />
           </div>
         </div>
-        <div className="lg:w-[45%] w-full lg:text-start flex flex-col justify-center  h-full z-10">
+        <div className="lg:w-[45%]  w-[90%] lg:text-start flex flex-col justify-center  h-full z-10 mt-5 p-5">
           <div>
-            <h1 className="text-6xl lg:text-start text-center font-extrabold text-black mb-4 ">
+            <h1 className="text-4xl md:text-6xl lg:text-start text-center font-extrabold text-black mb-4 ">
               Sobre
               <br /> TOTALPIZZA
             </h1>
-            <p className="w-4/5 text-lg mb-6">
+            <p className="md:w-4/5 text-center sm:text-start sm:text-lg text-base mb-6">
               Lorem ipsum dolor sit amet consectetur adipiscing elit enim
               bibendum sed et aliquet aliquet risus tempor semper odio egestas
               id pulvinar consectetur elit tortor.
@@ -68,19 +59,19 @@ function About() {
           <div>
             <ul>
               <li className="flex ">
-                <div className="bg-amber-400 p-1 mb-3 mr-3">
+                <div className="bg-amber-400 p-1 h-[100%] mb-3 mr-3">
                   <MdEmail size={22} className="text-black" />
                 </div>
                 cidade@totalpizza.com
               </li>
               <li className="flex">
-                <div className="bg-amber-400 p-1 mb-3  mr-3">
+                <div className="bg-amber-400 p-1 mb-3 h-[100%] mr-3">
                   <BsFillTelephoneFill size={22} className="text-black" />
                 </div>{" "}
                 (98)982122264
               </li>
               <li className="flex">
-                <div className="bg-amber-400 p-1  mr-3">
+                <div className="bg-amber-400 p-1  h-[100%] mr-3">
                   <GiPositionMarker size={22} className="text-black" />
                 </div>{" "}
                 Av. Holandeses, N. 28

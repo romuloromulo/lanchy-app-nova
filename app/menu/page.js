@@ -2,7 +2,7 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import { useEffect, useState } from "react";
-import useIsLoading from "@/app/hooks/useIsLoading";
+// import useIsLoading from "@/app/hooks/useIsLoading";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineLoading } from "react-icons/ai";
@@ -13,12 +13,12 @@ function MenuPage() {
 
   async function getProducts() {
     setIsLoading(true);
-    useIsLoading(true);
+    // useIsLoading(true);
     setProducts([]);
     const response = await fetch(`/api/products/`);
     const prods = await response.json();
     setProducts(prods);
-    useIsLoading(false);
+    // useIsLoading(false);
     setIsLoading(false);
   }
   useEffect(() => {
@@ -40,7 +40,9 @@ function MenuPage() {
             />
           </div>
         </div>
-        <h2 className="text-2xl font-extrabold mt-2">{pizza?.title}</h2>
+        <h2 className="text-xl sm:text-2xl font-extrabold mt-2">
+          {pizza?.title}
+        </h2>
         <p className="text-xl font-extrabold">R${pizza?.price}</p>
       </div>
     </Link>
@@ -51,23 +53,23 @@ function MenuPage() {
       <section
         id="Menu"
         className="flex items-center justify-center bg-white overflow-hidden">
-        <div className="py-20 max-w-[1500px] flex flex-col justify-center items-center relative mt-10 mb-10 ">
+        <div className="py-20 max-w-[1500px] flex flex-col justify-center items-center relative mt-5 sm:mt-8 md:mt-10 mb-10 ">
           <div className=" text-center mx-auto w-2/3 mb-12">
-            <h1 className="text-7xl text-black font-extrabold mb-2">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl text-black font-extrabold mb-2">
               NOSSO MENU
             </h1>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-sm sm:text-base">
               Amet consectetur adipiscing elit enim bibendum sed et aliquet
               aliquet risus tempor semper odio egestas id pulvinar consectetu.
             </p>
           </div>
           <div id="Pizzas">
-            <div className="grid gap-4 grid-cols-4 mt-5 ">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 ">
               {isLoading ? (
                 <div className="text-xl font-bold flex">
                   Carregando...
                   <span>
-                    <AiOutlineLoading size={33} className="animate-spin" />
+                    <AiOutlineLoading size={33} t className="animate-spin" />
                   </span>
                 </div>
               ) : (

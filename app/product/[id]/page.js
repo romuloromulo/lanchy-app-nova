@@ -46,8 +46,8 @@ function Product({ params }) {
       <MainLayout>
         <section id="Produto" className="bg-white text-black">
           <div className="max-w-[1200px] mx-auto">
-            <div className="flex px-4 py-10">
-              <div className="bg-red-500 p-10 flex items-center justify-around  rounded-lg">
+            <div className="flex md:flex-row flex-col items-center px-2 py-10">
+              <div className="bg-red-500 p-4 md:p-10 flex justify-around  rounded-lg">
                 {product?.url ? (
                   <Image
                     width={780}
@@ -60,14 +60,14 @@ function Product({ params }) {
                   <div className="w-[40%]"></div>
                 )}
               </div>
-              <div className="px-4 w-full flex flex-col justify-center items-start gap-2 ml-10">
-                <div className="font-extrabold text-6xl">
+              <div className="md:px-4 w-full mt-2 md:mt-0 flex flex-col  md:items-start gap-2 md:ml-10">
+                <div className="font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Pizza de {product?.title}
                 </div>
                 <div>{product.description}</div>
 
                 <div className="py-1" />
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex  px-4 flex-col">
                   <span className="font-bold flex translate-x-[-1rem]">
                     <Image
                       src="/images/ingredients.png"
@@ -105,16 +105,16 @@ function Product({ params }) {
                     </div>
                   ) : null}
                 </div>
-
-                <button
-                  className={`
-                      text-black py-5 font-bold text-xl mt-4 px-16 cursor-pointer bg-amber-400 hover:bg-[#bf851a]`}
-                  onClick={addToCartHandler}>
-                  {cart.isItemAdded
-                    ? "Remover do Carrinho"
-                    : "Adicionar no Carrinho"}
-                </button>
-
+                <div className="w-full flex justify-center items-center md:w-auto ">
+                  <button
+                    className={`
+                  text-black w-full py-5 font-bold text-xl mt-4 px-4 sm:px-6 md:px-16 cursor-pointer bg-amber-400 hover:bg-[#bf851a]`}
+                    onClick={addToCartHandler}>
+                    {cart.isItemAdded
+                      ? "Remover do Carrinho"
+                      : "Adicionar no Carrinho"}
+                  </button>
+                </div>
                 <div className="border-b py-1" />
               </div>
             </div>

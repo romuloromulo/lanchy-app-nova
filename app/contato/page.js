@@ -59,7 +59,7 @@ function page() {
         id="Menu"
         className="max-w-[1500px] flex pt-20 flex-col justify-center bg-white ">
         <div className=" text-center mx-auto w-2/3 mb-12">
-          <h1 className="text-7xl text-black font-extrabold mb-2">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl text-black font-extrabold mb-2">
             NOS CONTATE
           </h1>
           <p className="text-gray-700">
@@ -67,12 +67,12 @@ function page() {
             aliquet risus tempor semper odio egestas id pulvinar consectetu.
           </p>
         </div>
-        <div className="flex gap-12 px-10 mt-10 mb-10 items-center">
+        <div className="lg:flex-row flex flex-col items-center justify-center gap-12 md:px-10 px-4 mt-10 mb-10 w-full">
           <form
             ref={form}
             onSubmit={() => {}}
-            className="max-w-[50rem] sm:w-2/3 shadow-xl bg-white h-[45rem] sm:p-20 bg-secondary-light dark:bg-secondary-dark text-left">
-            <div className="grid grid-cols-2 gap-4">
+            className="max-w-[50rem] w-full p-2 sm:w-2/3 shadow-xl bg-white md:h-[45rem] lg:p-20 bg-secondary-light dark:bg-secondary-dark text-left pt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormInput
                 inputLabel="Nome completo"
                 labelFor="name"
@@ -126,23 +126,23 @@ function page() {
                 aria-label="Observação"
                 placeholder="Sua mensagem"></textarea>
             </div>
-            <div>
+            <div className="w-full flex justify-center">
               <button
                 type="submit"
-                className={`${styleButton}  w-40 h-20 px-4 py-2.5 text-center tracking-wider focus:ring-1 mt-6 duration-500`}>
+                className={`${styleButton} w-full  md:w-52 h-20 px-4 py-2.5 text-center tracking-wider focus:ring-1 mt-6 duration-500`}>
                 {enviar}
               </button>
             </div>
           </form>
 
-          <div className="relative  rounded-full h-[30rem] w-[30rem]   p-8 flex items-center ">
-            <div className="bg-red-500 rounded-full h-[26rem] w-[26rem] absolute overflow-hidden">
+          <div className="md:relative  rounded-full h-[30rem] w-[30rem]   p-8 flex items-center ">
+            <div className="bg-red-500 rounded-full h-[26rem] w-[26rem]  md:absolute overflow-hidden">
               <Image
                 src="/images/pizzaguy.png"
                 width={380}
                 height={380}
                 alt="Cara da Pizza"
-                className="translate-x-[2rem]"
+                className="md:translate-x-[2rem]"
               />
             </div>
           </div>

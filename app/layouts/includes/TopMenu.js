@@ -49,7 +49,7 @@ function TopMenu() {
       <div className="flex items-center justify-between w-full mx-auto h-14 max-w-[80rem] px-5">
         <ul
           id="TopMenuLeft"
-          className="flex items-center text-lg font-bold text-gray-800 px-2 h-8 hover:text-yellow-50 ease-in">
+          className="flex items-center md:text-lg  font-bold text-gray-800 px-2 h-8 hover:text-yellow-50 ease-in">
           <li className="relative px-3">
             {isLoggedIn()}
 
@@ -61,7 +61,7 @@ function TopMenu() {
               <div className="flex items-center justify-start gap-1 p-3 bg-amber-400">
                 <Image
                   className="rounded-full"
-                  alt="bandeira britanica"
+                  alt="foto-perfil"
                   width={50}
                   height={50}
                   src={user?.picture || "https://picsum.photos/200"}
@@ -93,14 +93,16 @@ function TopMenu() {
 
         <ul
           id="TopMenuRight"
-          className="flex items-center text-lg font-bold text-gray-800 px-2 h-8 ">
-          <li className="pr-5">PLATAFORMAS ONLINE:</li>
+          className="flex items-center md:text-lg text-sm font-bold text-gray-800 px-2 h-8 ">
+          <li className="md:pr-5 pr-2 text-sm md:text-lg">
+            PLATAFORMAS ONLINE:
+          </li>
           <li>
             <a href="ifood.com.br" target={"_blank"} rel={"noreferrer"}>
               <Image
                 className="grayscale hover:grayscale-0 duration-300"
                 src="/images/ifood-43.png"
-                alt="bandeira britanica"
+                alt="ifood"
                 width={52}
                 height={52}
               />

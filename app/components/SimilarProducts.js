@@ -24,8 +24,8 @@ function SimilasProducts() {
   }, []);
   return (
     <>
-      <div className="bg-white py-10">
-        <div className="border-b max-w-[1200px] mx-auto" />
+      <div className="bg-white md:py-10">
+        <div className="border-b p-4 max-w-[1200px] mx-auto" />
 
         <div className="max-w-[1200px] mx-auto">
           <div className="font-bold text-2xl py-2 mt-4 text-black">
@@ -33,7 +33,7 @@ function SimilasProducts() {
           </div>
 
           {products.length > 0 ? (
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid md:grid-cols-5 grid-cols-2 sm:grid-cols-4 gap-4 justify-around p-2">
               {products.map((product) => (
                 <Product key={product.id} product={product} />
               ))}

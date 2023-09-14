@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useCart } from "@/app/context/cart";
-import useIsLoading from "@/app/hooks/useIsLoading";
+import scrollSmoothTo from "@/app/hooks/scrollSmoothTo";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -53,8 +52,10 @@ function Menu() {
       className="flex items-center justify-center bg-amber-400 overflow-hidden">
       <div className="h-full max-w-[1500px] flex flex-col justify-center items-center relative mt-10 mb-10">
         <div className=" text-center mx-auto w-2/3 mb-8">
-          <h1 className="text-7xl text-black font-extrabold mb-2">Cardápio</h1>
-          <p className="text-gray-700">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl text-black font-extrabold mb-2">
+            Cardápio
+          </h1>
+          <p className="text-gray-700 text-sm sm:text-base">
             Amet consectetur adipiscing elit enim bibendum sed et aliquet
             aliquet risus tempor semper odio egestas id pulvinar consectetur
             elit tortor non hac pellentesque lacus donec accumsan quisque
@@ -62,7 +63,7 @@ function Menu() {
           </p>
         </div>
         <div id="Pizzas">
-          <div className="grid gap-2 grid-cols-5 mt-5 ">
+          <div className="grid gap-2 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 mt-5 ">
             {isLoading ? (
               <div className="text-xl font-bold flex">
                 Carregando...
@@ -75,11 +76,15 @@ function Menu() {
             )}
           </div>
         </div>
-        <div className="flex gap-4">
-          <div className="w-40 h-16  bg-white flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-black hover:text-white mt-5">
-            PEDIR ONLINE
-          </div>
-          <div className="w-40 h-16 bg-black flex justify-center items-center p-2 text-amber-400  font-bold text-lg cursor-pointer hover:bg-gray-800 mt-5">
+        <div className="flex gap-2 sm:gap-4">
+          <Link href="/menu">
+            <div className="sm:w-44 sm:h-20 w-22 h-14  bg-white flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-black hover:text-white mt-5">
+              PEDIR ONLINE
+            </div>
+          </Link>
+          <div
+            onClick={() => scrollSmoothTo("Reservas")}
+            className="sm:w-44 sm:h-20 w-22 h-14 bg-black flex justify-center items-center p-2 text-amber-400  font-bold text-lg cursor-pointer hover:bg-white  mt-5">
             RESERVAS
           </div>
         </div>

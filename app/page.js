@@ -29,7 +29,7 @@ export default function Home() {
       <div className="mx-auto">
         <Hero />
         <About />
-        {/* <Menu /> */}
+        <Menu />
         <Clientes />
         <Reservas />
       </div>

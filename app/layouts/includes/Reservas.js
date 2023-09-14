@@ -59,15 +59,15 @@ const Reservas = () => {
     <>
       <section
         id="Reservas"
-        className=" bg-black relative flex  w-full  justify-center items-center py-24 px-12 overflow-hidden">
+        className=" bg-black relative flex  w-full  py-24 px-4 sm:px-12 overflow-hidden">
         {/* <div className="w-[30rem] h-[60rem] bg-white"> */}
-        <div className="flex gap-5 max-w-[1500px] h-full justify-center items-center">
-          <div className="w-[45%] flex flex-col justify-center  h-full">
+        <div className="flex  md:flex-row flex-col gap-5 max-w-[1500px] h-full justify-center items-start">
+          <div className="md:w-[45%]  sm:p-5 flex flex-col justify-center h-full">
             <div>
-              <h1 className="text-6xl font-extrabold text-white mb-3">
+              <h1 className="text-4xl sm:text-5l md:text-6xl font-extrabold text-white mb-3">
                 Reserve uma mesa agora!
               </h1>
-              <p className="w-4/5 text-lg text-white mb-3">
+              <p className="w-4/5 text-base md:text-lg text-white mb-3">
                 Lorem ipsum dolor sit amet consectetur adipiscing elit enim
                 bibendum sed et aliquet aliquet risus tempor semper odio egestas
                 id pulvinar consectetur elit tortor.
@@ -88,10 +88,10 @@ const Reservas = () => {
                   (98)982122264
                 </li>
                 <li className="flex text-white">
-                  <div className="bg-amber-400 p-1  mr-3">
+                  <div className="bg-amber-400 h-[100%] p-1  mr-3">
                     <GiPositionMarker size={22} className="text-black" />
                   </div>{" "}
-                  837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles
+                  Rua Jorge Nicolau, 19, São Luis - MA
                 </li>
               </ul>
             </div>
@@ -100,8 +100,8 @@ const Reservas = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="max-w-xl bg-white h-4/5 sm:p-5 bg-secondary-light dark:bg-secondary-dark shadow-xl text-left">
-            <div className="grid grid-cols-2 gap-4">
+            className=" bg-white mt-4 h-4/5 sm:p-5 bg-secondary-light dark:bg-secondary-dark shadow-xl text-left">
+            <div className="grid grid-cols-1 p-4 sm:p-8 md:p-12 mt-2 sm:grid-cols-2 gap-2 md:gap-x-48">
               <FormInput
                 inputLabel="Nome completo"
                 labelFor="name"
@@ -158,24 +158,24 @@ const Reservas = () => {
                 placeholderText="Ex. 14:00"
                 ariaLabelName="Horário"
               />
+              <div className="mt-2">
+                <label
+                  className="block text-lg text-dim-gray dark:text-primary-light mb-2"
+                  htmlFor="message">
+                  Mensagem
+                </label>
+                <textarea
+                  className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+                  id="message"
+                  name="message"
+                  cols="14"
+                  rows="6"
+                  aria-label="Observação"
+                  placeholder="Alguma observação?"></textarea>
+              </div>
             </div>
 
-            <div className="mt-2">
-              <label
-                className="block text-lg text-dim-gray dark:text-primary-light mb-2"
-                htmlFor="message">
-                Mensagem
-              </label>
-              <textarea
-                className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
-                id="message"
-                name="message"
-                cols="14"
-                rows="6"
-                aria-label="Observação"
-                placeholder="Alguma observação?"></textarea>
-            </div>
-            <div>
+            <div className="w-full flex items-center justify-center mb-4">
               <button
                 type="submit"
                 className={`${styleButton} font-general-medium w-40 h-16 px-4 py-2.5 text-center font-medium tracking-wider focus:ring-1 mt-6 duration-500`}>

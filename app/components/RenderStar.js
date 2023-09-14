@@ -11,13 +11,13 @@ function renderStars(rating) {
     if (i < filledStars) {
       stars.push(
         <span key={i}>
-          <AiFillStar size={33} />
+          <AiFillStar size={28} />
         </span>
       ); // Estrela preenchida (★)
     } else {
       stars.push(
         <span key={i}>
-          <AiOutlineStar size={33} />
+          <AiOutlineStar size={28} />
         </span>
       ); // Estrela vazia (☆)
     }
