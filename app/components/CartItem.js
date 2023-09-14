@@ -8,7 +8,7 @@ function CartItem({ product }) {
 
   function removeItemFromCart() {
     let res = confirm(
-      `Are you sure you want to remove this?"${product.title}"`
+      `Tem certeza que deseja retirar este item? "Pizza de ${product.title}"`
     );
     if (res) {
       cart.removeFromCart(product);
@@ -41,13 +41,11 @@ function CartItem({ product }) {
             {product?.description.substring(0, 150)}...
           </div>
 
-          <div className="absolute right-0 bottom-0 p-4 text-sm bg-red-500  hover:bg-red-700 duration-300 font-bold">
-            <button
-              onClick={() => removeItemFromCart()}
-              className=" text-white">
+          <button onClick={() => removeItemFromCart()} className=" text-white">
+            <div className="absolute right-0 bottom-0 p-4 text-sm bg-red-500  hover:bg-red-700 duration-300 font-bold">
               REMOVER
-            </button>
-          </div>
+            </div>
+          </button>
         </div>
       </div>
     </>
