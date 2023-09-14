@@ -50,13 +50,13 @@ function Clientes() {
   return (
     <section
       id="Clients"
-      className="p-5 h-screen bg-white overflow-hidden w-full flex items-center justify-center">
+      className="md:p-5 min-h-screen  bg-white w-full flex items-center justify-center">
       <div className="max-w-[1500px] h-full flex flex-col items-center justify-center ">
-        <div className=" w-3/5 mt-5 text-center">
-          <h1 className="text-5xl font-extrabold text-black mb-6">
+        <div className="p-2 md:w-3/5 mt-5 text-center">
+          <h1 className=" text-2xl sm:text-3xl md:text-5xl font-extrabold text-black md:mb-6">
             Avaliação dos clientes
           </h1>
-          <p>
+          <p clasName="sm:text-base text-sm">
             Amet consectetur adipiscing elit enim bibendum sed et aliquet
             aliquet risus tempor semper odio egestas id pulvinar consectetur
             elit tortor non hac pellentesque lacus donec accumsan quisque
@@ -64,25 +64,20 @@ function Clientes() {
           </p>
         </div>
 
-        <div className="flex lg:h-2/3 p-12 mt-8 w-full justify-center items-center">
+        <div className="flex lg:h-2/3 sm:p-12 p-4 md:mt-8  w-full justify-center items-center">
           <button
             onClick={handlePrevious}
             className="p-4 bg-amber-400 hover:bg-amber-300 text-black hover:text-red-600 duration-200 shadow-lg translate-x-6 hidden lg:block">
             <FaChevronLeft size={22} />
           </button>
           <div className="mx-auto w-full h-full  flex flex-col items-center justify-center">
-            <div className="w-full lg:w-/23 py-8 shadow-lg h-full border-gray-400 text-black flex items-center justify-center gap-8 ">
+            <div className="w-full lg:w-2/3 py-8 shadow-lg h-full border-gray-400 text-black flex md:flex-row flex-col items-center justify-center gap-8 ">
               <div
-                className={`rounded-lg p-2 bg-amber-400 overflow-hidden w-1/3 h-1/2 flex justify-center items-center`}>
-                <Image
-                  className="rounded-full"
-                  src={info[counter].foto}
-                  width={350}
-                  height={350}
-                />
+                className={`rounded-lg w-4/5 h-[9rem]  bg-amber-400 overflow-hidden md:w-1/3 md:h-1/2 flex justify-center items-center`}>
+                <Image src={info[counter].foto} width={350} height={350} />
               </div>
 
-              <div className="flex flex-col w-1/2">
+              <div className="flex flex-col md:w-1/2 w-2/3">
                 <RatingStars rating={info[counter].rating} />
                 <div className="font-bold text-lg">{info[counter].quote}</div>
                 <div className="text-base mt-2 mb-8">

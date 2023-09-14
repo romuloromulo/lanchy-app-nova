@@ -1,16 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import scrollSmoothTo from "@/app/hooks/scrollSmoothTo";
 
 function Hero() {
   return (
     <section
       id="Hero"
-      className="max-w-[1200px] min-h-screen lg:mt-0 mt-16 mx-auto px-8 block overflow-hidden">
-      <div className="lg:flex lg:flex-row flex-col flex justify-between items-center max-h-screen h-auto lg:h-screen">
+      className="max-w-[1200px] min-h-screen lg:mt-0 mt-16 mx-auto md:px-8 block overflow-hidden lg:overflow-visible">
+      <div className="lg:flex lg:flex-row flex-col flex justify-between items-center max-h-screen h-auto lg:min-h-screen">
         <div
           id="Description"
-          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full lg:w-3/5 ">
-          <div className="text-red-50 tracking-wider text-5xl lg:text-7xl font-extrabold justify-center items-center z-10">
+          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-3/5 ">
+          <div className="text-red-50 tracking-wider text-4xl lg:text-7xl font-extrabold justify-center items-center z-10">
             O MELHOR LUGAR PARA COMER PIZZA.
           </div>
           <p className="text-red-50">
@@ -18,13 +20,19 @@ function Hero() {
             diam vitae velit bibendum elementum eget non vivamus volutpat odio
             cras vestibulum purus aliquam
           </p>
-          <div className="flex items-center justify-center lg:items-start lg:justify-start  gap-4">
-            <div className="w-44 h-20 bg-amber-400 flex justify-center items-center p-2 text-black font-bold text-lg cursor-pointer hover:bg-amber-500 mt-5">
-              PEDIR ONLINE
-            </div>
-            <div className="w-44 h-20 bg-black flex justify-center items-center p-2 text-amber-400  font-bold text-lg cursor-pointer hover:bg-gray-800 mt-5">
-              RESERVAS
-            </div>
+          <div className="flex items-center justify-center lg:items-start lg:justify-start gap-2  sm:gap-4">
+            <Link href="/menu">
+              <div className="sm:w-44 sm:h-20 w-22 h-14 bg-amber-400 flex justify-center items-center p-2 text-black font-bold lg:text-lg text-base  cursor-pointer hover:bg-amber-500 mt-5">
+                PEDIR ONLINE
+              </div>
+            </Link>
+            <Link href="#Reservas " scroll={false}>
+              <div
+                onClick={() => scrollSmoothTo("Reservas")}
+                className="sm:w-44  sm:h-20 w-22 h-14 bg-black flex justify-center items-center p-2 text-amber-400  font-bold lg:text-lg text-base cursor-pointer hover:bg-gray-800 mt-5">
+                RESERVAS
+              </div>
+            </Link>
           </div>
         </div>
         <div

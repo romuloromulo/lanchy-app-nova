@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { CiDeliveryTruck } from "react-icons/ci";
 import MainLayout from "../layouts/MainLayout";
 import moment from "moment";
@@ -98,11 +99,12 @@ function Orders() {
                       <Link
                         className="py-1 hover:underline text-black font-bold"
                         href={`/product/${item.d}`}>
-                        <img
+                        <Image
                           className="rounded"
-                          width="120px"
-                          height="120px"
-                          src={item.url}
+                          width={120}
+                          height={120}
+                          src={item.product.url}
+                          alt="pizza"
                         />
                         {item.title}
                       </Link>

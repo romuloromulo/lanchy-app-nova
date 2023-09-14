@@ -4,16 +4,21 @@ import { debounce } from "debounce";
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/app/context/cart";
-import { AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { BiLoaderCircle } from "react-icons/bi";
 import { FaPizzaSlice } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import ClientOnly from "@/app/components/ClientOnly";
 
-export default function MainHeader() {
+export default function NavBar() {
   const cart = useCart();
   const [items, setItems] = useState([]);
   const [isSearching, setIsSearching] = useState(null);
+  const [openNav, setOpenNav] = useState(false);
+
+  function handleNav() {
+    setOpenNav((prev) => !prev);
+  }
 
   const handleSearchName = debounce(async (event) => {
     const value = event.target.value;
@@ -38,12 +43,12 @@ export default function MainHeader() {
   }, 500);
   return (
     <>
-      <div id="MainHeader">
-        <nav className="flex items-center justify-between w-full mx-auto max-w-[80rem] marker:$px-5 md:px-8 lg:px-24 py-5 mb-5 mt-4">
+      <div id="NavBar">
+        <nav className="  flex items-center justify-between w-full mx-auto max-w-[80rem] ls:px-5 md:px-5 lg:px-16 py-5 px-5 mb-5 mt-4">
           <div id="MenuLeft" className="flex items-center">
-            <div className="lg:flex lg:flex-row flex flex-col items-start justify-start lg:gap-10 max-w-[1150px] w-full mx-auto">
+            <div className="lg:flex lg:flex-row flex flex-col items-start justify-start lg:gap-5 max-w-[1150px] w-full mx-auto">
               <Link href="/">
-                <div className="text-yellow-50 lg:items-center items-start justify-start lg:justify-center flex font-extrabold text-2xl">
+                <div className="text-black lg:items-center items-start justify-start lg:justify-center flex font-extrabold text-lg lg:text-2xl">
                   <FaPizzaSlice
                     size={22}
                     className="mr-2 lg:scale-x-[-1] text-amber-400"
@@ -52,7 +57,7 @@ export default function MainHeader() {
                 </div>
               </Link>
 
-              <div className="relative">
+              <div className="relative sm:block hidden">
                 <div className="flex items-center justify-center">
                   <div className="relative flex items-center border-2 rounded-lg border-gray-900 w-full px-2 h-8 bg-inherit">
                     <button className="flex items-center mr-1">
@@ -73,7 +78,7 @@ export default function MainHeader() {
                     ) : null}
 
                     {items.length > 0 ? (
-                      <div className="absolute bg-amber-400  h-auto w-full z-20 left-0 top-12 border-2 border-black p-1">
+                      <div className="absolute bg-amber-400  h-auto w-[20rem] z-20 left-0 top-10 border-2 border-black p-1">
                         {items.map((item) => (
                           <div className="p-1" key={item.id}>
                             <Link
@@ -86,7 +91,7 @@ export default function MainHeader() {
                                   height="40px"
                                   src={item?.url}
                                 />
-                                <div className="truncate ml-2">
+                                <div className="truncate ml-2 w-full">
                                   {item?.title}
                                 </div>
                               </div>
@@ -107,8 +112,8 @@ export default function MainHeader() {
               </div>
             </div>
           </div>
-          <div id="MenuRight" className="flex items-center">
-            <ul className="flex gap-8 font-extrabold text-lg text-red-50 z-10">
+          <div id="MenuRight" className="sm:flex hidden items-center">
+            <ul className="flex gap-2  sm:gap-5 md:gap-8 font-extrabold text-lg text-red-50 z-10">
               <li className="hover:text-gray-800">
                 <Link href="/">Início</Link>
               </li>
@@ -138,6 +143,61 @@ export default function MainHeader() {
                 </li>
               </ClientOnly>
             </ul>
+          </div>
+          <div
+            id="MenuMobile"
+            onClick={handleNav}
+            className="sm:hidden cursor-pointer md:pl-24">
+            <AiOutlineMenu size={25} />
+          </div>
+          <div
+            className={
+              openNav
+                ? "fixed left-0 top-0 w-screen sm:hidden h-2/3 bg-amber-400 border-2 border-black p-10 ease-in duration-500 z-20"
+                : "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-20"
+            }>
+            <div className="w-full flex items-center justify-between">
+              <div>
+                <ClientOnly>
+                  <div className="relative">
+                    <Link href="/cart">
+                      <AiOutlineShoppingCart size={30} />
+                      {cart.cartCount() > 0 ? (
+                        <div className="rounded-full absolute text-[10px] -top-[5px] pt-[2px]  -right-[5px] bg-red-500 w-[20px] h-[18px] text-gray-800 font-bold">
+                          <div className="flex items-center justify-center">
+                            {cart.cartCount()}
+                          </div>
+                        </div>
+                      ) : (
+                        <div></div>
+                      )}
+                    </Link>
+                  </div>
+                </ClientOnly>
+              </div>
+              <div onClick={handleNav} className="cursor-pointer">
+                <AiOutlineClose size={25} className="top-1 left-1" />
+              </div>
+            </div>
+            <div className=" ml-4 w-full mt-5 flex justify-center items-center">
+              <ul className="flex gap-8 flex-col font-extrabold text-2xl text-black z-10">
+                <li
+                  onClick={handleNav}
+                  className=" hover:underline hover:text-white ease-in duration-300  ">
+                  <Link href="/">Início</Link>
+                </li>
+                <li
+                  onClick={handleNav}
+                  className=" hover:underline hover:text-white ease-in duration-300 ">
+                  <Link href="/menu">Menu</Link>
+                </li>
+                <li
+                  onClick={handleNav}
+                  className=" hover:underline hover:text-white ease-in duration-300 ">
+                  <Link href="/contato">Contato</Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>

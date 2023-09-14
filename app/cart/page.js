@@ -32,20 +32,20 @@ function Cart() {
   return (
     <>
       <MainLayout>
-        <div className="w-full py-16  bg-white">
+        <div className="w-full py-16 bg-white">
           <div className="max-w-[1200px] mx-auto mt-10 mb-8 min-h-[300px]">
-            <div className="text-3xl font-extrabold my-4">Carro de Compras</div>
-            <div className="relative flex items-baseline justify-between gap-2">
-              <ClientOnly>
-                <div className="w-[65%">
+            <div className="text-3xl font-extrabold my-4 text-center">
+              Carro de Compras
+            </div>
+            <div className="lg:flex-row flex flex-col items-center  p-4 justify-center lg:items-baseline lg:justify-between gap-2">
+              <div className="flex flex-col justify-center items-center md:w-full h-auto w-auto">
+                <ClientOnly>
                   {cart.getCart().map((product) => (
                     <CartItem key={product.id} product={product} />
                   ))}
-                </div>
-              </ClientOnly>
-              <div
-                id="GoToCheckout"
-                className=" md:w-1/3 absolute top-0 right-0 m-2">
+                </ClientOnly>
+              </div>
+              <div id="GoToCheckout" className=" lg:w-1/3 w-4/5 m-2 ">
                 <ClientOnly>
                   <div className="bg-red-500 p-4 border-black border-2">
                     <button

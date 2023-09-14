@@ -18,7 +18,7 @@ function CartItem({ product }) {
 
   return (
     <>
-      <div className="relative flex justify-start my-2 overflow-hidden border-2 border-black bg-amber-400 w-2/3 p-6">
+      <div className="relative flex justify-start my-2 overflow-hidden border-2 border-black bg-amber-400 w-auto p-4 md:p-6">
         <Image
           src={product?.url}
           width={150}
@@ -27,9 +27,9 @@ function CartItem({ product }) {
           className="rounded-md"
         />
 
-        <div className="overflow-hidden pl-2 w-2/3">
+        <div className="overflow-hidden pl-2 w-full sm:w-2/3">
           <div className="flex items-center justify-between w-full">
-            <div className="flex items-center font-semibold justify-between w-[400px] text-[16px] underline">
+            <div className="flex items-center font-semibold w-60 justify-between md:w-[400px] text-[16px] underline">
               {product?.title}
             </div>
             <div className="font-bold text-lg">

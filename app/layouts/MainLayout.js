@@ -1,7 +1,7 @@
 "use client";
 
 import TopMenu from "./includes/TopMenu";
-import MainHeader from "./includes/MainHeader";
+import NavBar from "./includes/NavBar";
 
 import Footer from "./includes/Footer";
 import Loading from "../components/Loading";
@@ -23,7 +23,7 @@ export default function MainLayout({ children }) {
         <div>
           {isLoading ? <Loading /> : <div></div>}
           <TopMenu />
-          <MainHeader />
+          <NavBar />
           {/* <SubMenu /> */}
         </div>
 
