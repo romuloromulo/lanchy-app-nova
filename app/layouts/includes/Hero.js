@@ -7,12 +7,12 @@ function Hero() {
   return (
     <section
       id="Hero"
-      className="max-w-[1200px] min-h-screen lg:mt-0 mt-16 mx-auto md:px-8 block overflow-hidden lg:overflow-visible pb-8">
-      <div className="lg:flex lg:flex-row flex-col flex justify-between items-center  lg:min-h-screen">
+      className="max-w-[1500px] min-h-screen lg:mt-0 mt-16 mx-auto overflow-hidden lg:overflow-visible pb-8">
+      <div className="lg:flex lg:flex-row flex-col flex  justify-center items-center lg:min-h-screen">
         <div
           id="Description"
-          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5 ">
-          <div className="text-red-50 tracking-wider text-4xl lg:text-7xl font-extrabold justify-center items-center z-10">
+          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5  z-50  justify-center lg:translate-x-12 ">
+          <div className="text-red-50 tracking-wider text-4xl lg:text-6xl font-extrabold justify-center items-center z-10">
             O MELHOR LUGAR PARA COMER PIZZA.
           </div>
           <p className="text-red-50">
@@ -36,13 +36,13 @@ function Hero() {
         </div>
         <div
           id="Images"
-          className="relative h-auto flex items-center justify-center w-[30rem] lg:w-full mt-5">
+          className="relative h-auto flex items-center justify-center w-[26rem] lg:w-full mt-5">
           <Image
             src="/images/PizzaGrande.png"
             width={1000}
             height={1000}
             alt="Pizza"
-            // layout="responsive"
+            intrinsic
             className="lg:translate-x-[190px] lg:scale-x-[-1] translate-x-6  md:w-[%50] md:h-[%50] "
           />
           <Image
@@ -57,14 +57,14 @@ function Hero() {
             width={100}
             height={100}
             alt="Peperoni"
-            className="absolute hidden   lg:block right-[18rem]"
+            className="absolute  hidden lg:block  top-[29rem] left-[3rem] rotate-45"
           />
           <Image
             src="/images/manjericao.png"
             width={200}
             height={200}
             alt="Peperoni"
-            className="absolute  hidden lg:block  top-[25rem] left-[3rem] rotate-45"
+            className="absolute hidden lg:block  top-[15rem]  right-[32rem]"
           />
           <Image
             src="/images/spinach.png"
@@ -78,7 +78,14 @@ function Hero() {
             width={200}
             height={200}
             alt="Peperoni"
-            className="absolute hidden lg:overflow-visible top-[1rem] right-[30rem] rotate-45"
+            className="absolute hidden lg:block top-[1rem] right-[30rem] rotate-45"
+          />
+          <Image
+            src="/images/tomato2.png"
+            width={200}
+            height={200}
+            alt="Peperoni"
+            className="absolute hidden lg:block top-[29rem] right-[50rem] rotate-45"
           />
         </div>
       </div>

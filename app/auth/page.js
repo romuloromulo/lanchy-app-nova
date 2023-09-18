@@ -9,6 +9,7 @@ import MainLayout from "../layouts/MainLayout";
 export default function AuthPage() {
   const supabase = createClientComponentClient();
   let reference;
+
   if (typeof window !== "undefined") {
     reference = `${window.location.origin}/auth/callback`;
   }

@@ -64,11 +64,11 @@ function MenuPage() {
             </p>
           </div>
           <div id="Pizzas">
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5 ">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-5">
               {isLoading ? (
-                <div className="text-xl font-bold flex">
+                <div className="text-xl font-bold flex items-center justify-center">
                   Carregando...
-                  <span>
+                  <span className="ml-4">
                     <AiOutlineLoading size={33} t className="animate-spin" />
                   </span>
                 </div>

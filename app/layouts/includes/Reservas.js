@@ -59,9 +59,9 @@ const Reservas = () => {
     <>
       <section
         id="Reservas"
-        className=" bg-black relative flex  w-full  py-24 px-4 sm:px-12 overflow-hidden">
+        className=" bg-black relative flex  w-full  py-24 px-4 sm:px-12 overflow-hidden justify-center items-center">
         {/* <div className="w-[30rem] h-[60rem] bg-white"> */}
-        <div className="flex   md:flex-row flex-col gap-5 max-w-[1500px] h-full justify-center md:items-start ">
+        <div className="flex   md:flex-row flex-col gap-5 max-w-[1500px] h-full justify-center md:items-start">
           <div className="md:w-[45%]  sm:p-2 flex flex-col justify-center h-full">
             <div>
               <h1 className="text-4xl sm:text-5l md:text-5xl font-extrabold text-white mb-3">
