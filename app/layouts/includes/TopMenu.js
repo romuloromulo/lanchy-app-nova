@@ -4,16 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useUser } from "@/app/context/user";
 import { BsChevronDown } from "react-icons/bs";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useState } from "react";
 import { useCart } from "@/app/context/cart";
-import ClientOnly from "@/app/components/ClientOnly";
 
 function TopMenu() {
   const [isMenu, setIsMenu] = useState(false);
 
   const user = useUser();
-  const cart = useCart();
 
   function isLoggedIn() {
     if (user && user?.id) {
@@ -32,7 +29,7 @@ function TopMenu() {
         href="/auth"
         className="flex items-center gap-2 hover:underline   w-5
     ease-in-out duration-500 
-    cursor-pointer mr-4">
+    cursor-pointer mr-4 lg:px-10">
         <div>Login</div>
         <div>
           {user && user?.id ? (
@@ -97,7 +94,10 @@ function TopMenu() {
             PLATAFORMAS ONLINE:
           </li>
           <li>
-            <a href="ifood.com.br" target={"_blank"} rel={"noreferrer"}>
+            <a
+              href="https://www.ifood.com.br/"
+              target={"_blank"}
+              rel={"noreferrer"}>
               <Image
                 className="grayscale hover:grayscale-0 duration-300"
                 src="/images/ifood-43.png"
@@ -107,34 +107,6 @@ function TopMenu() {
               />
             </a>
           </li>
-          {/* <li className="flex items-center gap-2 px-3 hover:underline cursor-pointer">
-            <Image
-              alt="bandeira britanica"
-              width={32}
-              height={32}
-              src="/images/uk.png"
-            />
-            Ship to
-          </li> */}
-          {/* 
-          <ClientOnly>
-            <li className="px-3 hover:underline cursor-pointer">
-              <div className="relative">
-                <Link href="/cart">
-                  <AiOutlineShoppingCart size={22} />
-                  {cart.cartCount() > 0 ? (
-                    <div className="rounded-full absolute text-[10px] -top-[2px] -right-[5px] bg-red-500 w-[14px] h-[14px] text-white">
-                      <div className="flex items-center justify-center -mt-[1px]">
-                        {cart.cartCount()}
-                      </div>
-                    </div>
-                  ) : (
-                    <div></div>
-                  )}
-                </Link>
-              </div>
-            </li>
-          </ClientOnly> */}
         </ul>
       </div>
     </div>

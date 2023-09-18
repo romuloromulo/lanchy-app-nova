@@ -2,12 +2,13 @@
 
 import SimilarProducts from "@/app/components/SimilarProducts";
 import MainLayout from "@/app/layouts/MainLayout";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { toast } from "react-toastify";
 import { useCart } from "@/app/context/cart";
 import { useEffect, useState } from "react";
 import useIsLoading from "@/app/hooks/useIsLoading";
 import { LuWheat, LuWheatOff } from "react-icons/lu";
+import { AiOutlineLoading } from "react-icons/ai";
 
 function Product({ params }) {
   const cart = useCart();
@@ -43,21 +44,25 @@ function Product({ params }) {
     <>
       <MainLayout>
         <section id="Produto" className="bg-white text-black">
-          <div className="max-w-[1200px] mx-auto">
+          <div className="max-w-[1200px] min-h-screen mx-auto">
             <div className="flex md:flex-row flex-col items-center px-2 py-10">
-              <div className="bg-red-500 p-4 md:p-10 flex justify-around  rounded-lg">
-                {product?.url ? (
+              {product.url ? (
+                <div className="bg-red-500 p-4 md:p-10 flex justify-around  rounded-lg ">
                   <Image
                     width={780}
                     height={780}
-                    className=" rounded-lg"
-                    alt="Imagem do Produto"
+                    className="rounded-lg"
+                    alt="Imagem da Pizza"
                     src={product?.url}
+                    placeholder="blur"
+                    blurDataURL="/images/PizzasMenu/Tomato.png"
                   />
-                ) : (
-                  <div className="w-[40%]"></div>
-                )}
-              </div>
+                </div>
+              ) : (
+                <div className="bg-red-500 p-4 md:p-10 flex justify-center items-center rounded-lg w-full h-[310px] sm:h-[38px] md:h-[400px] lg:h-[490px]">
+                  <AiOutlineLoading size={55} className="animate-spin" />
+                </div>
+              )}
               <div className="md:px-4 w-full mt-2 md:mt-0 flex flex-col  md:items-start gap-2 md:ml-10">
                 <div className="font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
                   Pizza de {product?.title}

@@ -26,7 +26,7 @@ function Menu() {
   }, []);
 
   const pizzas = products.map((pizza) => (
-    <Link href={`/product/${pizza.id}`}>
+    <Link key={pizza.id} href={`/product/${pizza.id}`}>
       <div className="flex flex-col justify-center items-center text-xl font-bold text-red-600  hover:text-red-700 mb-5 group">
         <div className="relative  w-[200px] h-[200px]">
           <div className="flex flex-col  justify-center items-center p-3 bg-red-600 w-full h-full overflow-hidden rounded-full rotate-90 absolute">
@@ -65,10 +65,10 @@ function Menu() {
         <div id="Pizzas">
           <div className="grid gap-2 grid-cols-1  md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 mt-5 ">
             {isLoading ? (
-              <div className="text-xl font-bold flex">
+              <div className="text-2xl font-bold flex items-center justify-center">
                 Carregando...
-                <span>
-                  <AiOutlineLoading size={33} className="animate-spin" />
+                <span className="ml-4">
+                  <AiOutlineLoading size={33} t className="animate-spin" />
                 </span>
               </div>
             ) : (
