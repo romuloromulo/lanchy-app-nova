@@ -196,7 +196,7 @@ export default function NavBar() {
                   <AiOutlineClose size={25} className="top-1 left-1" />
                 </div>
               </div>
-              <div className=" ml-4 w-full mt-5 flex justify-center items-center">
+              <div className=" ml-4 w-full mt-5 flex justify-center items-center z-50">
                 <ul className="flex gap-8 flex-col font-extrabold text-2xl text-black z-10">
                   <li
                     onClick={handleNav}
