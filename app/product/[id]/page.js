@@ -59,13 +59,13 @@ function Product({ params }) {
                   />
                 </div>
               ) : (
-                <div className="bg-red-500 p-4 md:p-10 flex justify-center items-center rounded-lg w-full h-[310px] sm:h-[38px] md:h-[400px] lg:h-[490px]">
+                <div className="bg-red-500 p-4 md:p-10 flex justify-center items-center rounded-lg  w-full h-[310px] sm:h-[38px] md:h-[400px] lg:h-[490px]">
                   <AiOutlineLoading size={55} className="animate-spin" />
                 </div>
               )}
               <div className="md:px-4 w-full mt-2 md:mt-0 flex flex-col  md:items-start gap-2 md:ml-10">
                 <div className="font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Pizza de {product?.title}
+                  Pizza {product?.title}
                 </div>
                 <div>{product.description}</div>
 
