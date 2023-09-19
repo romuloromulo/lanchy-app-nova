@@ -11,7 +11,7 @@ function Hero() {
       <div className="lg:flex lg:flex-row flex-col flex  justify-center items-center lg:min-h-screen">
         <div
           id="Description"
-          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5  z-50  justify-center lg:translate-x-12 ">
+          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5  z-20  justify-center lg:translate-x-12 ">
           <div className="text-red-50 tracking-wider text-4xl lg:text-6xl font-extrabold justify-center items-center z-10">
             O MELHOR LUGAR PARA COMER PIZZA.
           </div>
