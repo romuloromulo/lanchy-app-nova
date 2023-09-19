@@ -43,7 +43,7 @@ function Hero() {
             height={1000}
             alt="Pizza"
             intrinsic
-            className="lg:translate-x-[190px] lg:scale-x-[-1] translate-x-6  md:w-[%50] md:h-[%50] "
+            className="lg:translate-x-[190px] lg:scale-x-[-1] md:w-[%50] md:h-[%50] "
           />
           <Image
             src="/images/peperonislice.png"
