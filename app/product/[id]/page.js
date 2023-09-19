@@ -44,7 +44,7 @@ function Product({ params }) {
     <>
       <MainLayout>
         <section id="Produto" className="bg-white text-black">
-          <div className="max-w-[1200px] min-h-screen mx-auto">
+          <div className="max-w-[1200px] gi add .  mx-auto">
             <div className="flex md:flex-row flex-col items-center px-2 py-10">
               {product.url ? (
                 <div className="bg-red-500 p-4 md:p-10 flex justify-around  rounded-lg ">
