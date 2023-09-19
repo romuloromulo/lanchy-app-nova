@@ -24,6 +24,7 @@ export async function POST(req) {
         zipcode: body.zipcode,
         city: body.city,
         country: body.country,
+        quantity: body.quantity,
         total: Number(body.total),
       },
     });

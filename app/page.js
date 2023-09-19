@@ -8,6 +8,7 @@ import Menu from "./layouts/includes/Menu";
 import Clientes from "./layouts/includes/Clientes";
 import Reservas from "./layouts/includes/Reservas";
 
+
 export default function Home() {
   const [products, setProducts] = useState([]);
 

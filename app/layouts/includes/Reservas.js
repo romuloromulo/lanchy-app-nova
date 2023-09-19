@@ -127,7 +127,7 @@ const Reservas = () => {
                 inputType="number"
                 inputId="numero"
                 inputName="numero"
-                placeholderText="(12) 91234-1234"
+                placeholderText="(99) 99999-9999"
                 ariaLabelName="Numero"
               />
               <FormInput

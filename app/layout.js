@@ -8,8 +8,8 @@ import PatataProvider from "./context/cart";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Lanchy App",
-  description: "Lanchy app",
+  title: "TOTALPIZZA",
+  description: "Sua pizzaria favorita!",
 };
 
 export default function RootLayout({ children }) {
