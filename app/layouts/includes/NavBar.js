@@ -170,8 +170,8 @@ export default function NavBar() {
             <div
               className={
                 openNav
-                  ? "fixed left-0 top-0 w-screen sm:hidden h-2/3 bg-amber-400 border-2 border-black p-10 ease-in duration-500 z-20"
-                  : "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-20"
+                  ? "fixed left-0 top-0 w-screen sm:hidden h-2/3 bg-amber-400 border-2 border-black p-10 ease-in duration-500 z-50"
+                  : "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-50"
               }>
               <div className="w-full flex items-center justify-between">
                 <div>

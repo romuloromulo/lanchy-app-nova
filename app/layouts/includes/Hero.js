@@ -11,7 +11,7 @@ function Hero() {
       <div className="lg:flex lg:flex-row flex-col flex  justify-center items-center lg:min-h-screen">
         <div
           id="Description"
-          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5  z-20  justify-center lg:translate-x-12 ">
+          className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5    justify-center lg:translate-x-12  z-10">
           <div className="text-red-50 tracking-wider text-4xl lg:text-6xl font-extrabold justify-center items-center z-10">
             O MELHOR LUGAR PARA COMER PIZZA.
           </div>
@@ -50,42 +50,42 @@ function Hero() {
             width={100}
             height={100}
             alt="Peperoni"
-            className="absolute hidden  lg:block top-[10rem] right-[45rem]"
+            className="absolute hidden  lg:block top-[10rem] z-0 right-[45rem]"
           />
           <Image
             src="/images/peperonislice.png"
             width={100}
             height={100}
             alt="Peperoni"
-            className="absolute  hidden lg:block  top-[29rem] left-[3rem] rotate-45"
+            className="absolute  hidden lg:block  top-[29rem] z-0 left-[3rem] rotate-45"
           />
           <Image
             src="/images/manjericao.png"
             width={200}
             height={200}
             alt="Peperoni"
-            className="absolute hidden lg:block  top-[15rem]  right-[32rem]"
+            className="absolute hidden lg:block  top-[15rem] z-0  right-[32rem]"
           />
           <Image
             src="/images/spinach.png"
             width={200}
             height={200}
             alt="Peperoni"
-            className="absolute hidden  lg:block top-[-10rem] left-[18rem] rotate-45"
+            className="absolute hidden  lg:block top-[-10rem] z-0 left-[18rem] rotate-45"
           />
           <Image
             src="/images/tomato2.png"
             width={200}
             height={200}
             alt="Peperoni"
-            className="absolute hidden lg:block top-[1rem] right-[30rem] rotate-45"
+            className="absolute hidden lg:block top-[1rem] z-0 right-[30rem] rotate-45"
           />
           <Image
             src="/images/tomato2.png"
             width={200}
             height={200}
             alt="Peperoni"
-            className="absolute hidden lg:block top-[29rem] right-[50rem] rotate-45"
+            className="absolute hidden lg:block top-[29rem]  z-0 right-[50rem] rotate-45"
           />
         </div>
       </div>

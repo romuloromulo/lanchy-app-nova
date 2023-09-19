@@ -39,38 +39,49 @@ function Cart() {
             </div>
             <div className="lg:flex-row flex flex-col items-center justify-center md:items-start p-4  lg:justify-between gap-2 ">
               <div className="flex flex-col justify-center items-center md:w-full h-auto w-auto ">
-                <ClientOnly>
-                  {cart.getCart().map((product) => (
-                    <CartItem key={product.id} product={product} />
-                  ))}
-                </ClientOnly>
+                {cart.cartTotal() > 0 ? (
+                  <ClientOnly>
+                    {cart.getCart().map((product) => (
+                      <CartItem key={product.id} product={product} />
+                    ))}
+                  </ClientOnly>
+                ) : (
+                  <div className="text-4xl text-black font-bold">
+                    {" "}
+                    Carrinho Vazio
+                  </div>
+                )}
               </div>
-              <div
-                id="GoToCheckout"
-                className="flex flex-col justify-center items-center w-full h-auto  ">
-                <div className="bg-red-500 p-4 border-black border-2 w-[90%] flex flex-col  justify-center">
-                  <button
-                    onClick={() => goToCheckout()}
-                    className="flex items-center border-2 border-black justify-center bg-amber-400 w-[90%] text-black font-bold p-3 mt-4 py-5 hover:bg-amber-500 duration-300 mx-auto">
-                    CHECKOUT
-                  </button>
-                  <div className="flex items-center justify-between mt-4 text-xl mb-1">
-                    <div>Items ({cart.getCart().length})</div>
-                    <div>R${cart.cartTotal().toFixed(2)}</div>
-                  </div>
-                  <div className="flex items-center justify-between mb-4 text-sm">
-                    <div className="font-bold">Frete:</div>
-                    <div className="font-bold">Grátis</div>
-                  </div>
+              {cart.cartTotal() > 0 ? (
+                <div
+                  id="GoToCheckout"
+                  className="flex flex-col justify-center items-center w-full h-auto  ">
+                  <div className="bg-red-500 p-4 border-black border-2 w-[90%] flex flex-col  justify-center">
+                    <button
+                      onClick={() => goToCheckout()}
+                      className="flex items-center border-2 border-black justify-center bg-amber-400 w-[90%] text-black font-bold p-3 mt-4 py-5 hover:bg-amber-500 duration-300 mx-auto">
+                      FINALIZAR E PAGAR!
+                    </button>
+                    <div className="flex items-center justify-between mt-4 text-xl mb-1">
+                      <div>Items ({cart.getCart().length})</div>
+                      <div>R${cart.cartTotal().toFixed(2)}</div>
+                    </div>
+                    <div className="flex items-center justify-between mb-4 text-sm">
+                      <div className="font-bold">Frete:</div>
+                      <div className="font-bold">Grátis</div>
+                    </div>
 
-                  <div className="border-b border-black border-2 w-[90%]" />
+                    <div className="border-b border-black border-2 w-[90%]" />
 
-                  <div className="flex items-center justify-between mt-4 mb-1 text-2xl font-extrabold">
-                    <div>Subtotal</div>
-                    <div>R${cart.cartTotal().toFixed(2)}</div>
+                    <div className="flex items-center justify-between mt-4 mb-1 text-2xl font-extrabold">
+                      <div>Subtotal</div>
+                      <div>R${cart.cartTotal().toFixed(2)}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                ""
+              )}
             </div>
           </div>
 

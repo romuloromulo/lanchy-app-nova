@@ -18,18 +18,42 @@ const Provider = ({ children }) => {
     return cart;
   };
 
-  function addToCart(product) {
+  // ... (código existente)
+  function addToCart(product, quantity) {
     let cart = [];
 
     if (typeof localStorage !== "undefined") {
       cart = JSON.parse(localStorage.getItem("cart")) || [];
     }
 
-    cart.push(product);
+    const existingItemIndex = cart.findIndex((item) => item.id === product.id);
+
+    if (existingItemIndex !== -1) {
+      cart[existingItemIndex].quantity += quantity;
+    } else {
+      const newItem = { ...product, quantity };
+      cart.push(newItem);
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
     isItemAddedToCart(product);
     router.refresh();
   }
+
+  // ... (resto do código)
+
+  // function addToCart(product) {
+  //   let cart = [];
+
+  //   if (typeof localStorage !== "undefined") {
+  //     cart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   }
+
+  //   cart.push(product);
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  //   isItemAddedToCart(product);
+  //   router.refresh();
+  // }
 
   function removeFromCart(product) {
     let cart = [];
