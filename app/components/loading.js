@@ -1,6 +1,7 @@
 "use client";
 
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+// import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { FaPizzaSlice } from "react-icons/fa";
 
 export default function Loading() {
   return (
@@ -20,12 +21,9 @@ export default function Loading() {
                 overflow-hidden
             ">
         <div className="p-3 rounded-md">
-          <AiOutlineLoading3Quarters
-            size={100}
-            className="text-blue-400 animate-spin"
-          />
-          <div className="text-center pt-5 text-xl font-bold text-white">
-            Loading...
+          <FaPizzaSlice size={100} className="text-amber-400 animate-spin" />
+          <div className="text-center pt-5 text-xl font-bold text-red-500">
+            Carregando...
           </div>
         </div>
       </div>
