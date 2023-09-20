@@ -6,7 +6,6 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiPositionMarker } from "react-icons/gi";
 import Image from "next/image";
 
-
 const Reservas = () => {
   const [enviar, setEnviar] = useState("RESERVAR");
   const [styleButton, setStyleButton] = useState(
@@ -158,7 +157,6 @@ const Reservas = () => {
                 inputId="horario"
                 inputName="horario"
                 placeholderText="Ex. 14:00"
-                mask="00:00"
                 ariaLabelName="Horário"
               />
             </div>
