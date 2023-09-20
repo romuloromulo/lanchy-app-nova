@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiPositionMarker } from "react-icons/gi";
 import Image from "next/image";
-import ReactInputMask from "react-input-mask";
+
 
 const Reservas = () => {
   const [enviar, setEnviar] = useState("RESERVAR");

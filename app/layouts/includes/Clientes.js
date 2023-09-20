@@ -56,7 +56,7 @@ function Clientes() {
           <h1 className=" text-2xl sm:text-3xl md:text-5xl font-extrabold text-black md:mb-6">
             Avaliação dos clientes
           </h1>
-          <p clasName="sm:text-base text-sm">
+          <p className="sm:text-base text-sm">
             Amet consectetur adipiscing elit enim bibendum sed et aliquet
             aliquet risus tempor semper odio egestas id pulvinar consectetur
             elit tortor non hac pellentesque lacus donec accumsan quisque

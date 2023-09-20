@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import FormInput from "../components/InputFormulario";
 import Image from "next/image";
+import emailjs from "@emailjs/browser";
 
 function page() {
   const [enviar, setEnviar] = useState("ENVIAR");
@@ -15,7 +16,7 @@ function page() {
     e.preventDefault();
 
     setEnviar("ENVIANDO... ");
-    setStyleButton("text-black bg-amber-400 font-bold border-black ");
+    setStyleButton("text-black bg-transparent font-bold border-black ");
 
     emailjs
       .sendForm(
@@ -30,7 +31,7 @@ function page() {
             setTimeout(() => {
               setEnviar("ENVIADO!");
               setStyleButton(
-                "bg-green-500 text-black  hover:bg-green-700 focus:ring-green-900"
+                "bg-green-500 text-black font-bold hover:bg-green-700 focus:ring-green-900"
               );
               e.target.reset();
               setTimeout(() => {
