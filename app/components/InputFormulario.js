@@ -1,4 +1,5 @@
 import React from "react";
+import ReactInputMask from "react-input-mask";
 
 const FormInput = ({
   inputLabel,
@@ -10,6 +11,8 @@ const FormInput = ({
   placeholderText,
   ariaLabelName,
   value,
+  mask,
+  maxlength,
 }) => {
   return (
     <div className=" mb-2">
@@ -18,7 +21,7 @@ const FormInput = ({
         htmlFor={labelFor}>
         {inputLabel}
       </label>
-      <input
+      <ReactInputMask
         className="w-full px-5 py-2 border-2 border-black dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark shadow-sm text-md mb-5 h-[3rem]"
         type={inputType}
         inputMode={inputMode}
@@ -28,6 +31,8 @@ const FormInput = ({
         aria-label={ariaLabelName}
         required
         value={value}
+        mask={mask}
+        maxlength={maxlength}
       />
     </div>
   );

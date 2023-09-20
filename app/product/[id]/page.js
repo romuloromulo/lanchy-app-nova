@@ -1,5 +1,4 @@
 "use client";
-
 import SimilarProducts from "@/app/components/SimilarProducts";
 import MainLayout from "@/app/layouts/MainLayout";
 import Image from "next/legacy/image";
@@ -13,6 +12,7 @@ import { AiOutlineLoading } from "react-icons/ai";
 function Product({ params }) {
   const cart = useCart();
   const [product, setProduct] = useState({});
+  const [loadingProduct, setLoadingProduct] = useState(true);
 
   async function getProduct() {
     useIsLoading(true);
@@ -21,6 +21,7 @@ function Product({ params }) {
     const prod = await response.json();
     setProduct(prod);
     cart.isItemAddedToCart(prod);
+    setLoadingProduct(false);
     useIsLoading(false);
   }
 
@@ -59,15 +60,30 @@ function Product({ params }) {
                   />
                 </div>
               ) : (
-                <div className="bg-red-500 p-4 md:p-10 flex justify-center items-center rounded-lg  w-full h-[310px] sm:h-[38px] md:h-[400px] lg:h-[490px]">
-                  <AiOutlineLoading size={55} className="animate-spin" />
+                <div className="bg-red-500 p-4 md:p-10 flex justify-center items-center rounded-lg  w-[80%] h-[310px] sm:h-[38px] md:h-[400px] lg:h-[490px]">
+                  {loadingProduct ? (
+                    <AiOutlineLoading
+                      size={55}
+                      className="animate-spin text-white"
+                    />
+                  ) : null}
                 </div>
               )}
               <div className="md:px-4 w-full mt-2 md:mt-0 flex flex-col  md:items-start gap-2 md:ml-10">
-                <div className="font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
-                  Pizza {product?.title}
+                <div className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                  {loadingProduct ? (
+                    <div className="w-[200px] h-12 md:w-[400px] md:h-24 bg-gray-300 animate-pulse" />
+                  ) : (
+                    `Pizza ${product?.title}`
+                  )}
                 </div>
-                <div>{product.description}</div>
+                <div>
+                  {loadingProduct ? (
+                    <div className="w-[300px] h-6 bg-gray-300 animate-pulse" />
+                  ) : (
+                    product.description
+                  )}
+                </div>
 
                 <div className="py-1" />
                 <div className="flex  px-4 flex-col">
@@ -76,18 +92,27 @@ function Product({ params }) {
                       src="/images/ingredients.png"
                       width={22}
                       height={22}
-                      className=""
+                      alt="ingredients"
                     />
                     Ingredientes:
                   </span>
                   <ul className="text-lx text-black gap-2">
-                    {ingredients.map((i) => (
-                      <li className=""> - {i}</li>
-                    ))}
+                    {loadingProduct ? (
+                      <>
+                        <li className="w-[100px] h-4 bg-gray-300 animate-pulse mb-2" />
+                        <li className="w-[100px] h-4 bg-gray-300 animate-pulse mb-2" />
+                        <li className="w-[100px] h-4 bg-gray-300 animate-pulse mb-2" />
+                        <li className="w-[100px] h-4 bg-gray-300 animate-pulse mb-2" />
+                      </>
+                    ) : (
+                      ingredients.map((i) => <li key={i}> - {i}</li>)
+                    )}
                   </ul>
                 </div>
                 <div className="font-bold">
-                  {product?.glutenFree === false ? (
+                  {loadingProduct ? (
+                    <div className="w-[150px] h-5 bg-gray-300 animate-pulse" />
+                  ) : product?.glutenFree === false ? (
                     <div className="flex">
                       {" "}
                       <LuWheat size={22} />
@@ -102,11 +127,13 @@ function Product({ params }) {
                   )}
                 </div>
                 <div className="flex items-center mt-5">
-                  {product?.price ? (
+                  {loadingProduct ? (
+                    <div className="w-[100px] h-10 bg-gray-300 animate-pulse" />
+                  ) : (
                     <div className="font-bold text-4xl ml-2">
-                      R${(product?.price).toFixed(2)}
+                      R${product?.price?.toFixed(2)}
                     </div>
-                  ) : null}
+                  )}
                 </div>
                 <div className="w-full flex justify-center items-center md:w-auto ">
                   <button
