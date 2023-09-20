@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useUser } from "@/app/context/user";
 import { BsChevronDown } from "react-icons/bs";
 import { useState } from "react";
-import { useCart } from "@/app/context/cart";
 
 function TopMenu() {
   const [isMenu, setIsMenu] = useState(false);

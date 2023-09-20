@@ -1,10 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
-
 import SimilasProducts from "../components/SimilarProducts";
 import CartItem from "../components/CartItem";
-import { productionBrowserSourceMaps } from "@/next.config.js";
 import { useRouter } from "next/navigation";
 import { useCart } from "../context/cart";
 import useIsLoading from "../hooks/useIsLoading";
@@ -63,7 +61,7 @@ function Cart() {
                       FINALIZAR E PAGAR!
                     </button>
                     <div className="flex items-center justify-between mt-4 text-xl mb-1">
-                      <div>Items ({cart.getCart().length})</div>
+                      <div>Items ({cart.cartCount()})</div>
                       <div>R${cart.cartTotal().toFixed(2)}</div>
                     </div>
                     <div className="flex items-center justify-between mb-4 text-sm">

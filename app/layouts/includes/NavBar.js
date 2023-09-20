@@ -41,6 +41,7 @@ export default function NavBar() {
       alert(error);
     }
   }, 500);
+
   return (
     <>
       <div id="NavBar">
@@ -174,24 +175,6 @@ export default function NavBar() {
                   : "fixed left-[-100%] top-0 p-10 ease-out duration-500 z-50"
               }>
               <div className="w-full flex items-center justify-between">
-                <div>
-                  <ClientOnly>
-                    <div className="relative">
-                      <Link href="/cart">
-                        <AiOutlineShoppingCart size={30} />
-                        {cart.cartCount() > 0 ? (
-                          <div className="rounded-full absolute text-[10px] -top-[5px] pt-[2px]  -right-[5px] bg-red-500 w-[20px] h-[18px] text-gray-800 font-bold">
-                            <div className="flex items-center justify-center">
-                              {cart.cartCount()}
-                            </div>
-                          </div>
-                        ) : (
-                          <div></div>
-                        )}
-                      </Link>
-                    </div>
-                  </ClientOnly>
-                </div>
                 <div onClick={handleNav} className="cursor-pointer">
                   <AiOutlineClose size={25} className="top-1 left-1" />
                 </div>

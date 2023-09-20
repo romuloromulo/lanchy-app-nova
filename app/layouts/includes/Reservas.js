@@ -5,9 +5,10 @@ import { MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GiPositionMarker } from "react-icons/gi";
 import Image from "next/image";
+import ReactInputMask from "react-input-mask";
 
 const Reservas = () => {
-  const [enviar, setEnviar] = useState("Reservar");
+  const [enviar, setEnviar] = useState("RESERVAR");
   const [styleButton, setStyleButton] = useState(
     "bg-black text-white  hover:bg-white hover:border hover:text-black z-10 "
   );
@@ -30,13 +31,13 @@ const Reservas = () => {
         (result) => {
           if (result.text === "OK") {
             setTimeout(() => {
-              setEnviar("ok!");
+              setEnviar("RESERVADO!");
               setStyleButton(
                 "bg-green-500 text-black  hover:bg-green-700 focus:ring-green-900"
               );
               e.target.reset();
               setTimeout(() => {
-                setEnviar("Reservar");
+                setEnviar("RESERVAR");
                 setStyleButton(
                   "bg-black text-white  hover:bg-white hover:border hover:text-black "
                 );
@@ -124,10 +125,11 @@ const Reservas = () => {
               <FormInput
                 inputLabel="Telefone"
                 labelFor="numeric"
-                inputType="number"
+                inputType="tel"
                 inputId="numero"
                 inputName="numero"
-                placeholderText="(99) 99999-9999"
+                placeholderText="(99)99999-9999"
+                mask="(99)99999-9999"
                 ariaLabelName="Numero"
               />
               <FormInput
@@ -152,10 +154,11 @@ const Reservas = () => {
               <FormInput
                 inputLabel="Horário"
                 labelFor="horario"
-                inputType="text"
+                inputType="time"
                 inputId="horario"
                 inputName="horario"
                 placeholderText="Ex. 14:00"
+                mask="00:00"
                 ariaLabelName="Horário"
               />
             </div>

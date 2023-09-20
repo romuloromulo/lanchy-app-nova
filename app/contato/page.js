@@ -14,7 +14,7 @@ function page() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    setEnviar("Enviando... ");
+    setEnviar("ENVIANDO... ");
     setStyleButton("text-black bg-amber-400 font-bold border-black ");
 
     emailjs
@@ -28,13 +28,13 @@ function page() {
         (result) => {
           if (result.text === "OK") {
             setTimeout(() => {
-              setEnviar("ok!");
+              setEnviar("ENVIADO!");
               setStyleButton(
                 "bg-green-500 text-black  hover:bg-green-700 focus:ring-green-900"
               );
               e.target.reset();
               setTimeout(() => {
-                setEnviar("Reservar");
+                setEnviar("ENVIAR");
                 setStyleButton(
                   "bg-black text-white  hover:bg-white hover:border hover:text-black "
                 );
@@ -70,7 +70,7 @@ function page() {
         <div className="lg:flex-row flex flex-col items-center justify-center gap-12 md:px-10 px-4 mb-10 w-full">
           <form
             ref={form}
-            onSubmit={() => {}}
+            onSubmit={sendEmail}
             className="max-w-[50rem] w-full p-2 sm:w-2/3 shadow-xl bg-white md:h-[45rem] lg:p-20 bg-secondary-light dark:bg-secondary-dark text-left pt-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormInput
@@ -91,14 +91,14 @@ function page() {
                 placeholderText="Seu email"
                 ariaLabelName="Email"
               />
-
               <FormInput
                 inputLabel="Telefone"
                 labelFor="numeric"
-                inputType="number"
+                inputType="tel"
                 inputId="numero"
                 inputName="numero"
-                placeholderText="(12) 91234-1234"
+                placeholderText="(99)99999-9999"
+                mask="(99)99999-9999"
                 ariaLabelName="Numero"
               />
               <FormInput

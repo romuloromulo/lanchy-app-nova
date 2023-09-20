@@ -11,49 +11,34 @@ const Provider = ({ children }) => {
 
   const getCart = () => {
     let cart = [];
-
+    let totalAmount = 0;
     if (typeof localStorage !== "undefined") {
       cart = JSON.parse(localStorage.getItem("cart")) || [];
     }
+
     return cart;
   };
 
-  // ... (código existente)
-  function addToCart(product, quantity) {
+  function addToCart(product, amount) {
     let cart = [];
+    if (!amount) amount = 1;
 
     if (typeof localStorage !== "undefined") {
       cart = JSON.parse(localStorage.getItem("cart")) || [];
     }
 
-    const existingItemIndex = cart.findIndex((item) => item.id === product.id);
+    const existingItem = cart.find((item) => item.id === product.id);
 
-    if (existingItemIndex !== -1) {
-      cart[existingItemIndex].quantity += quantity;
+    if (existingItem) {
+      existingItem.amount = amount;
     } else {
-      const newItem = { ...product, quantity };
-      cart.push(newItem);
+      cart.push({ ...product, amount: amount });
     }
-
+    console.log(cart);
     localStorage.setItem("cart", JSON.stringify(cart));
     isItemAddedToCart(product);
     router.refresh();
   }
-
-  // ... (resto do código)
-
-  // function addToCart(product) {
-  //   let cart = [];
-
-  //   if (typeof localStorage !== "undefined") {
-  //     cart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   }
-
-  //   cart.push(product);
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-  //   isItemAddedToCart(product);
-  //   router.refresh();
-  // }
 
   function removeFromCart(product) {
     let cart = [];
@@ -91,23 +76,26 @@ const Provider = ({ children }) => {
       cart = JSON.parse(localStorage.getItem("cart")) || [];
     }
 
-    return cart.length;
+    return cart.reduce((curNumber, item) => {
+      return curNumber + item.amount;
+    }, 0);
   }
 
   function cartTotal() {
     let total = 0;
     let cart = [];
+
     if (typeof localStorage !== "undefined") {
       cart = JSON.parse(localStorage.getItem("cart")) || [];
     }
 
     for (let i = 0; i < cart.length; i++) {
-      const element = cart[i];
-      total += element.price;
+      const item = cart[i];
+      total += item.price * item.amount;
     }
+
     return total;
   }
-
   function clearCart() {
     localStorage.removeItem("cart");
     router.refresh();

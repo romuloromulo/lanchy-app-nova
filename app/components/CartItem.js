@@ -4,11 +4,17 @@ import { toast } from "react-toastify";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function CartItem({ product }) {
-  const [quantity, setQuantity] = useState(1);
+  const [amount, setAmount] = useState(1);
+  useEffect(() => {
+    setAmount(product.amount || 1);
+  }, [product]);
 
   const cart = useCart();
+
+  console.log(cart.getCart());
 
   function removeItemFromCart() {
     let res = confirm(
@@ -20,14 +26,10 @@ function CartItem({ product }) {
     }
   }
 
-  function handleQuantityChange(event) {
-    setQuantity(parseInt(event.target.value, 10));
-    addToCartHandler(quantity);
-  }
-  function addToCartHandler() {
-    // Chame a função addToCart do contexto do carrinho com o produto e a quantidade selecionada
-    cart.addToCart(product, quantity);
-    toast.success("Adicionado ao carrinho", { autoClose: 1500 });
+  function handleAmountChange(event) {
+    const selectedAmount = parseInt(event.target.value, 10);
+    cart.addToCart(product, selectedAmount); // Atualiza o carrinho com a quantidade selecionada
+    toast.success("Adicionado ao carrinho", { autoClose: 1000 });
   }
 
   let options = [];
@@ -66,15 +68,15 @@ function CartItem({ product }) {
         </div>
 
         <div className="flex items-center">
-          <label for="pizzamount" className="font-semibold mr-2">
+          <label htmlFor="pizzamount" className="font-semibold mr-2">
             Quantidade:
           </label>
 
           <select
-            onChange={handleQuantityChange}
+            onChange={handleAmountChange}
+            value={amount}
             name="pizzamount"
             id="pizzamount"
-            value={quantity}
             className="bg-transparent border">
             {options}
           </select>
