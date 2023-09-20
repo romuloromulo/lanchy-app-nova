@@ -28,8 +28,7 @@ function CartItem({ product }) {
 
   function handleAmountChange(event) {
     const selectedAmount = parseInt(event.target.value, 10);
-    cart.addToCart(product, selectedAmount); // Atualiza o carrinho com a quantidade selecionada
-    toast.success("Adicionado ao carrinho", { autoClose: 1000 });
+    cart.addToCart(product, selectedAmount);
   }
 
   let options = [];

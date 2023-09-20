@@ -72,10 +72,7 @@ export default function NavBar() {
                       onChange={handleSearchName}
                     />
                     {isSearching ? (
-                      <BiLoaderCircle
-                        className="mr-2 animation-spin"
-                        size={22}
-                      />
+                      <BiLoaderCircle className="mr-2 animate-spin" size={22} />
                     ) : null}
 
                     {items.length > 0 ? (
@@ -84,7 +81,7 @@ export default function NavBar() {
                           <div className="p-1" key={item.id}>
                             <Link
                               href={`/product/${item.id}`}
-                              className="flex items-center justify-between w-full cursor-pointer hover:bg-gray-200 p-1 px-2">
+                              className="flex items-center justify-between w-full cursor-pointer border-b border-amber-200  hover:border-red-500 p-1 px-2">
                               <div className="flex items-center">
                                 <img
                                   className="rounded-md"
