@@ -32,7 +32,7 @@ const FormInput = ({
         required
         value={value}
         mask={mask}
-        maxlength={maxlength}
+        maxLength={maxlength}
       />
     </div>
   );
