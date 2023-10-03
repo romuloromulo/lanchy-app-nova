@@ -6,7 +6,12 @@ export async function middleware(req) {
   const supabase = createMiddlewareClient({ req, res });
   const { data } = await supabase.auth.getSession();
 
-  if (data?.session && req.nextUrl.pathname.startsWith("/auth")) {
+  if (
+    data?.session &&
+    req.nextUrl.pathname.startsWith(
+      "/auth" || req.nextUrl.pathname.startsWith("/sign-up")
+    )
+  ) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
@@ -23,3 +28,7 @@ export async function middleware(req) {
 
   return res;
 }
+
+export const config = {
+  matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
+};

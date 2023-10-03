@@ -24,18 +24,24 @@ function TopMenu() {
     }
 
     return (
-      <Link
-        href="/auth"
-        className="flex items-center gap-2 hover:underline   w-5
-    ease-in-out duration-500 
-    cursor-pointer mr-4 lg:px-10">
-        <div>Login</div>
-        <div>
-          {user && user?.id ? (
-            <BsChevronDown className="translate-x-[-50%] w-2" />
-          ) : null}
-        </div>
-      </Link>
+      <div className="flex items-center justify-center">
+        <Link href="sign-up">
+          <div
+            className="flex items-center  
+        ease-in-out duration-500 
+        cursor-pointer text-sm bg-white h-10 my-2 px-4 border-2 border-white hover:border-black hover:bg-transparent rounded-lg font-bold ">
+            Criar Conta
+          </div>
+        </Link>
+        <Link href="/auth">
+          <div
+            className="flex items-center  hover:underline   
+      duration-100 
+        cursor-pointer text-sm mx-4 font-semibold transform hover:scale-115 transition-transform">
+            Login
+          </div>
+        </Link>
+      </div>
     );
   }
 
@@ -44,7 +50,28 @@ function TopMenu() {
       <div className="flex items-center justify-between w-full mx-auto h-14 max-w-[80rem] px-5">
         <ul
           id="TopMenuLeft"
-          className="flex items-center md:text-lg  font-bold text-gray-800 px-2 h-8 hover:text-yellow-50 ease-in">
+          className="flex items-center md:text-lg text-sm font-bold text-gray-800 px-2 h-8 ">
+          <li className="md:pr-5 pr-2 text-sm md:text-lg">
+            PLATAFORMAS ONLINE:
+          </li>
+          <li>
+            <a
+              href="https://www.ifood.com.br/"
+              target={"_blank"}
+              rel={"noreferrer"}>
+              <Image
+                className="grayscale hover:grayscale-0 duration-300"
+                src="/images/ifood-43.png"
+                alt="ifood"
+                width={52}
+                height={52}
+              />
+            </a>
+          </li>
+        </ul>
+        <ul
+          id="TopMenuRight"
+          className="flex items-center  text-gray-800 px-2 h-8 ">
           <li className="relative px-3">
             {isLoggedIn()}
 
@@ -84,28 +111,6 @@ function TopMenu() {
           <li className="px-3 hover:underline cursor-pointer">
             Help & Contact
           </li> */}
-        </ul>
-
-        <ul
-          id="TopMenuRight"
-          className="flex items-center md:text-lg text-sm font-bold text-gray-800 px-2 h-8 ">
-          <li className="md:pr-5 pr-2 text-sm md:text-lg">
-            PLATAFORMAS ONLINE:
-          </li>
-          <li>
-            <a
-              href="https://www.ifood.com.br/"
-              target={"_blank"}
-              rel={"noreferrer"}>
-              <Image
-                className="grayscale hover:grayscale-0 duration-300"
-                src="/images/ifood-43.png"
-                alt="ifood"
-                width={52}
-                height={52}
-              />
-            </a>
-          </li>
         </ul>
       </div>
     </div>
