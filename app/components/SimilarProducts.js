@@ -29,7 +29,7 @@ function SimilasProducts() {
 
         <div className="max-w-[1200px] mx-auto">
           <div className="font-bold text-2xl py-2 mt-4 text-black">
-            Talve você também goste:
+            Pizzas que talvez goste:
           </div>
 
           {products.length > 0 ? (
