@@ -4,11 +4,36 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import MainLayout from "../layouts/MainLayout";
 
 export default function AuthPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const supabase = createClientComponentClient();
+  const router = useRouter();
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  async function signInWithEmail() {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+    if (!error) {
+      // Registro bem-sucedido, redirecione o usuário para a página desejada
+      router.push(window.location.origin);
+    }
+    // console.log("DATA SIGNUP:", data, "ERRO SIGNUP:", error);
+  }
 
   let reference;
 
@@ -22,6 +47,7 @@ export default function AuthPage() {
         <div className="bg-amber-400 h-auto py-5 border-2 rounded-md shadow-lg flex flex-col items-center justify-center">
           <form
             id="credenciais"
+            onSubmit={signInWithEmail}
             className="flex flex-col mx-auto justify-center items-center">
             <div className="flex flex-col">
               <label htmlFor="email" className="font-bold">
@@ -30,6 +56,7 @@ export default function AuthPage() {
               <input
                 id="email"
                 type="text"
+                onChange={handleEmailChange}
                 required
                 className="h-10 w-64 mt-2 p-5 rounded-md"
               />
@@ -41,6 +68,7 @@ export default function AuthPage() {
               <input
                 id="senha"
                 type="password"
+                onChange={handlePasswordChange}
                 required
                 className="h-10 w-64 mt-2 p-5 rounded-md"
               />

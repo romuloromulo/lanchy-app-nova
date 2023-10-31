@@ -29,6 +29,7 @@ function TopMenu() {
   };
 
   const user = useUser();
+  // console.log("user aqui", user);
 
   function isLoggedIn() {
     if (user && user?.id) {
@@ -36,7 +37,9 @@ function TopMenu() {
         <button
           className="flex items-center gap-2 duration-300  cursor-pointer"
           onClick={() => setIsMenu(!isMenu)}>
-          <div className=" whitespace-nowrap ">Olá, {user.name}</div>
+          <div className=" whitespace-nowrap ">
+            Olá, {user.name || user.email}
+          </div>
           <BsChevronDown />
         </button>
       );
