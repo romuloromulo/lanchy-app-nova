@@ -2,13 +2,17 @@
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
+import { useRouter } from "next/navigation";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState("Criar");
 
+  const router = useRouter();
   const supabase = createClientComponentClient();
 
   const handleEmailChange = (event) => {
@@ -21,22 +25,28 @@ export default function SignUpPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-
+    setLoading(
+      <p className="flex items-center justify-center">
+        Criando...
+        <AiOutlineLoading3Quarters size={19} className="animate-spin ml-2 " />
+      </p>
+    );
     if (typeof window !== "undefined") {
       const { data, error } = await supabase.auth.signUp({
         email: email,
         password: password,
-        options: {
-          emailRedirectTo: window.location.origin,
-        },
       });
 
-      console.log(data, error);
-    } else {
-      console.log("falhou");
-    }
+      if (!error) {
+        setLoading("Pronto!");
+        // Registro bem-sucedido, redirecione o usuário para a página desejada
+        router.push(window.location.origin);
+      }
 
-    console.log("Submitted:", { email, password });
+      // console.log("DATA:", data, "ERRO:", error);
+    } else {
+      console.log("Erro! Por favor, tente mais tarde.");
+    }
   }
 
   return (
@@ -79,7 +89,7 @@ export default function SignUpPage() {
             <button
               type="submit"
               className="mt-5 bg-red-500 text-white hover:bg-transparent border-2 border-red-500  hover:border-black py-2 px-12 rounded-md hover:text-black font-bold text-lg duration-300 w-full">
-              Criar
+              {loading}
             </button>
             <p className="text-sm flex mt-2">
               Já possui uma conta?
