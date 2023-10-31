@@ -54,12 +54,7 @@ function Cart() {
                 <div
                   id="GoToCheckout"
                   className="flex flex-col justify-center items-center w-full h-auto  ">
-                  <div className="bg-red-500 p-4 border-black border-2 w-[90%] flex flex-col  justify-center">
-                    <button
-                      onClick={() => goToCheckout()}
-                      className="flex items-center border-2 border-black justify-center bg-amber-400 w-[90%] text-black font-bold p-3 mt-4 py-5 hover:bg-amber-500 duration-300 mx-auto">
-                      FINALIZAR E PAGAR!
-                    </button>
+                  <div className="bg-red-500 p-4 rounded-md shadow-lg w-[90%] flex flex-col  justify-center">
                     <div className="flex items-center justify-between mt-4 text-xl mb-1">
                       <div>Items ({cart.cartCount()})</div>
                       <div>R${cart.cartTotal().toFixed(2)}</div>
@@ -75,6 +70,11 @@ function Cart() {
                       <div>Subtotal</div>
                       <div>R${cart.cartTotal().toFixed(2)}</div>
                     </div>
+                    <button
+                      onClick={() => goToCheckout()}
+                      className="flex items-center rounded-lg shadow-md justify-center bg-amber-400 w-[90%] text-black font-bold p-3 mt-4 py-5 hover:bg-amber-500 duration-300 mx-auto">
+                      FINALIZAR E PAGAR!
+                    </button>
                   </div>
                 </div>
               ) : (

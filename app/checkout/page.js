@@ -154,7 +154,7 @@ function Checkout() {
 
             <div className="relative flex md:flex-row flex-col md:items-baseline items-center gap-4 justify-between mx-auto w-full">
               <div className="md:w-[65%] w-[90%]">
-                <div className="bg-red-500 p-4 border-2 border-black">
+                <div className="bg-red-500 p-4 shadow-lg rounded-md">
                   <div className="text-xl font-bold mb-2">
                     Endereço de entrega
                   </div>
@@ -163,7 +163,7 @@ function Checkout() {
                     {!isLoadingAddress ? (
                       <Link
                         href="/address"
-                        className="text-white text-lg font-bold underline">
+                        className="text-white text-lg font-bold underline hover:text-zinc-200 duration-300">
                         {addressDetails.name
                           ? "Atualizar endereço"
                           : "Adicionar endereço"}
@@ -200,7 +200,7 @@ function Checkout() {
 
               <div
                 id="PlaceOrder"
-                className="relative -top-[6px] md:w-[35%] w-[90%] border-2 border-black ">
+                className="relative -top-[6px] md:w-[35%] w-[90%] shadow-lg rounded-md ">
                 <ClientOnly>
                   <div className="p-4">
                     <div className="flex items-baseline justify-between text-sm mb-1">
@@ -223,7 +223,7 @@ function Checkout() {
 
                     <form onSubmit={pay}>
                       <div
-                        className="border-2 border-black p-2 rounded-sm"
+                        className="border-2 border-zinc-400 p-2 rounded-md"
                         id="card-element"
                       />
 
@@ -235,7 +235,7 @@ function Checkout() {
 
                       <button
                         type="submit"
-                        className="mt-4 bg-amber-400 text-lg font-bold w-full text-black p-3 border-2 hover:bg-amber-500 duration-300 border-black">
+                        className="mt-4 bg-amber-400 text-lg font-bold w-full text-black p-3 border-2 rounded-md hover:bg-amber-500 duration-300 border-black">
                         <div>Confirmar e pagar</div>
                       </button>
                     </form>

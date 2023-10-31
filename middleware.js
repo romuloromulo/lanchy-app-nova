@@ -6,8 +6,6 @@ export async function middleware(req) {
   const supabase = createMiddlewareClient({ req, res });
   const { data } = await supabase.auth.getSession();
 
-  console.log('RESPOSTA AQUI:', res)
-
   if (
     data?.session &&
     req.nextUrl.pathname.startsWith(

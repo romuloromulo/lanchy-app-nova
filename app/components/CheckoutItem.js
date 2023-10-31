@@ -8,7 +8,7 @@ export default function CheckoutItem({ product }) {
 
   return (
     <>
-      <div className="flex justify-start mb-2 border-2 border-black bg-amber-400 p-4">
+      <div className="flex justify-start mb-2 shadow-lg rounded-md bg-amber-400 p-4">
         <Image
           width={150}
           height={150}

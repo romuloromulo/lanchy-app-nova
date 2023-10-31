@@ -24,6 +24,7 @@
     "@supabase/supabase-js": "^2.32.0",
     "autoprefixer": "10.4.14",
     "debounce": "^1.2.1",
+    "framer-motion": "^10.16.4",
     "moment": "^2.29.4",
     "next": "13.4.13",
     "plaiceholder": "^3.0.0",

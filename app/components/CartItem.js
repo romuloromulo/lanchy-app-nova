@@ -40,7 +40,7 @@ function CartItem({ product }) {
     );
   }
   return (
-    <div className="relative flex justify-start my-2 overflow-hidden border-2 border-black bg-amber-400 w-[90%]p-4 md:p-6">
+    <div className="relative flex justify-start my-2 overflow-hidden rounded-lg shadow-lg bg-amber-400 w-[90%]p-4 md:p-6">
       <Link href={`/product/${product.id}`}>
         <Image
           src={product?.url}
@@ -81,7 +81,7 @@ function CartItem({ product }) {
           </select>
         </div>
         <button onClick={() => removeItemFromCart()} className=" text-white">
-          <div className="absolute right-0 bottom-0 p-4 text-sm bg-red-500  hover:bg-red-700 duration-300 font-bold">
+          <div className="absolute right-0 bottom-0 p-4 text-sm rounded-tl-md bg-red-500  hover:bg-red-700 duration-300 font-bold">
             REMOVER
           </div>
         </button>
