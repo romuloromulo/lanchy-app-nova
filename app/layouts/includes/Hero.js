@@ -7,8 +7,8 @@ function Hero() {
   return (
     <section
       id="Hero"
-      className="max-w-[1500px] min-h-screen lg:mt-0 mt-16 mx-auto overflow-hidden lg:overflow-visible pb-8">
-      <div className="lg:flex lg:flex-row flex-col flex  justify-center items-center lg:min-h-screen">
+      className="max-w-[1500px] lg:mt-0 mt-16 mx-auto overflow-hidden lg:overflow-visible pb-8">
+      <div className="lg:flex lg:flex-row flex-col flex  justify-center items-center lg:min-h-screen py-8">
         <div
           id="Description"
           className="flex flex-col text-center lg:text-start gap-5 lg:gap-0  w-full  p-2 lg:w-4/5    justify-center lg:translate-x-12  z-10">

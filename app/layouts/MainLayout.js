@@ -5,7 +5,6 @@ import NavBar from "./includes/NavBar";
 import Footer from "./includes/Footer";
 import Loading from "../components/loading";
 import { useEffect, useState } from "react";
-import Head from "next/head";
 
 export default function MainLayout({ children }) {
   const [isLoading, setIsLoading] = useState(false);

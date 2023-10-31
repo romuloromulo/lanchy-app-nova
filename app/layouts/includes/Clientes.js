@@ -50,7 +50,7 @@ function Clientes() {
   return (
     <section
       id="Clients"
-      className="md:p-5 min-h-screen  bg-white w-full flex items-center justify-center">
+      className="md:p-5 lg:min-h-screen  bg-white w-full flex items-center justify-center">
       <div className="max-w-[1500px] h-full flex flex-col items-center justify-center ">
         <div className="p-2 md:w-3/5 mt-5 text-center">
           <h1 className=" text-2xl sm:text-3xl md:text-5xl font-extrabold text-black md:mb-6">

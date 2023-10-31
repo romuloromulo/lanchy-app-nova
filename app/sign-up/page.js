@@ -21,22 +21,19 @@ export default function SignUpPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    try {
-      if (typeof window !== "undefined") {
-        const { data, error } = await supabase.auth.signUp({
-          email: email,
-          password: password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/auth/callback`,
-          },
-        });
 
-        console.log(data, error);
-      } else {
-        console.log("falhou");
-      }
-    } catch (error) {
-      console.log(error);
+    if (typeof window !== "undefined") {
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          emailRedirectTo: window.location.origin,
+        },
+      });
+
+      console.log(data, error);
+    } else {
+      console.log("falhou");
     }
 
     console.log("Submitted:", { email, password });
