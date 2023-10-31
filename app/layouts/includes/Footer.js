@@ -87,8 +87,15 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="m-auto border-t border-gray-800 w-auto md:w-[50rem] botton-2 text-center mt-20 text-white text-lg p-3">
-          © Criado por Rômulo Viana.
+
+        <div className="m-auto border-t border-gray-800 w-auto md:w-[50rem] botton-2 text-center mt-20 ">
+          <p className="text-white text-lg p-3">
+            <Link
+              href="https://portfolio-romulo.vercel.app/"
+              className=" hover:text-amber-500 duration-300">
+              © Criado por Rômulo Viana.
+            </Link>
+          </p>
         </div>
       </div>
     </>
