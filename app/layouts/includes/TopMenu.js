@@ -17,7 +17,7 @@ function TopMenu() {
         <button
           className="flex items-center gap-2 duration-300  cursor-pointer"
           onClick={() => (!isMenu ? setIsMenu(true) : setIsMenu(false))}>
-          <div>Olá, {user.name}</div>
+          <div className=" whitespace-nowrap ">Olá, {user.name}</div>
           <BsChevronDown />
         </button>
       );
@@ -50,11 +50,9 @@ function TopMenu() {
       <div className="flex items-center justify-between w-full mx-auto h-14 max-w-[80rem] px-5">
         <ul
           id="TopMenuLeft"
-          className="flex items-center md:text-lg text-sm font-bold text-gray-800 px-2 h-8 ">
-          <li className="md:pr-5 pr-2 text-sm md:text-lg">
+          className="flex items-center md:text-lg text-sm font-bold text-gray-800 sm:px-2 h-8 ">
+          <li className="md:pr-5 pr-2 text-sm md:text-lg flex justify-center items-center whitespace-nowrap">
             PLATAFORMAS ONLINE:
-          </li>
-          <li>
             <a
               href="https://www.ifood.com.br/"
               target={"_blank"}
@@ -65,21 +63,22 @@ function TopMenu() {
                 alt="ifood"
                 width={52}
                 height={52}
+                loading="lazy"
               />
             </a>
           </li>
         </ul>
         <ul
           id="TopMenuRight"
-          className="flex items-center  text-gray-800 px-2 h-8 ">
-          <li className="relative px-3">
+          className="flex items-center  text-gray-800 px-2 h-8">
+          <li className="relative px-3 ">
             {isLoggedIn()}
 
             <div
               id="AuthDropdown"
               className={`${
                 isMenu ? "visible" : "hidden"
-              } placeholder:first-letter absolute bg-amber-400 w-52 text-gray-800  duration-1000 z-40 top-5 left-0 border mt-3 border-black shadow-lg`}>
+              } placeholder:first-letter absolute bg-amber-400 overflow-hidden w-52 rounded-lg  border border-black text-gray-800  duration-1000 z-40 top-5 left-0 translate-x-[-3rem]  mt-3  shadow-lg`}>
               <div className="flex items-center justify-start gap-1 p-3 bg-amber-400">
                 <Image
                   className="rounded-full"

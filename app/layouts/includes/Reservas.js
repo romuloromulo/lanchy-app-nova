@@ -61,8 +61,8 @@ const Reservas = () => {
         id="Reservas"
         className=" bg-black relative flex  w-full  py-24 px-4 sm:px-12 overflow-hidden justify-center items-center">
         {/* <div className="w-[30rem] h-[60rem] bg-white"> */}
-        <div className="flex   md:flex-row flex-col gap-5 max-w-[1500px] h-full justify-center md:items-start">
-          <div className="md:w-[45%]  sm:p-2 flex flex-col justify-center h-full">
+        <div className="flex   lg:flex-row flex-col gap-5 max-w-[1500px] h-full justify-center md:items-start">
+          <div className="lg:w-[45%]  sm:p-2 flex flex-col justify-center h-full">
             <div>
               <h1 className="text-4xl sm:text-5l md:text-5xl font-extrabold text-white mb-3">
                 Reserve uma mesa agora!
@@ -100,7 +100,7 @@ const Reservas = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className=" bg-white mt-4 h-4/5  bg-secondary-light dark:bg-secondary-dark shadow-xl w-full md:w-auto  text-left">
+            className=" bg-white mt-4 h-4/5  bg-secondary-light dark:bg-secondary-dark shadow-xl w-full lg:w-auto  text-left">
             <div className="grid grid-cols-1 p-4 mt-2 sm:grid-cols-2 gap-2">
               <FormInput
                 inputLabel="Nome completo"

@@ -45,7 +45,7 @@ export default function NavBar() {
   return (
     <>
       <div id="NavBar">
-        <nav className="  flex items-center justify-between w-full mx-auto max-w-[80rem] ls:px-5 md:px-5 lg:px-16 py-5 px-5 mb-5 mt-4">
+        <nav className="flex items-center justify-between w-full mx-auto max-w-[80rem] ls:px-5 md:px-5 lg:px-16 py-5 px-5 mb-5 mt-4">
           <div id="MenuLeft" className="flex items-center">
             <div className="lg:flex lg:flex-row flex flex-col items-start justify-start lg:gap-5 max-w-[1150px] w-full mx-auto">
               <Link href="/">
