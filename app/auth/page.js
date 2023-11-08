@@ -25,7 +25,7 @@ export default function AuthPage() {
 
   async function signInWithEmail(e) {
     e.preventDefault();
-    console.log("submitendo!");
+    // console.log("submitendo!");
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,

@@ -14,7 +14,7 @@ function CartItem({ product }) {
 
   const cart = useCart();
 
-  console.log(cart.getCart());
+  // console.log(cart.getCart());
 
   function removeItemFromCart() {
     let res = confirm(

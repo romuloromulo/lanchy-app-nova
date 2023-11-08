@@ -34,7 +34,7 @@ const Provider = ({ children }) => {
     } else {
       cart.push({ ...product, amount: amount });
     }
-    console.log(cart);
+    // console.log(cart);
     localStorage.setItem("cart", JSON.stringify(cart));
     isItemAddedToCart(product);
     router.refresh();

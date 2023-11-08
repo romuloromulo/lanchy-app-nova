@@ -19,7 +19,7 @@ const Provider = ({ children }) => {
 
   const getCurrentSession = async () => {
     const res = await supabaseClient.auth.getSession();
-    console.log("RESPOSTA:", res);
+    // console.log("RESPOSTA USER CONTEXT:", res);
     if (res && res.data.session) {
       return res.data.session;
     }

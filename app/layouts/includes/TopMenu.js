@@ -38,7 +38,7 @@ function TopMenu() {
           className="flex items-center gap-2 duration-300  cursor-pointer"
           onClick={() => setIsMenu(!isMenu)}>
           <div className=" whitespace-nowrap ">
-            Olá, {user.name || user.email}
+            Olá, {user?.name || user?.email}
           </div>
           <BsChevronDown />
         </button>
@@ -105,7 +105,7 @@ function TopMenu() {
               id="AuthDropdown"
               className={`${
                 isMenu ? "visible" : "hidden"
-              } placeholder:first-letter absolute bg-amber-400 overflow-hidden w-52 rounded-lg  border border-black text-gray-800  duration-1000 z-40 top-5 left-0 mt-3  shadow-lg`}>
+              } placeholder:first-letter absolute bg-amber-400 overflow-hidden min-w-52 rounded-lg  border border-black text-gray-800  duration-1000 z-40 top-5 left-0 mt-3  shadow-lg`}>
               <div className="flex items-center justify-start gap-1 p-3 bg-amber-400">
                 <Image
                   className="rounded-full"
@@ -114,7 +114,9 @@ function TopMenu() {
                   height={50}
                   src={user?.picture || "https://picsum.photos/200"}
                 />
-                <div className="font-bold text-xs">{user?.name}</div>
+                <div className="font-bold text-xs">
+                  {user?.name || user?.email}
+                </div>
               </div>
 
               <div className="border-b border-black" />
