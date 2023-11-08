@@ -9,15 +9,12 @@ export default function CheckoutItem({ product }) {
   return (
     <>
       <div className="flex justify-start mb-2 shadow-lg rounded-md bg-amber-400 p-4">
-        <Image
-          width={150}
-          height={150}
-          className="rounded-md"
-          src={product.url}
-        />
+        <div className="my-auto">
+          <Image width={150} height={150} src={product.url} />
+        </div>
 
         <div className="overflow-hidden pl-2">
-          <div className="font-bold">Pizza de {product.title}</div>
+          <div className="font-bold">Pizza {product.title}</div>
 
           <div className="text-lg font-semibold ">
             <span className="font-bold">R${product.price.toFixed(2)}</span>

@@ -127,7 +127,7 @@ export default function Home() {
         <div
           id="AddressPage"
           className="mt-4 max-w-[600px] mx-auto px-2 py-10 h-screen">
-          <div className="mx-auto bg-amber-400 border-2 border-black p-3">
+          <div className="mx-auto bg-amber-400 border-2 border-black rounded-md shadow-lg p-3">
             <div className="text-xl text-bold mb-2">Endereço completo</div>
 
             <form onSubmit={submit}>
@@ -146,7 +146,7 @@ export default function Home() {
               <div className="mb-4">
                 <ClientOnly>
                   <TextInput
-                    className="w-full border-2 border-black mt-2"
+                    className="w-full border-2 border-black mt-2 rounded-md"
                     string={address}
                     placeholder="Endereço"
                     onUpdate={setAddress}
@@ -203,7 +203,7 @@ export default function Home() {
                                 p-3 
                             border-2 border-black
                             hover:bg-red-600
-                            duration-300
+                            duration-300 rounded-md
                                 ${
                                   isUpdatingAddress
                                     ? "bg-red-400"

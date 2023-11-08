@@ -6,11 +6,13 @@ import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import { useRouter } from "next/navigation";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import isEmailValid from "../hooks/isEmailValid";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState("Criar");
+  const [emailValidation, setEmailValidation] = useState("");
 
   const router = useRouter();
   const supabase = createClientComponentClient();
@@ -25,12 +27,17 @@ export default function SignUpPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    if (!isEmailValid(email)) {
+      setEmailValidation("Formato de e-mail inválido");
+      return; // Impede o envio do formulário se o e-mail for inválido
+    }
     setLoading(
       <p className="flex items-center justify-center">
         Criando...
         <AiOutlineLoading3Quarters size={19} className="animate-spin ml-2 " />
       </p>
     );
+
     if (typeof window !== "undefined") {
       const { data, error } = await supabase.auth.signUp({
         email: email,
@@ -38,9 +45,11 @@ export default function SignUpPage() {
       });
 
       if (!error) {
+        setEmailValidation("");
         setLoading("Pronto!");
         // Registro bem-sucedido, redirecione o usuário para a página desejada
         router.push(window.location.origin);
+        window.location.reload();
       }
 
       // console.log("DATA:", data, "ERRO:", error);
@@ -70,6 +79,7 @@ export default function SignUpPage() {
                 required
                 className="h-10 w-64 mt-2 p-5 rounded-md"
               />
+              <p className=" text-red-600 text-sm mt-1"> {emailValidation}</p>
             </div>
             <div className="mt-4 flex flex-col">
               <label htmlFor="senha" className="font-bold">

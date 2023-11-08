@@ -15,6 +15,7 @@ export default function TextInput({ string, placeholder, error, onUpdate }) {
                 p-3
                 placeholder-gray-500
                 focus:outline-none
+                rounded-md
             "
         value={string || ""}
         onChange={(event) => onUpdate(event.target.value)}

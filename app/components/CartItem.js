@@ -40,20 +40,22 @@ function CartItem({ product }) {
     );
   }
   return (
-    <div className="relative flex justify-start my-2 overflow-hidden rounded-lg shadow-lg bg-amber-400 w-[90%]p-4 md:p-6">
-      <Link href={`/product/${product.id}`}>
-        <Image
-          src={product?.url}
-          width={150}
-          height={150}
-          alt="Product Image"
-          className="rounded-md"
-        />
-      </Link>
-      <div className="overflow-hidden pl-2 w-full sm:w-2/3">
+    <div className="relative flex flex-col justify-center md:justify-start my-2 overflow-hidden rounded-lg shadow-lg bg-amber-400 w-[90%] p-4 md:p-6">
+      <div className="mx-auto">
+        <Link href={`/product/${product.id}`}>
+          <Image
+            src={product?.url}
+            width={150}
+            height={150}
+            alt="Product Image"
+            className="rounded-md"
+          />
+        </Link>
+      </div>
+      <div className="pl-2 w-full sm:w-2/3">
         <div className="flex items-center justify-between w-full">
           <Link href={`/product/${product.id}`}>
-            <div className="flex items-center font-semibold w-60 justify-between md:w-[400px] text-[16px] underline">
+            <div className="flex items-center font-semibold w-auto justify-between md:w-[400px] text-[16px] underline">
               {product?.title}
             </div>
           </Link>

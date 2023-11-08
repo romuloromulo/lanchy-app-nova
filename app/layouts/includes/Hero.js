@@ -42,7 +42,6 @@ function Hero() {
             width={1000}
             height={1000}
             alt="Pizza"
-            intrinsic
             className="lg:translate-x-[190px] lg:scale-x-[-1] md:w-[%50] md:h-[%50] "
           />
           <Image

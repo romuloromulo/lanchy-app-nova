@@ -12,8 +12,8 @@ import MainLayout from "../layouts/MainLayout";
 export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const supabase = createClientComponentClient();
-  const router = useRouter();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -23,16 +23,24 @@ export default function AuthPage() {
     setPassword(event.target.value);
   };
 
-  async function signInWithEmail() {
+  async function signInWithEmail(e) {
+    e.preventDefault();
+    console.log("submitendo!");
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
     });
+
+    if (error) {
+      setError("Usuário ou senha inválidos. Tente novamente.");
+    }
+
     if (!error) {
       // Registro bem-sucedido, redirecione o usuário para a página desejada
-      router.push(window.location.origin);
+      setError("");
+      window.location.reload();
     }
-    // console.log("DATA SIGNUP:", data, "ERRO SIGNUP:", error);
+    console.log("DATA SIGNUP:", data, "ERRO SIGNUP:", error);
   }
 
   let reference;
@@ -76,6 +84,7 @@ export default function AuthPage() {
                 Esqueceu sua senha?
               </p>
             </div>
+            <p className=" text-red-600 text-sm mt-1"> {error}</p>
             <button
               type="submit"
               className="mt-5 bg-red-500 text-white hover:bg-transparent border-2 border-red-500  hover:border-black py-2 px-12 rounded-md hover:text-black font-bold text-lg duration-300">

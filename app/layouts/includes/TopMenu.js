@@ -47,7 +47,7 @@ function TopMenu() {
 
     return (
       <div className="flex items-center justify-center">
-        <Link href="sign-up">
+        <Link href="/sign-up">
           <div
             className="flex items-center  
         ease-in-out duration-500 
@@ -69,11 +69,11 @@ function TopMenu() {
 
   return (
     <div id="TopMenu" className=" bg-amber-400 ">
-      <div className="flex items-center justify-between w-full mx-auto h-14 max-w-[80rem] px-5">
+      <div className="flex items-center justify-start  sm:justify-between w-full mx-auto h-14 max-w-[80rem] px-10">
         <ul
           id="TopMenuLeft"
           className="flex items-center md:text-lg text-sm font-bold text-gray-800 sm:px-2 h-8  ">
-          <li className="md:pr-5 pr-2 text-sm md:text-lg flex justify-center items-center whitespace-nowrap">
+          <li className="md:pr-5 pr-2 text-sm md:text-lg justify-center items-center whitespace-nowrap hidden sm:flex">
             PLATAFORMAS ONLINE:
             <a
               href="https://www.ifood.com.br/"
