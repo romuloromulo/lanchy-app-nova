@@ -127,6 +127,8 @@ function TopMenu() {
                   onClick={() => {
                     user.signOut();
                     setIsMenu(false);
+                    setError("");
+                    window.location.reload();
                   }}>
                   Sair da conta
                 </li>
