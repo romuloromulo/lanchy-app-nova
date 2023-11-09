@@ -13,6 +13,7 @@ export default function SignUpPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState("Criar");
   const [emailValidation, setEmailValidation] = useState("");
+  const [userError, setUserError] = useState("");
 
   const router = useRouter();
   const supabase = createClientComponentClient();
@@ -27,6 +28,7 @@ export default function SignUpPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     if (!isEmailValid(email)) {
       setEmailValidation("Formato de e-mail inválido");
       return; // Impede o envio do formulário se o e-mail for inválido
@@ -46,15 +48,19 @@ export default function SignUpPage() {
 
       if (!error) {
         setEmailValidation("");
+        // setUserError("");
         setLoading("Pronto!");
         // Registro bem-sucedido, redirecione o usuário para a página desejada
         router.push(window.location.origin);
         window.location.reload();
       }
 
-      // console.log("DATA:", data, "ERRO:", error);
-    } else {
-      console.log("Erro! Por favor, tente mais tarde.");
+      console.log("DATA SIGN-UP:", data, "ERRO SIGN-UP:", error);
+
+      if (error) {
+        setLoading("Criar");
+        setUserError("E-mail já registrado! Use outro.");
+      }
     }
   }
 
@@ -80,6 +86,7 @@ export default function SignUpPage() {
                 className="h-10 w-64 mt-2 p-5 rounded-md"
               />
               <p className=" text-red-600 text-sm mt-1"> {emailValidation}</p>
+              <p className=" text-red-600 text-sm mt-1"> {userError}</p>
             </div>
             <div className="mt-4 flex flex-col">
               <label htmlFor="senha" className="font-bold">

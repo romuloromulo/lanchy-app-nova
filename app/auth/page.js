@@ -5,7 +5,8 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import isEmailValid from "../hooks/isEmailValid";
+// import { useRouter } from "next/navigation";
 
 import MainLayout from "../layouts/MainLayout";
 
@@ -13,6 +14,7 @@ export default function AuthPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [emailValidation, setEmailValidation] = useState("");
   const supabase = createClientComponentClient();
 
   const handleEmailChange = (event) => {
@@ -26,6 +28,10 @@ export default function AuthPage() {
   async function signInWithEmail(e) {
     e.preventDefault();
     // console.log("submitendo!");
+    if (!isEmailValid(email)) {
+      setEmailValidation("Formato de e-mail inválido");
+      return; // Impede o envio do formulário se o e-mail for inválido
+    }
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
@@ -37,6 +43,7 @@ export default function AuthPage() {
 
     if (!error) {
       // Registro bem-sucedido, redirecione o usuário para a página desejada
+      setEmailValidation("");
       setError("");
       window.location.reload();
     }
