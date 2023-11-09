@@ -68,7 +68,7 @@ function Menu() {
               <div className="text-2xl font-bold flex items-center justify-center">
                 Carregando...
                 <span className="ml-4">
-                  <AiOutlineLoading size={33} t className="animate-spin" />
+                  <AiOutlineLoading size={33} className="animate-spin" />
                 </span>
               </div>
             ) : (
