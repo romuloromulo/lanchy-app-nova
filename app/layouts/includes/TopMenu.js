@@ -35,7 +35,7 @@ function TopMenu() {
     if (user && user?.id) {
       return (
         <button
-          className="flex items-center gap-2 duration-300  cursor-pointer"
+          className="flex items-center gap-2 duration-300   cursor-pointer"
           onClick={() => setIsMenu(!isMenu)}>
           <div className=" whitespace-nowrap ">
             Olá, {user?.name || user?.email}
@@ -69,7 +69,7 @@ function TopMenu() {
 
   return (
     <div id="TopMenu" className=" bg-amber-400 ">
-      <div className="flex items-center justify-start  sm:justify-between w-full mx-auto h-14 max-w-[80rem] px-10">
+      <div className="flex items-center justify-start sm:justify-between w-full mx-auto h-14 max-w-[80rem]  md:px-10 ">
         <ul
           id="TopMenuLeft"
           className="flex items-center md:text-lg text-sm font-bold text-gray-800 sm:px-2 h-8  ">
@@ -93,7 +93,7 @@ function TopMenu() {
         </ul>
         <ul
           id="TopMenuRight"
-          className="flex items-center  text-gray-800 px-2 h-8  translate-x-[-3rem] z-20">
+          className="flex items-center   text-gray-800 px-2 h-8   z-20">
           <li className="relative px-3 ">
             {isLoggedIn()}
 

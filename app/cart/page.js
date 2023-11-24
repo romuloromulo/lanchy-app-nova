@@ -36,7 +36,7 @@ function Cart() {
               Carro de Compras
             </div>
             <div className="lg:flex-row flex flex-col items-center justify-center md:items-start p-4  lg:justify-between gap-2 ">
-              <div className="flex flex-col justify-center items-center md:w-full h-auto w-auto ">
+              <div className="flex flex-col justify-center items-center md:w-full ">
                 {cart.cartTotal() > 0 ? (
                   <ClientOnly>
                     {cart.getCart().map((product) => (

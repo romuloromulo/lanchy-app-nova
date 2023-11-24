@@ -40,7 +40,7 @@ function CartItem({ product }) {
     );
   }
   return (
-    <div className="relative flex flex-col justify-center md:justify-start my-2 overflow-hidden rounded-lg shadow-lg bg-amber-400 w-[90%] p-4 md:p-6">
+    <div className="relative flex flex-col md:flex-row mx-auto justify-center md:justify-start my-2 overflow-hidden rounded-lg shadow-lg bg-amber-400 w-[90%] p-4 md:p-6">
       <div className="mx-auto">
         <Link href={`/product/${product.id}`}>
           <Image
