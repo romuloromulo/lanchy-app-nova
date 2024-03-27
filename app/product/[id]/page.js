@@ -138,7 +138,7 @@ function Product({ params }) {
                 <div className="w-full flex justify-center items-center md:w-auto ">
                   <button
                     className={`
-                  text-black w-full py-5 font-bold text-xl mt-4 px-4 sm:px-6 md:px-16 cursor-pointer bg-amber-400 hover:bg-[#bf851a] rounded-md shadow-sm`}
+                  text-black w-full py-5 font-bold text-xl mt-4 px-4 sm:px-6 md:px-16 cursor-pointer bg-amber-400 hover:bg-[#d6a852] rounded-md shadow-sm`}
                     onClick={addToCartHandler}>
                     {cart.isItemAdded
                       ? "Remover do Carrinho"
