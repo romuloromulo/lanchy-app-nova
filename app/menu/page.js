@@ -2,7 +2,7 @@
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import { useEffect, useState } from "react";
-// import useIsLoading from "@/app/hooks/useIsLoading";
+
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineLoading } from "react-icons/ai";
@@ -13,12 +13,12 @@ function MenuPage() {
 
   async function getProducts() {
     setIsLoading(true);
-    // useIsLoading(true);
+
     setProducts([]);
     const response = await fetch(`/api/products/`);
     const prods = await response.json();
     setProducts(prods);
-    // useIsLoading(false);
+
     setIsLoading(false);
   }
   useEffect(() => {
