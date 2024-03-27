@@ -27,6 +27,21 @@ const Provider = ({ children }) => {
     return null;
   };
 
+  const getCurrentUser = async () => {
+    if (id) return;
+
+    const res = await supabaseClient.auth.getUser();
+    if (res && res.data.user) {
+      const theUser = res.data.user;
+
+      setUser(theUser);
+      setId(theUser.id);
+      setEmail(theUser.email);
+      setName(theUser.identities[0].identity_data.name);
+      setPicture(theUser.identities[0].identity_data.picture);
+    }
+  };
+
   useEffect(() => {
     const isUser = async () => {
       const currentSession = await getCurrentSession();

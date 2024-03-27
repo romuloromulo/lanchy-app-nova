@@ -26,7 +26,7 @@ function TopMenu() {
               user.signOut();
               setIsMenu(false);
               setError("");
-              window.location.reload(); // Adicione sua lógica de logout aqui
+              window.location.reload();
             }}
           />
         </ul>
