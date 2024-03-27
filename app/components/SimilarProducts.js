@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import { BiLoader } from "react-icons/bi";
 import useIsLoading from "../hooks/useIsLoading";
+import Loading from "./loading";
 
 function SimilasProducts() {
   const [products, setProducts] = useState([]);
@@ -28,7 +29,7 @@ function SimilasProducts() {
         <div className="border-b p-4 max-w-[1200px] mx-auto" />
 
         <div className="max-w-[1200px] mx-auto">
-          <div className="font-bold text-2xl py-2 mt-4 text-black">
+          <div className="font-bold text-2xl py-2 px-4 mt-4 text-black">
             Pizzas que talvez goste:
           </div>
 
@@ -40,10 +41,7 @@ function SimilasProducts() {
             </div>
           ) : (
             <div className="flex items-center justify-center">
-              <div className="flex items-center justify-center gap-4 font-semibold">
-                <BiLoader size={30} className="text-blue-400 animate-spin" />
-                Loading Products...
-              </div>
+              <Loading />
             </div>
           )}
         </div>

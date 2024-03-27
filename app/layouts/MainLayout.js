@@ -1,7 +1,7 @@
 "use client";
 
 import TopMenu from "./includes/TopMenu/TopMenu";
-import NavBar from "./includes/NavBar";
+import NavBar from "./includes/NavBar/NavBar";
 import Footer from "./includes/Footer";
 import Loading from "../components/loading";
 import { useEffect, useState } from "react";
