@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiTrustedshops } from "react-icons/si";
 import { AiOutlineLoading } from "react-icons/ai";
+import Loading from "@/app/components/loading";
 
 function Menu() {
   const [products, setProducts] = useState([]);
@@ -64,16 +65,7 @@ function Menu() {
         </div>
         <div id="Pizzas">
           <div className="grid gap-2 grid-cols-1  md:grid-cols-3 sm:grid-cols-2 lg:grid-cols-5 mt-5 ">
-            {isLoading ? (
-              <div className="text-2xl font-bold flex items-center justify-center">
-                Carregando...
-                <span className="ml-4">
-                  <AiOutlineLoading size={33} className="animate-spin" />
-                </span>
-              </div>
-            ) : (
-              pizzas
-            )}
+            {isLoading ? <Loading /> : pizzas}
           </div>
         </div>
         <div className="flex items-center justify-center lg:items-start lg:justify-start gap-5 sm:gap-4">

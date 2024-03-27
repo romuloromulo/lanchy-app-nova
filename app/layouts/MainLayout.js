@@ -1,6 +1,6 @@
 "use client";
 
-import TopMenu from "./includes/TopMenu";
+import TopMenu from "./includes/TopMenu/TopMenu";
 import NavBar from "./includes/NavBar";
 import Footer from "./includes/Footer";
 import Loading from "../components/loading";
