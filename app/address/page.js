@@ -127,14 +127,14 @@ export default function Home() {
         <div
           id="AddressPage"
           className="mt-4 max-w-[600px] mx-auto px-2 py-10 h-screen">
-          <div className="mx-auto bg-amber-400 border-2 border-black rounded-md shadow-lg p-3">
+          <div className="mx-auto bg-amber-400  rounded-md shadow-lg p-3">
             <div className="text-xl text-bold mb-2">Endereço completo</div>
 
             <form onSubmit={submit}>
               <div className="mb-4">
                 <ClientOnly>
                   <TextInput
-                    className="w-full border-2 border-black"
+                    className="w-full"
                     string={name}
                     placeholder="Nome"
                     onUpdate={setName}
@@ -201,7 +201,7 @@ export default function Home() {
                                 text-lg 
                                 font-semibold 
                                 p-3 
-                            border-2 border-black
+                           
                             hover:bg-red-600
                             duration-300 rounded-md
                                 ${
