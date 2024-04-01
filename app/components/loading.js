@@ -9,8 +9,7 @@ export default function Loading() {
       <div
         className="
                 fixed 
-                bg-black 
-                bg-opacity-70 
+               bg-red-500
                 inset-0 
                 w-full 
                 z-40 

@@ -1,5 +1,5 @@
 "use client";
-import { useCart } from "../context/cart";
+import { useCart } from "../../context/cart";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import Link from "next/link";

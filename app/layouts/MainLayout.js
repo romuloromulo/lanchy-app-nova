@@ -20,7 +20,7 @@ export default function MainLayout({ children }) {
     <>
       <div id="MainLayout" className="mx-auto bg-red-500 overflow-hidden">
         <div>
-          {isLoading ? <Loading /> : <div></div>}
+          {/* {isLoading ? <Loading /> : <div></div>} */}
           <TopMenu />
           <NavBar />
         </div>

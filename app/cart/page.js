@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
 import SimilasProducts from "../components/SimilarProducts";
-import CartItem from "../components/CartItem";
+import CartItem from "../components/Cart/CartItem";
 import { useRouter } from "next/navigation";
 import { useCart } from "../context/cart";
 import useIsLoading from "../hooks/useIsLoading";
