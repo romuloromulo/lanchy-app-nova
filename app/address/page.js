@@ -1,7 +1,5 @@
 "use client";
 
-// https://nextjs.org/docs/messages/react-hydration-error#solution-1-using-useeffect-to-run-on-the-client-only
-
 import MainLayout from "../layouts/MainLayout";
 import TextInput from "../components/TextInput";
 import { useEffect, useState } from "react";
@@ -23,7 +21,6 @@ export default function Home() {
   const [address, setAddress] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
   const [isUpdatingAddress, setIsUpdatingAddress] = useState(false);
   const [error, setError] = useState({});
 
@@ -60,7 +57,6 @@ export default function Home() {
     setAddress(result.address);
     setZipcode(result.zipcode);
     setCity(result.city);
-    setCountry(result.country);
   };
 
   const validate = () => {
@@ -69,19 +65,16 @@ export default function Home() {
     let isError = false;
 
     if (!name) {
-      setError({ type: "name", message: "A name is required" });
+      setError({ type: "name", message: "Nome obrigatório" });
       isError = true;
     } else if (!address) {
-      setError({ type: "address", message: "An address is required" });
+      setError({ type: "address", message: "Endereço obrigatório" });
       isError = true;
     } else if (!zipcode) {
-      setError({ type: "zipcode", message: "A zipcode is required" });
+      setError({ type: "zipcode", message: "CEP obrigatório" });
       isError = true;
     } else if (!city) {
-      setError({ type: "city", message: "A city is required" });
-      isError = true;
-    } else if (!country) {
-      setError({ type: "country", message: "A country is required" });
+      setError({ type: "city", message: "Cidade obrigatório" });
       isError = true;
     }
     return isError;
@@ -105,7 +98,6 @@ export default function Home() {
         address,
         zipcode,
         city,
-        country,
       });
 
       setTheCurrentAddres(response);
@@ -175,18 +167,6 @@ export default function Home() {
                     placeholder="Cidade"
                     onUpdate={setCity}
                     error={showError("city")}
-                  />
-                </ClientOnly>
-              </div>
-
-              <div>
-                <ClientOnly>
-                  <TextInput
-                    className="w-full border-2 border-black mt-2"
-                    string={country}
-                    placeholder="País"
-                    onUpdate={setCountry}
-                    error={showError("country")}
                   />
                 </ClientOnly>
               </div>
