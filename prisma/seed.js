@@ -120,7 +120,7 @@ async function seedProducts() {
         categoria: "Salgada",
         description:
           "Inspirada na culinária mediterrânea, esta products apresenta ingredientes como azeitonas, tomate seco e queijo feta.",
-        url: "https://eferdsxpshrqcxuqnlms.supabase.co/storage/v1/object/public/PizzaImages/Azeitona.png",
+        url: "https://qxejovzhjmcusbgwiklu.supabase.co/storage/v1/object/sign/PizzaImages/Azeitona.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJQaXp6YUltYWdlcy9BemVpdG9uYS5wbmciLCJpYXQiOjE3MTM0ODE2NTAsImV4cCI6MTc0NTAxNzY1MH0.tYSZHoj_s3mOI3S41zQSD90vUtIkmpRpQ-QlK8mZFQE&t=2024-04-18T23%3A07%3A30.697Z",
       },
     });
 
@@ -161,7 +161,7 @@ async function seedProducts() {
 
         description:
           "Pizza com pedaços suculentos de carne de churrasco, cebola e pimentão.",
-        url: "https://eferdsxpshrqcxuqnlms.supabase.co/storage/v1/object/public/PizzaImages/Churrasco.png",
+        url: "https://qxejovzhjmcusbgwiklu.supabase.co/storage/v1/object/sign/PizzaImages/Azeitona.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJQaXp6YUltYWdlcy9BemVpdG9uYS5wbmciLCJpYXQiOjE3MTM0ODE2NTAsImV4cCI6MTc0NTAxNzY1MH0.tYSZHoj_s3mOI3S41zQSD90vUtIkmpRpQ-QlK8mZFQE&t=2024-04-18T23%3A07%3A30.697Z",
       },
     });
 

@@ -14,8 +14,6 @@ function CartItem({ product }) {
 
   const cart = useCart();
 
-  // console.log(cart.getCart());
-
   function removeItemFromCart() {
     let res = confirm(
       `Tem certeza que deseja retirar este item? "Pizza de ${product.title}"`
