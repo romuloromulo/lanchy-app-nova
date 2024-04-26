@@ -11,15 +11,17 @@ import Reservas from "./layouts/includes/Reservas";
 export default function Home() {
   const [products, setProducts] = useState([]);
 
-  async function getProducts() {
-    setProducts([]);
-    const response = await fetch(`/api/products/`);
-    const prods = await response.json();
-    setProducts(prods);
-  }
-  useEffect(() => {
-    getProducts();
-  }, []);
+  // async function getProducts() {
+  //   setProducts([]);
+  //   const response = await fetch(
+  //     `%${process.env.NEXT_PUBLIC_API_URL}/api/products/`
+  //   );
+  //   const prods = await response.json();
+  //   setProducts(prods);
+  // }
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
 
   return (
     <MainLayout>

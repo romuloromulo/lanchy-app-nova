@@ -12,7 +12,7 @@ function Clientes() {
         "“Lorem ipsum dolor sit amet consectetur adipiscing lectus a nunc mauris scelerisque sed quis pharetra arcu pharetra blandit.",
       nome: "Sandra Lopes",
       cidade: "São Luis - MA",
-      foto: "https://eferdsxpshrqcxuqnlms.supabase.co/storage/v1/object/public/PersonsImages/person1.png?t=2023-08-31T21%3A30%3A19.931Z",
+      foto: "https://qxejovzhjmcusbgwiklu.supabase.co/storage/v1/object/sign/PersonImages/person1.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJQZXJzb25JbWFnZXMvcGVyc29uMS5wbmciLCJpYXQiOjE3MTQwOTc1NTIsImV4cCI6MTc0NTYzMzU1Mn0.mCG1SCBcM_PzVlormK7oy-ZJ6jm03KP9C6r4nn-gkK4&t=2024-04-26T02%3A12%3A33.097Z",
       color: "red-600",
     },
     {
@@ -22,7 +22,7 @@ function Clientes() {
         "“Lorem ipsum dolor sit amet consectetur adipiscing lectus a nunc mauris scelerisq pharetra arcu pharetra blandit.",
       nome: "Andre Ferreira",
       cidade: "São Paulo - SP",
-      foto: "https://eferdsxpshrqcxuqnlms.supabase.co/storage/v1/object/public/PersonsImages/person2.png?t=2023-08-31T21%3A32%3A18.170Z",
+      foto: "https://qxejovzhjmcusbgwiklu.supabase.co/storage/v1/object/sign/PersonImages/person2.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJQZXJzb25JbWFnZXMvcGVyc29uMi5wbmciLCJpYXQiOjE3MTQwOTc1NjEsImV4cCI6MTc0NTYzMzU2MX0.Y66AA5H2kM5yIO9lcJBdX1HrC2r2AXGncJq1X16Ae5k&t=2024-04-26T02%3A12%3A42.006Z",
       color: "blue-600",
     },
     {
@@ -32,7 +32,7 @@ function Clientes() {
         "“Lorem ipsum dolor sit amet consectetur adipiscing lectus a nunc sed quis pharetra arcu pharetra blandit t amet ca fofite.",
       nome: "Jonas Rodrigues",
       cidade: "Recife - PE",
-      foto: "https://eferdsxpshrqcxuqnlms.supabase.co/storage/v1/object/public/PersonsImages/person3.png",
+      foto: "https://qxejovzhjmcusbgwiklu.supabase.co/storage/v1/object/sign/PersonImages/person2.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJQZXJzb25JbWFnZXMvcGVyc29uMi5wbmciLCJpYXQiOjE3MTQwOTc1NjEsImV4cCI6MTc0NTYzMzU2MX0.Y66AA5H2kM5yIO9lcJBdX1HrC2r2AXGncJq1X16Ae5k&t=2024-04-26T02%3A12%3A42.006Z",
       color: "green-500",
     },
   ];

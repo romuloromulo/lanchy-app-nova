@@ -13,6 +13,7 @@ function Menu() {
     setProducts([]);
     const response = await fetch(`/api/products/`);
     const prods = await response.json();
+
     setProducts(prods);
     setIsLoading(false);
   }
