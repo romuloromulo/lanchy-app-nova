@@ -8,21 +8,14 @@ import ClientOnly from "@/app/components/ClientOnly";
 import SearchField from "./SearchField";
 import SearchResults from "./SearchResults";
 import MobileMenu from "./MobileMenu";
-import CartModal from "@/app/components/Cart/CartModal";
 
 export default function NavBar() {
   const cart = useCart();
   const [items, setItems] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [openNav, setOpenNav] = useState(false);
-  const [openCart, setOpenCart] = useState(false);
-  console.log("OPEN CART", openCart);
   const toggleNav = () => {
     setOpenNav(!openNav);
-  };
-
-  const toggleCart = () => {
-    setOpenCart(!openCart);
   };
 
   const handleSearch = async (value) => {
@@ -82,14 +75,10 @@ export default function NavBar() {
                 <Link href="/contato">Contato</Link>
               </li>
 
-              {/* <ClientOnly>
+              <ClientOnly>
                 <li className="px-3 hover:underline cursor-pointer">
                   <div className="relative">
-                    <div
-                      onClick={() => {
-                        toggleCart();
-                      }}>
-                      <CartModal isOpen={openCart} />
+                    <Link href="/cart">
                       <AiOutlineShoppingCart size={30} />
                       {cart.cartCount() > 0 ? (
                         <div className="rounded-full absolute text-[10px] -top-[5px] pt-[2px]  -right-[5px] bg-amber-400 w-[20px] h-[18px] text-gray-800">
@@ -100,10 +89,10 @@ export default function NavBar() {
                       ) : (
                         <div></div>
                       )}
-                    </div>
+                    </Link>
                   </div>
                 </li>
-              </ClientOnly> */}
+              </ClientOnly>
             </ul>
           </div>
           <div className="sm:hidden  flex items-center gap-8">
@@ -123,7 +112,6 @@ export default function NavBar() {
                 </Link>
               </div>
             </ClientOnly>
-
             <div
               id="MenuMobile"
               onClick={toggleNav}
