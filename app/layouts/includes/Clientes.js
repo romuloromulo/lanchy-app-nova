@@ -32,7 +32,7 @@ function Clientes() {
         "“Lorem ipsum dolor sit amet consectetur adipiscing lectus a nunc sed quis pharetra arcu pharetra blandit t amet ca fofite.",
       nome: "Jonas Rodrigues",
       cidade: "Recife - PE",
-      foto: "https://qxejovzhjmcusbgwiklu.supabase.co/storage/v1/object/sign/PersonImages/person2.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJQZXJzb25JbWFnZXMvcGVyc29uMi5wbmciLCJpYXQiOjE3MTQwOTc1NjEsImV4cCI6MTc0NTYzMzU2MX0.Y66AA5H2kM5yIO9lcJBdX1HrC2r2AXGncJq1X16Ae5k&t=2024-04-26T02%3A12%3A42.006Z",
+      foto: "https://qxejovzhjmcusbgwiklu.supabase.co/storage/v1/object/sign/PersonImages/person3.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJQZXJzb25JbWFnZXMvcGVyc29uMy5wbmciLCJpYXQiOjE3MTQyMzc3MjAsImV4cCI6MTc0NTc3MzcyMH0.iVe5Hr1ptCcQTytxBOzmLM03E95si9YFTvlNhLqL2uk&t=2024-04-27T17%3A08%3A41.219Z",
       color: "green-500",
     },
   ];
