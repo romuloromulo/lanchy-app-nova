@@ -82,7 +82,7 @@ export default function NavBar() {
                 <Link href="/contato">Contato</Link>
               </li>
 
-              <ClientOnly>
+              {/* <ClientOnly>
                 <li className="px-3 hover:underline cursor-pointer">
                   <div className="relative">
                     <div
@@ -103,7 +103,7 @@ export default function NavBar() {
                     </div>
                   </div>
                 </li>
-              </ClientOnly>
+              </ClientOnly> */}
             </ul>
           </div>
           <div className="sm:hidden  flex items-center gap-8">
@@ -123,22 +123,7 @@ export default function NavBar() {
                 </Link>
               </div>
             </ClientOnly>
-            {/* <ClientOnly>
-              <div className="relative cursor-pointer">
-                <Link href="/cart">
-                  <AiOutlineShoppingCart size={30} />
-                  {cart.cartCount() > 0 ? (
-                    <div className="rounded-full absolute text-[10px] -top-[5px] pt-[2px]  bg-amber-500 w-[20px] h-[18px] text-gray-800 font-bold mr-8 ">
-                      <div className="flex items-center justify-center">
-                        {cart.cartCount()}
-                      </div>
-                    </div>
-                  ) : (
-                    <div></div>
-                  )}
-                </Link>
-              </div>
-            </ClientOnly> */}
+
             <div
               id="MenuMobile"
               onClick={toggleNav}
